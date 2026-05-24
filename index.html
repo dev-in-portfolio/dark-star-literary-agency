@@ -3,65 +3,1051 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dark Star Literary Agency</title>
+    <title>Dark Star Literary Agency | Ambrose Caspian Vale & Lulu & Ellie Adventures</title>
+    <meta
+      name="description"
+      content="Dark Star Literary Agency is the creative home of Ambrose Caspian Vale and the Lulu & Ellie Adventures, a growing universe of magical children’s books, learning lines, activity collections, and storyworlds built to grow."
+    >
+    <meta name="theme-color" content="#0a1020">
+    <meta property="og:title" content="Dark Star Literary Agency | Ambrose Caspian Vale & Lulu & Ellie Adventures">
+    <meta
+      property="og:description"
+      content="An independent literary studio, publishing imprint, and creative development house for magical children’s books, learning adventures, and expandable storyworlds."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dark-star-literary-agency.netlify.app/">
+    <meta property="og:image" content="https://dark-star-literary-agency.netlify.app/og-image.png">
     <style>
       :root {
         color-scheme: dark;
-        --bg: #0c1020;
-        --panel: #11182d;
-        --text: #f4f1ea;
-        --muted: #b8bfd6;
-        --accent: #f0c674;
+        --bg: #070c17;
+        --bg-2: #0b1224;
+        --panel: rgba(11, 18, 36, 0.82);
+        --panel-strong: rgba(16, 24, 48, 0.94);
+        --line: rgba(240, 198, 116, 0.22);
+        --line-soft: rgba(255, 255, 255, 0.08);
+        --text: #f3efe6;
+        --muted: #bdc6da;
+        --gold: #f0c674;
+        --gold-soft: #ffdd9a;
+        --cream: #faf3e2;
+        --blue: #8fc0ff;
+        --teal: #99e6d0;
+        --pink: #f4b7cf;
+        --shadow: 0 28px 90px rgba(0, 0, 0, 0.48);
+        --radius-xl: 30px;
+        --radius-lg: 22px;
+        --radius-md: 16px;
+        --max: 1160px;
       }
 
-      html, body {
-        height: 100%;
-        margin: 0;
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       body {
-        display: grid;
-        place-items: center;
-        font-family: Georgia, "Times New Roman", serif;
-        background:
-          radial-gradient(circle at top, rgba(240, 198, 116, 0.18), transparent 30%),
-          linear-gradient(160deg, #050814, var(--bg) 60%, #040507);
+        margin: 0;
+        min-height: 100vh;
         color: var(--text);
+        background:
+          radial-gradient(circle at 15% 15%, rgba(240, 198, 116, 0.16), transparent 24%),
+          radial-gradient(circle at 80% 18%, rgba(143, 192, 255, 0.10), transparent 22%),
+          radial-gradient(circle at 78% 76%, rgba(153, 230, 208, 0.08), transparent 20%),
+          linear-gradient(160deg, #04060c 0%, var(--bg) 34%, #050814 72%, #040507 100%);
+        font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+        line-height: 1.6;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.35;
+        background-image:
+          radial-gradient(rgba(255, 255, 255, 0.85) 0.8px, transparent 0.9px),
+          radial-gradient(rgba(240, 198, 116, 0.8) 0.7px, transparent 0.8px);
+        background-size: 150px 150px, 210px 210px;
+        background-position: 0 0, 50px 80px;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.78), transparent 90%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        padding: 0.8rem 1rem;
+        border-radius: 999px;
+        background: var(--gold);
+        color: #111;
+        transform: translateY(-180%);
+        transition: transform 0.2s ease;
+        z-index: 1000;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .site-shell {
+        width: min(calc(100% - 2rem), var(--max));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 60;
+        backdrop-filter: blur(14px);
+        background: linear-gradient(to bottom, rgba(5, 8, 17, 0.88), rgba(5, 8, 17, 0.58));
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .header-inner {
+        width: min(calc(100% - 2rem), var(--max));
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+
+      .brand-mark {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.85rem;
+        font-size: 0.92rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--cream);
+        white-space: nowrap;
+      }
+
+      .brand-orb {
+        width: 1.1rem;
+        height: 1.1rem;
+        border-radius: 999px;
+        background:
+          radial-gradient(circle at 35% 35%, #fff7d6 0 18%, #f0c674 24%, #7f5a0a 74%, #281d05 100%);
+        box-shadow: 0 0 0 4px rgba(240, 198, 116, 0.08), 0 0 28px rgba(240, 198, 116, 0.28);
+        flex: 0 0 auto;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.45rem;
+      }
+
+      .nav a {
+        padding: 0.55rem 0.82rem;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        transition: 0.2s ease;
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible {
+        color: var(--text);
+        border-color: var(--line);
+        background: rgba(240, 198, 116, 0.08);
+        outline: none;
       }
 
       main {
-        width: min(90vw, 720px);
-        padding: 4rem 2rem;
-        text-align: center;
-        background: rgba(17, 24, 45, 0.78);
-        border: 1px solid rgba(240, 198, 116, 0.22);
-        border-radius: 24px;
-        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
-        backdrop-filter: blur(10px);
+        padding-bottom: 4rem;
       }
 
-      h1 {
+      section {
+        padding: 4.5rem 0;
+      }
+
+      .hero {
+        padding-top: 3.5rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+        gap: 2rem;
+        align-items: stretch;
+      }
+
+      .hero-copy,
+      .hero-aside,
+      .section-card,
+      .portal-card,
+      .book-card {
+        border: 1px solid var(--line-soft);
+        background: linear-gradient(180deg, rgba(17, 24, 45, 0.88), rgba(9, 14, 30, 0.96));
+        box-shadow: var(--shadow);
+        border-radius: var(--radius-xl);
+      }
+
+      .hero-copy {
+        padding: clamp(1.4rem, 3vw, 2.5rem);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-copy::after {
+        content: "";
+        position: absolute;
+        inset: auto -15% -30% auto;
+        width: 18rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(240, 198, 116, 0.15), transparent 66%);
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.38rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid rgba(240, 198, 116, 0.24);
+        color: var(--gold-soft);
+        background: rgba(240, 198, 116, 0.08);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.72rem;
+      }
+
+      .hero h1 {
+        margin: 1rem 0 0;
+        font-size: clamp(2.65rem, 7vw, 5.8rem);
+        line-height: 0.95;
+        letter-spacing: 0.02em;
+      }
+
+      .tagline {
+        margin: 1rem 0 0;
+        font-size: clamp(1.25rem, 2vw, 1.5rem);
+        color: var(--gold-soft);
+      }
+
+      .hero p {
+        margin: 1rem 0 0;
+        max-width: 60ch;
+        color: var(--muted);
+        font-size: 1.04rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-top: 1.6rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0.8rem 1.2rem;
+        border-radius: 999px;
+        border: 1px solid rgba(240, 198, 116, 0.3);
+        transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        font-size: 0.98rem;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        transform: translateY(-1px);
+        outline: none;
+      }
+
+      .button.primary {
+        background: linear-gradient(180deg, #f6d78d, #c89435);
+        color: #171103;
+        border-color: rgba(255, 240, 197, 0.4);
+      }
+
+      .button.primary:hover,
+      .button.primary:focus-visible {
+        background: linear-gradient(180deg, #ffe2a8, #d7a845);
+      }
+
+      .button.secondary {
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
+      }
+
+      .hero-aside {
+        padding: 1.2rem;
+        display: grid;
+        gap: 1rem;
+        align-content: start;
+      }
+
+      .aside-panel {
+        padding: 1.15rem;
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015)),
+          rgba(7, 11, 24, 0.5);
+      }
+
+      .aside-panel h2,
+      .aside-panel h3,
+      .section-heading h2,
+      .section-heading h3,
+      .portal-card h3,
+      .book-card h3 {
         margin: 0;
-        font-size: clamp(2rem, 5vw, 4.25rem);
-        letter-spacing: 0.04em;
+        line-height: 1.15;
+      }
+
+      .aside-panel p,
+      .section-heading p,
+      .portal-card p,
+      .book-card p,
+      .section-card p {
+        margin: 0.65rem 0 0;
+        color: var(--muted);
+      }
+
+      .mini-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
+      }
+
+      .stat {
+        padding: 1rem;
+        border-radius: 18px;
+        border: 1px solid rgba(240, 198, 116, 0.14);
+        background: rgba(240, 198, 116, 0.05);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.05rem;
+        color: var(--cream);
+      }
+
+      .section-heading {
+        max-width: 720px;
+        margin-bottom: 1.5rem;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(1.8rem, 3vw, 3rem);
+      }
+
+      .section-heading .lede {
+        color: var(--cream);
+        font-size: 1.08rem;
+      }
+
+      .portal-grid,
+      .book-grid,
+      .feature-grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .portal-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .portal-card,
+      .book-card {
+        padding: 1.25rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .portal-card::before,
+      .book-card::before,
+      .section-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(135deg, rgba(240, 198, 116, 0.12), transparent 40%, transparent 60%, rgba(143, 192, 255, 0.08));
+        opacity: 0.7;
+      }
+
+      .portal-card > *,
+      .book-card > *,
+      .section-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .card-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.32rem 0.66rem;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        color: var(--gold-soft);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .section-card {
+        padding: 1.5rem;
+        position: relative;
+      }
+
+      .section-card + .section-card {
+        margin-top: 1rem;
+      }
+
+      .panel-list {
+        display: grid;
+        gap: 0.75rem;
+        margin: 1rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .panel-list li {
+        padding-left: 1.2rem;
+        position: relative;
+        color: var(--muted);
+      }
+
+      .panel-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.72em;
+        width: 0.42rem;
+        height: 0.42rem;
+        border-radius: 999px;
+        background: var(--gold);
+        box-shadow: 0 0 12px rgba(240, 198, 116, 0.35);
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .accent-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        background: rgba(153, 230, 208, 0.12);
+        border: 1px solid rgba(153, 230, 208, 0.25);
+        color: #cdf6ea;
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
       }
 
-      p {
-        margin: 1rem 0 0;
-        color: var(--muted);
-        font-size: clamp(1rem, 2vw, 1.2rem);
+      .lulu-ellie {
+        background:
+          radial-gradient(circle at 14% 22%, rgba(255, 222, 154, 0.16), transparent 30%),
+          radial-gradient(circle at 80% 12%, rgba(143, 192, 255, 0.14), transparent 25%),
+          linear-gradient(180deg, rgba(26, 28, 46, 0.92), rgba(12, 15, 29, 0.94));
       }
 
-      .accent {
-        color: var(--accent);
+      .lulu-ellie .card-kicker {
+        color: #1d1300;
+        background: linear-gradient(180deg, #ffe2a1, #f1c565);
+        border-color: rgba(255, 228, 164, 0.28);
+      }
+
+      .lulu-ellie .hero-word {
+        color: var(--gold-soft);
+      }
+
+      .book-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .book-card {
+        min-height: 100%;
+      }
+
+      .book-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.32rem 0.58rem;
+        border-radius: 999px;
+        background: rgba(240, 198, 116, 0.09);
+        border: 1px solid rgba(240, 198, 116, 0.18);
+        color: var(--gold-soft);
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .contact-card {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+        align-items: start;
+      }
+
+      .contact-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+        padding: 0.9rem 1.2rem;
+        border-radius: 999px;
+        border: 1px solid rgba(240, 198, 116, 0.28);
+        background: rgba(240, 198, 116, 0.1);
+        color: var(--cream);
+        width: fit-content;
+      }
+
+      .contact-link:hover,
+      .contact-link:focus-visible {
+        outline: none;
+        background: rgba(240, 198, 116, 0.16);
+      }
+
+      .note {
+        font-size: 0.92rem;
+        color: #d0d8ea;
+        border-left: 3px solid rgba(240, 198, 116, 0.5);
+        padding-left: 0.9rem;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      footer {
+        padding: 1.75rem 0 3rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .footer-inner {
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        justify-content: space-between;
+      }
+
+      .footer-inner a {
+        color: var(--gold-soft);
+      }
+
+      .gold {
+        color: var(--gold-soft);
+      }
+
+      .lulu-gold {
+        color: #ffe2a1;
+      }
+
+      @media (max-width: 1024px) {
+        .hero-grid,
+        .portal-grid,
+        .book-grid,
+        .contact-card,
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+
+        .book-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 720px) {
+        .site-shell,
+        .header-inner {
+          width: min(calc(100% - 1.2rem), var(--max));
+        }
+
+        .header-inner {
+          padding: 0.85rem 0;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        section {
+          padding: 3.2rem 0;
+        }
+
+        .hero {
+          padding-top: 2.4rem;
+        }
+
+        .hero h1 {
+          font-size: clamp(2.3rem, 12vw, 4rem);
+        }
+
+        .hero p,
+        .section-heading .lede {
+          font-size: 1rem;
+        }
+
+        .book-grid,
+        .mini-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .button,
+        .contact-link {
+          width: 100%;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+        }
       }
     </style>
   </head>
   <body>
-    <main>
-      <h1>Welcome to <span class="accent">Dark Star Literary Agency</span></h1>
-      <p>Stories with gravity, voice, and reach.</p>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand-mark" href="#top" aria-label="Dark Star Literary Agency home">
+          <span class="brand-orb" aria-hidden="true"></span>
+          Dark Star Literary Agency
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#dark-star">Dark Star</a>
+          <a href="#ambrose">Ambrose</a>
+          <a href="#lulu-ellie">Lulu &amp; Ellie</a>
+          <a href="#books">Books</a>
+          <a href="#parents-teachers">Parents &amp; Teachers</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="site-shell hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Public Launch V2</span>
+            <h1>Dark Star Literary Agency</h1>
+            <p class="tagline">Stories with gravity, voice, and reach.</p>
+            <p>
+              Dark Star Literary Agency is an independent literary studio, publishing imprint, and creative development house for magical children’s books, learning adventures, and expandable storyworlds.
+            </p>
+            <p>
+              Home of Ambrose Caspian Vale and the Lulu &amp; Ellie Adventures.
+            </p>
+            <div class="hero-actions" aria-label="Hero actions">
+              <a class="button primary" href="#lulu-ellie">Explore Lulu &amp; Ellie</a>
+              <a class="button secondary" href="#ambrose">Meet the Author</a>
+              <a class="button secondary" href="#books">View the Library</a>
+            </div>
+          </div>
+
+          <aside class="hero-aside" aria-label="Brand snapshot">
+            <div class="aside-panel">
+              <span class="accent-chip">Brand architecture</span>
+              <h2 style="margin-top: 0.75rem;">Three connected public worlds.</h2>
+              <p>
+                Dark Star is the umbrella. Ambrose Caspian Vale is the author brand. Lulu &amp; Ellie Adventures is the flagship children’s universe.
+              </p>
+            </div>
+            <div class="mini-grid">
+              <div class="stat">
+                <strong>Literary studio</strong>
+                <span class="muted">Publishing home for story-led collections.</span>
+              </div>
+              <div class="stat">
+                <strong>Children’s universe</strong>
+                <span class="muted">Warm, magical, and built to grow.</span>
+              </div>
+              <div class="stat">
+                <strong>Public preview</strong>
+                <span class="muted">Only live, sample-ready, or intentionally teased items.</span>
+              </div>
+              <div class="stat">
+                <strong>Future-ready</strong>
+                <span class="muted">A clean foundation for the next releases.</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="dark-star">
+        <div class="site-shell">
+          <div class="section-heading">
+            <span class="eyebrow">Dark Star</span>
+            <h2>Three portals, one coherent public brand.</h2>
+            <p class="lede">
+              The site presents Dark Star Literary Agency as a polished literary home first, with clear entry points into the author brand and the children’s universe.
+            </p>
+          </div>
+
+          <div class="portal-grid">
+            <article class="portal-card">
+              <span class="card-kicker">Dark Star Literary Agency</span>
+              <h3>A literary studio and publishing home.</h3>
+              <p>
+                A place for storybook series, activity collections, learning lines, and character-driven creative worlds.
+              </p>
+            </article>
+            <article class="portal-card">
+              <span class="card-kicker">Ambrose Caspian Vale</span>
+              <h3>An author brand with warmth and range.</h3>
+              <p>
+                The creator behind magical children’s stories, cozy mysteries, and gentle adventures that return to courage, kindness, and curiosity.
+              </p>
+            </article>
+            <article class="portal-card">
+              <span class="card-kicker">Lulu &amp; Ellie Adventures</span>
+              <h3>The flagship children’s universe.</h3>
+              <p>
+                Magical portal adventures, learning workbooks, printable activities, and story collections designed to grow into a full library.
+              </p>
+            </article>
+          </div>
+
+          <div class="section-card" style="margin-top: 1rem;">
+            <span class="card-kicker">Public language rules</span>
+            <div class="two-col" style="margin-top: 0.9rem;">
+              <div>
+                <h3>Use public-facing terms like these.</h3>
+                <ul class="panel-list">
+                  <li>Series</li>
+                  <li>Collections</li>
+                  <li>Book lines</li>
+                  <li>Learning lines</li>
+                  <li>Activity collections</li>
+                  <li>Lulu &amp; Ellie Library</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Avoid this public wording.</h3>
+                <p>
+                  Branch codes and internal production language stay behind the scenes. Public copy should stay focused on the visible brand, the library preview, and the releases that are actually ready.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-card" style="margin-top: 1rem;">
+            <h3>About Dark Star Literary Agency</h3>
+            <p>
+              Dark Star Literary Agency develops imaginative children’s book projects with strong character continuity, clear production systems, and long-term creative growth.
+            </p>
+            <p>
+              Its flagship universe is Lulu &amp; Ellie Adventures, created by Ambrose Caspian Vale.
+            </p>
+            <p>
+              A good story can become a whole world, and a good world can help children read, imagine, learn, laugh, and grow.
+            </p>
+            <p class="note">
+              Dark Star Literary Agency is currently focused on in-house publishing, creative development, and owned literary properties. Outside representation and submissions may be added in the future.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="ambrose">
+        <div class="site-shell">
+          <div class="section-heading">
+            <span class="eyebrow">Ambrose</span>
+            <h2>Meet Ambrose Caspian Vale.</h2>
+            <p class="lede">
+              Author of the Lulu &amp; Ellie Adventures and magical books for curious young readers.
+            </p>
+          </div>
+
+          <div class="section-card">
+            <div class="two-col">
+              <div>
+                <h3>Magical stories with a gentle compass.</h3>
+                <p>
+                  Ambrose Caspian Vale writes children’s stories filled with brave little dogs, impossible portals, cozy mysteries, gentle lessons, and worlds where courage does not always have to roar.
+                </p>
+                <p>
+                  As the creator of the Lulu &amp; Ellie Adventures, Ambrose builds books where children can explore friendship, problem-solving, kindness, creativity, careful thinking, and wonder through warm, imaginative adventures.
+                </p>
+              </div>
+              <div>
+                <ul class="panel-list">
+                  <li>Warm literary voice</li>
+                  <li>Character-first worldbuilding</li>
+                  <li>Stories built for return visits</li>
+                  <li>Book lines that can expand cleanly over time</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="lulu-ellie">
+        <div class="site-shell">
+          <div class="section-card lulu-ellie">
+            <div class="section-heading" style="margin-bottom: 0;">
+              <span class="eyebrow">Lulu &amp; Ellie Adventures</span>
+              <h2>Two scruffy sisters. One magical portal. A universe of cozy quests.</h2>
+              <p class="lede">
+                Lulu and Ellie are two scruffy terrier sisters with one very unusual problem: magical portals keep finding them.
+              </p>
+            </div>
+
+            <div class="two-col" style="margin-top: 1.25rem;">
+              <div class="section-card" style="background: rgba(255, 255, 255, 0.03);">
+                <h3><span class="hero-word">Lulu</span></h3>
+                <p>
+                  Small, tan-golden, scruffy, bold, dramatic, snack-motivated, and usually ready to leap before reading the map. Lulu wears a red bandana and tends to charge into the story with excellent confidence and questionable planning.
+                </p>
+              </div>
+              <div class="section-card" style="background: rgba(255, 255, 255, 0.03);">
+                <h3><span class="hero-word">Ellie</span></h3>
+                <p>
+                  Slightly larger, cream-colored, careful, observant, and very good at noticing the clue everyone else missed. Ellie wears a blue bandana and keeps the whole adventure quietly on track.
+                </p>
+              </div>
+            </div>
+
+            <div class="section-card" style="margin-top: 1rem; background: rgba(255, 255, 255, 0.03);">
+              <h3>Together, they explore, solve, and learn.</h3>
+              <p>
+                They travel into magical worlds, solve gentle mysteries, help creatures in trouble, earn charms and badges, and learn that bravery can look different every time.
+              </p>
+              <p>
+                Sometimes courage is loud. Sometimes courage is quiet. Sometimes courage is checking the map before Lulu runs into a mushroom maze.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="books">
+        <div class="site-shell">
+          <div class="section-heading">
+            <span class="eyebrow">Books</span>
+            <h2>Explore the Lulu &amp; Ellie Library.</h2>
+            <p class="lede">
+              The Lulu &amp; Ellie universe is designed to grow through storybook series, activity collections, learning lines, bedtime adventures, and printable resources.
+            </p>
+          </div>
+
+          <div class="section-card">
+            <p class="note" style="margin-top: 0;">
+              Publicly show only what is live, preorder-ready, sample-ready, or intentionally teased.
+            </p>
+          </div>
+
+          <div class="book-grid" style="margin-top: 1rem;">
+            <article class="book-card">
+              <span class="status">Storybook series</span>
+              <h3 style="margin-top: 0.9rem;">Lulu &amp; Ellie Adventures</h3>
+              <p>Magical portal adventures where Lulu and Ellie help worlds out of trouble.</p>
+              <div class="book-meta">
+                <span>Preview</span>
+                <span>Coming soon</span>
+              </div>
+            </article>
+            <article class="book-card">
+              <span class="status">Cozy mystery series</span>
+              <h3 style="margin-top: 0.9rem;">Lulu &amp; Ellie Mystery Tails</h3>
+              <p>Gentle clue-following mysteries where most problems are misunderstandings waiting to be understood.</p>
+              <div class="book-meta">
+                <span>Preview</span>
+                <span>Coming soon</span>
+              </div>
+            </article>
+            <article class="book-card">
+              <span class="status">Learning line</span>
+              <h3 style="margin-top: 0.9rem;">Lulu &amp; Ellie Phonics Path</h3>
+              <p>Gentle learn-to-read workbook adventures with warm visuals and steady practice.</p>
+              <div class="book-meta">
+                <span>Preview</span>
+                <span>Sample-ready</span>
+              </div>
+            </article>
+            <article class="book-card">
+              <span class="status">Activity collections</span>
+              <h3 style="margin-top: 0.9rem;">Lulu &amp; Ellie Search &amp; Find</h3>
+              <p>Search-and-color activity books with hidden objects, clues, charms, and busy adventure scenes.</p>
+              <div class="book-meta">
+                <span>Preview</span>
+                <span>Coming soon</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="parents-teachers">
+        <div class="site-shell">
+          <div class="section-heading">
+            <span class="eyebrow">Parents &amp; Teachers</span>
+            <h2>Gentle books and activities for curious young readers.</h2>
+            <p class="lede">
+              Lulu &amp; Ellie books are designed to be warm, playful, encouraging, and emotionally safe.
+            </p>
+          </div>
+
+          <div class="section-card">
+            <div class="two-col">
+              <div>
+                <p>
+                  The stories and activities use curiosity, humor, kindness, and problem-solving instead of fear, shame, or pressure.
+                </p>
+                <p>
+                  The goal is simple: help children feel brave, capable, curious, and ready to try.
+                </p>
+              </div>
+              <div>
+                <ul class="panel-list">
+                  <li>Reading confidence</li>
+                  <li>Gentle emotional lessons</li>
+                  <li>Low-pressure learning</li>
+                  <li>Creative thinking</li>
+                  <li>Kindness and problem-solving</li>
+                  <li>Warm adventure without harsh fear</li>
+                  <li>Story-powered workbooks and activities</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="site-shell">
+          <div class="section-heading">
+            <span class="eyebrow">Free Downloads</span>
+            <h2>Free Lulu &amp; Ellie printables, coming soon.</h2>
+            <p class="lede">
+              These materials will support the launch without exposing the full future library before it is ready.
+            </p>
+          </div>
+
+          <div class="section-card">
+            <div class="two-col">
+              <div>
+                <h3>Planned printables</h3>
+                <ul class="panel-list">
+                  <li>Meet Lulu &amp; Ellie character sheet</li>
+                  <li>Coloring page</li>
+                  <li>Reading tracker</li>
+                  <li>Mystery clue sheet</li>
+                  <li>Search-and-find sample</li>
+                  <li>Phonics sample page</li>
+                  <li>Handwriting sample page</li>
+                </ul>
+              </div>
+              <div>
+                <p class="note">
+                  Free printables are being prepared for the official Lulu &amp; Ellie launch.
+                </p>
+                <p>
+                  Join the reader list for launch updates and free printable activities once signup is connected.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="site-shell">
+          <div class="section-heading">
+            <span class="eyebrow">Contact</span>
+            <h2>Contact Dark Star.</h2>
+            <p class="lede">
+              For publishing, book, school, library, media, or general inquiries.
+            </p>
+          </div>
+
+          <div class="section-card contact-card">
+            <div>
+              <h3>General inquiry email</h3>
+              <p class="gold" style="font-size: 1.15rem; margin-top: 0.75rem;">
+                <a href="mailto:darkstarculinary@gmail.com">darkstarculinary@gmail.com</a>
+              </p>
+              <p>
+                Later, this can shift to the domain mailboxes for hello, books, rights, and press once the site is ready for that layer.
+              </p>
+              <div class="hero-actions" style="margin-top: 1.2rem;">
+                <a class="button primary" href="mailto:darkstarculinary@gmail.com?subject=General%20Inquiry">General Inquiry</a>
+                <a class="button secondary" href="mailto:darkstarculinary@gmail.com?subject=School%20or%20Library%20Inquiry">School / Library Inquiry</a>
+                <a class="button secondary" href="mailto:darkstarculinary@gmail.com?subject=Rights%20or%20Licensing">Rights / Licensing</a>
+                <a class="button secondary" href="mailto:darkstarculinary@gmail.com?subject=Media%20Inquiry">Media Inquiry</a>
+              </div>
+            </div>
+            <div class="aside-panel">
+              <span class="accent-chip">Deployment note</span>
+              <h3 style="margin-top: 0.9rem;">Static and Netlify-friendly.</h3>
+              <p>
+                The page stays simple, responsive, and ready to deploy as a single static landing site while the library grows behind it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <div class="site-shell">
+        <div class="footer-inner">
+          <div>© 2026 Dark Star Literary Agency. All rights reserved.</div>
+          <div>Dark Star Literary Agency is the creative home of Ambrose Caspian Vale and the Lulu &amp; Ellie Adventures.</div>
+          <div>Public-facing collections, series, and learning lines appear only when available, preorder-ready, sample-ready, or intentionally announced.</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Internal visibility note:
+      Future pages and collection structures may be built internally, but public navigation should show only live, preorder-ready,
+      sample-ready, or intentionally announced items.
+    -->
   </body>
 </html>
