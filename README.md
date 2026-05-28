@@ -4,6 +4,8 @@ Public website for Dark Star Literary Agency, the creative home of Ambrose Caspi
 
 Dark Star Literary Agency is an independent literary studio, publishing imprint, and creative development house for magical children’s books, learning adventures, activity collections, and expandable storyworlds.
 
+The public homepage uses a curated set of Lulu & Ellie media assets copied from `l_e_storage`. The storage hub remains internal infrastructure; public pages should use clean, site-owned asset paths.
+
 ## Public Brand Architecture
 
 - Dark Star Literary Agency - parent literary studio / imprint

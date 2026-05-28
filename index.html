@@ -582,16 +582,196 @@
         color: #ffe2a1;
       }
 
+      .hero-stage {
+        position: relative;
+        min-height: min(760px, calc(100vh - 86px));
+        overflow: hidden;
+        display: grid;
+        align-items: end;
+        isolation: isolate;
+      }
+
+      .hero-stage::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(90deg, rgba(4, 6, 12, 0.94) 0%, rgba(4, 6, 12, 0.76) 42%, rgba(4, 6, 12, 0.22) 100%),
+          linear-gradient(0deg, rgba(4, 6, 12, 0.96) 0%, transparent 42%);
+      }
+
+      .hero-stage__video {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-stage__content {
+        width: min(calc(100% - 2rem), var(--max));
+        margin: 0 auto;
+        padding: 5rem 0 4rem;
+      }
+
+      .hero-stage h1 {
+        max-width: 11ch;
+        margin: 1rem 0 0;
+        font-size: clamp(3.2rem, 7vw, 7rem);
+        line-height: 0.92;
+      }
+
+      .hero-stage p {
+        max-width: 58ch;
+        margin: 1rem 0 0;
+        color: var(--cream);
+        font-size: 1.12rem;
+      }
+
+      .hero-stage .tagline {
+        color: var(--gold-soft);
+        font-size: clamp(1.25rem, 2vw, 1.7rem);
+      }
+
+      .hero-ribbon {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        margin-top: 1.5rem;
+      }
+
+      .hero-ribbon span,
+      .asset-chip {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 0.42rem 0.72rem;
+        border-radius: 999px;
+        border: 1px solid rgba(240, 198, 116, 0.24);
+        background: rgba(240, 198, 116, 0.1);
+        color: var(--gold-soft);
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+        gap: 1rem;
+        align-items: stretch;
+      }
+
+      .cinema-frame,
+      .cover-tile,
+      .printable-tile {
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.035);
+        box-shadow: var(--shadow);
+      }
+
+      .cinema-frame {
+        border-radius: var(--radius-xl);
+      }
+
+      .cinema-frame video,
+      .cover-tile img,
+      .printable-tile img,
+      .printable-tile video {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+
+      .cinema-frame video {
+        aspect-ratio: 16 / 10;
+      }
+
+      .showcase-copy {
+        align-self: center;
+      }
+
+      .showcase-copy h2 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 0.98;
+      }
+
+      .showcase-copy p {
+        color: var(--muted);
+      }
+
+      .feature-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .cover-tile,
+      .printable-tile {
+        border-radius: var(--radius-lg);
+        position: relative;
+        min-height: 260px;
+      }
+
+      .cover-tile video {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        aspect-ratio: 4 / 5;
+      }
+
+      .cover-tile__caption,
+      .printable-tile__caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 1rem;
+        background: linear-gradient(0deg, rgba(3, 5, 12, 0.86), transparent);
+      }
+
+      .cover-tile__caption strong,
+      .printable-tile__caption strong {
+        display: block;
+        color: var(--cream);
+      }
+
+      .cover-tile__caption span,
+      .printable-tile__caption span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .library-stage {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .printable-tile {
+        min-height: 330px;
+      }
+
       @media (max-width: 1024px) {
         .hero-grid,
         .portal-grid,
         .book-grid,
         .contact-card,
-        .two-col {
+        .two-col,
+        .showcase-grid,
+        .library-stage {
           grid-template-columns: 1fr;
         }
 
-        .book-grid {
+        .book-grid,
+        .feature-strip {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
@@ -630,8 +810,17 @@
         }
 
         .book-grid,
-        .mini-grid {
+        .mini-grid,
+        .feature-strip {
           grid-template-columns: 1fr;
+        }
+
+        .hero-stage {
+          min-height: auto;
+        }
+
+        .hero-stage__content {
+          padding: 4rem 0 3rem;
         }
 
         .hero-actions {
@@ -670,53 +859,34 @@
     </header>
 
     <main id="main">
-      <section class="hero" id="top">
-        <div class="site-shell hero-grid">
-          <div class="hero-copy">
-            <span class="eyebrow">Public Launch V2</span>
-            <h1>Dark Star Literary Agency</h1>
-            <p class="tagline">Stories with gravity, voice, and reach.</p>
-            <p>
-              Dark Star Literary Agency is an independent literary studio, publishing imprint, and creative development house for magical children’s books, learning adventures, and expandable storyworlds.
-            </p>
-            <p>
-              Home of Ambrose Caspian Vale and the Lulu &amp; Ellie Adventures.
-            </p>
-            <div class="hero-actions" aria-label="Hero actions">
-              <a class="button primary" href="#dark-star">Enter Site</a>
-              <a class="button secondary" href="#lulu-ellie">Explore Lulu &amp; Ellie</a>
-              <a class="button secondary" href="#ambrose">Meet the Author</a>
-              <a class="button secondary" href="#books">View the Library</a>
-            </div>
+      <section class="hero-stage" id="top" aria-label="Dark Star Literary Agency introduction">
+        <video
+          class="hero-stage__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="assets/lulu-ellie/original-adventure/book-1/front-cover.png"
+        >
+          <source src="assets/lulu-ellie/original-adventure/book-1/animated-cover.mp4" type="video/mp4">
+        </video>
+        <div class="hero-stage__content">
+          <span class="eyebrow">Dark Star Literary Agency</span>
+          <h1>Dark Star Literary Agency</h1>
+          <p class="tagline">A literary studio for magical books, learning adventures, and expandable storyworlds.</p>
+          <p>
+            Home of Ambrose Caspian Vale and the Lulu &amp; Ellie Adventures, where every release is built with story, art, motion, and room for the world to grow.
+          </p>
+          <div class="hero-ribbon" aria-label="Featured brand pillars">
+            <span>Ambrose Caspian Vale</span>
+            <span>Lulu &amp; Ellie Adventures</span>
+            <span>Original Adventure</span>
           </div>
-
-          <aside class="hero-aside" aria-label="Brand snapshot">
-            <div class="aside-panel">
-              <span class="accent-chip">Brand architecture</span>
-              <h2 style="margin-top: 0.75rem;">Three connected public worlds.</h2>
-              <p>
-                Dark Star is the umbrella. Ambrose Caspian Vale is the author brand. Lulu &amp; Ellie Adventures is the flagship children’s universe.
-              </p>
-            </div>
-            <div class="mini-grid">
-              <div class="stat">
-                <strong>Literary studio</strong>
-                <span class="muted">Publishing home for story-led collections.</span>
-              </div>
-              <div class="stat">
-                <strong>Children’s universe</strong>
-                <span class="muted">Warm, magical, and built to grow.</span>
-              </div>
-              <div class="stat">
-                <strong>Public preview</strong>
-                <span class="muted">Only live, sample-ready, or intentionally teased items.</span>
-              </div>
-              <div class="stat">
-                <strong>Future-ready</strong>
-                <span class="muted">A clean foundation for the next releases.</span>
-              </div>
-            </div>
-          </aside>
+          <div class="hero-actions" aria-label="Hero actions">
+            <a class="button primary" href="#lulu-ellie">Enter Site</a>
+            <a class="button secondary" href="#books">Explore the Library</a>
+            <a class="button secondary" href="#contact">Contact Dark Star</a>
+          </div>
         </div>
       </section>
 
@@ -752,29 +922,6 @@
                 Magical portal adventures, learning workbooks, printable activities, and story collections designed to grow into a full library.
               </p>
             </article>
-          </div>
-
-          <div class="section-card" style="margin-top: 1rem;">
-            <span class="card-kicker">Public language rules</span>
-            <div class="two-col" style="margin-top: 0.9rem;">
-              <div>
-                <h3>Use public-facing terms like these.</h3>
-                <ul class="panel-list">
-                  <li>Series</li>
-                  <li>Collections</li>
-                  <li>Book lines</li>
-                  <li>Learning lines</li>
-                  <li>Activity collections</li>
-                  <li>Lulu &amp; Ellie Library</li>
-                </ul>
-              </div>
-              <div>
-                <h3>Avoid this public wording.</h3>
-                <p>
-                  Branch codes and internal production language stay behind the scenes. Public copy should stay focused on the visible brand, the library preview, and the releases that are actually ready.
-                </p>
-              </div>
-            </div>
           </div>
 
           <div class="section-card" style="margin-top: 1rem;">
@@ -831,39 +978,67 @@
 
       <section id="lulu-ellie">
         <div class="site-shell">
-          <div class="section-card lulu-ellie">
-            <div class="section-heading" style="margin-bottom: 0;">
-              <span class="eyebrow">Lulu &amp; Ellie Adventures</span>
-              <h2>Two scruffy sisters. One magical portal. A universe of cozy quests.</h2>
-              <p class="lede">
-                Lulu and Ellie are two scruffy terrier sisters with one very unusual problem: magical portals keep finding them.
-              </p>
+          <div class="showcase-grid">
+            <div class="cinema-frame">
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                poster="assets/lulu-ellie/original-adventure/book-10/front-cover.jpg"
+              >
+                <source src="assets/lulu-ellie/original-adventure/book-10/animated-cover.mp4" type="video/mp4">
+              </video>
             </div>
-
-            <div class="two-col" style="margin-top: 1.25rem;">
-              <div class="section-card" style="background: rgba(255, 255, 255, 0.03);">
-                <h3><span class="hero-word">Lulu</span></h3>
-                <p>
-                  Small, tan-golden, scruffy, bold, dramatic, snack-motivated, and usually ready to leap before reading the map. Lulu wears a red bandana and tends to charge into the story with excellent confidence and questionable planning.
-                </p>
-              </div>
-              <div class="section-card" style="background: rgba(255, 255, 255, 0.03);">
-                <h3><span class="hero-word">Ellie</span></h3>
-                <p>
-                  Slightly larger, cream-colored, careful, observant, and very good at noticing the clue everyone else missed. Ellie wears a blue bandana and keeps the whole adventure quietly on track.
-                </p>
-              </div>
-            </div>
-
-            <div class="section-card" style="margin-top: 1rem; background: rgba(255, 255, 255, 0.03);">
-              <h3>Together, they explore, solve, and learn.</h3>
+            <div class="showcase-copy">
+              <span class="asset-chip">Lulu &amp; Ellie Adventures</span>
+              <h2>Storybook worlds with motion, magic, and a growing library.</h2>
               <p>
-                They travel into magical worlds, solve gentle mysteries, help creatures in trouble, earn charms and badges, and learn that bravery can look different every time.
+                Lulu &amp; Ellie Adventures blends warm character storytelling with cinematic book art, animated covers, and printable activities built for young readers who like their stories to feel alive.
               </p>
               <p>
-                Sometimes courage is loud. Sometimes courage is quiet. Sometimes courage is checking the map before Lulu runs into a mushroom maze.
+                The first public window is Original Adventure: a growing collection of portal quests, cozy mysteries, gentle lessons, and playful activity pages.
               </p>
+              <div class="hero-actions" aria-label="Lulu and Ellie actions">
+                <a class="button primary" href="#books">View Original Adventure</a>
+                <a class="button secondary" href="#parents-teachers">For Parents &amp; Teachers</a>
+              </div>
             </div>
+          </div>
+
+          <div class="feature-strip" aria-label="Original Adventure animated highlights">
+            <article class="cover-tile">
+              <video autoplay muted loop playsinline preload="metadata" poster="assets/lulu-ellie/original-adventure/book-4/front-cover.jpg">
+                <source src="assets/lulu-ellie/original-adventure/book-4/animated-cover.mp4" type="video/mp4">
+              </video>
+              <div class="cover-tile__caption">
+                <strong>Original Adventure</strong>
+                <span>Book 4 animated cover</span>
+              </div>
+            </article>
+            <article class="cover-tile">
+              <video autoplay muted loop playsinline preload="metadata" poster="assets/lulu-ellie/original-adventure/book-16/front-cover.jpg">
+                <source src="assets/lulu-ellie/original-adventure/book-16/animated-cover.mp4" type="video/mp4">
+              </video>
+              <div class="cover-tile__caption">
+                <strong>Original Adventure</strong>
+                <span>Book 16 animated cover</span>
+              </div>
+            </article>
+            <article class="cover-tile">
+              <img src="assets/lulu-ellie/original-adventure/book-20/front-cover.jpg" alt="Original Adventure Book 20 front cover">
+              <div class="cover-tile__caption">
+                <strong>Original Adventure</strong>
+                <span>Book 20 cover art</span>
+              </div>
+            </article>
+            <article class="cover-tile">
+              <img src="assets/lulu-ellie/original-adventure/book-1/fun-page.png" alt="Original Adventure Book 1 printable activity page">
+              <div class="cover-tile__caption">
+                <strong>Printable play</strong>
+                <span>Activity-page preview</span>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -871,54 +1046,35 @@
       <section id="books">
         <div class="site-shell">
           <div class="section-heading">
-            <span class="eyebrow">Books</span>
-            <h2>Explore the Lulu &amp; Ellie Library.</h2>
+            <span class="eyebrow">Original Adventure</span>
+            <h2>Explore the first shelf of the Lulu &amp; Ellie Library.</h2>
             <p class="lede">
-              The Lulu &amp; Ellie universe is designed to grow through storybook series, activity collections, learning lines, bedtime adventures, and printable resources.
+              A curated look at the book covers, animated cover moments, and activity pages that shape the Original Adventure collection.
             </p>
           </div>
 
-          <div class="section-card">
-            <p class="note" style="margin-top: 0;">
-              Publicly show only what is live, preorder-ready, sample-ready, or intentionally teased.
-            </p>
-          </div>
-
-          <div class="book-grid" style="margin-top: 1rem;">
-            <article class="book-card">
-              <span class="status">Storybook series</span>
-              <h3 style="margin-top: 0.9rem;">Lulu &amp; Ellie Adventures</h3>
-              <p>Magical portal adventures where Lulu and Ellie help worlds out of trouble.</p>
-              <div class="book-meta">
-                <span>Preview</span>
-                <span>Coming soon</span>
+          <div class="library-stage">
+            <article class="printable-tile">
+              <img src="assets/lulu-ellie/original-adventure/book-4/front-cover.jpg" alt="Original Adventure Book 4 cover">
+              <div class="printable-tile__caption">
+                <strong>Portal Quest</strong>
+                <span>Book 4 cover preview</span>
               </div>
             </article>
-            <article class="book-card">
-              <span class="status">Cozy mystery series</span>
-              <h3 style="margin-top: 0.9rem;">Lulu &amp; Ellie Mystery Tails</h3>
-              <p>Gentle clue-following mysteries where most problems are misunderstandings waiting to be understood.</p>
-              <div class="book-meta">
-                <span>Preview</span>
-                <span>Coming soon</span>
+            <article class="printable-tile">
+              <video autoplay muted loop playsinline preload="metadata" poster="assets/lulu-ellie/original-adventure/book-20/front-cover.jpg">
+                <source src="assets/lulu-ellie/original-adventure/book-20/animated-cover.mp4" type="video/mp4">
+              </video>
+              <div class="printable-tile__caption">
+                <strong>Animated Cover</strong>
+                <span>Book 20 motion preview</span>
               </div>
             </article>
-            <article class="book-card">
-              <span class="status">Learning line</span>
-              <h3 style="margin-top: 0.9rem;">Lulu &amp; Ellie Phonics Path</h3>
-              <p>Gentle learn-to-read workbook adventures with warm visuals and steady practice.</p>
-              <div class="book-meta">
-                <span>Preview</span>
-                <span>Sample-ready</span>
-              </div>
-            </article>
-            <article class="book-card">
-              <span class="status">Activity collections</span>
-              <h3 style="margin-top: 0.9rem;">Lulu &amp; Ellie Search &amp; Find</h3>
-              <p>Search-and-color activity books with hidden objects, clues, charms, and busy adventure scenes.</p>
-              <div class="book-meta">
-                <span>Preview</span>
-                <span>Coming soon</span>
+            <article class="printable-tile">
+              <img src="assets/lulu-ellie/original-adventure/book-16/fun-page.png" alt="Original Adventure Book 16 printable activity page">
+              <div class="printable-tile__caption">
+                <strong>Activity Pages</strong>
+                <span>Printable companion preview</span>
               </div>
             </article>
           </div>
@@ -964,36 +1120,35 @@
       <section>
         <div class="site-shell">
           <div class="section-heading">
-            <span class="eyebrow">Free Downloads</span>
-            <h2>Free Lulu &amp; Ellie printables, coming soon.</h2>
+            <span class="eyebrow">Printables</span>
+            <h2>Story pages that keep the adventure going after reading time.</h2>
             <p class="lede">
-              These materials will support the launch without exposing the full future library before it is ready.
+              The collection includes activity pages and visual companions designed to make the stories feel tangible, playful, and easy to revisit.
             </p>
           </div>
 
-          <div class="section-card">
-            <div class="two-col">
-              <div>
-                <h3>Planned printables</h3>
-                <ul class="panel-list">
-                  <li>Meet Lulu &amp; Ellie character sheet</li>
-                  <li>Coloring page</li>
-                  <li>Reading tracker</li>
-                  <li>Mystery clue sheet</li>
-                  <li>Search-and-find sample</li>
-                  <li>Phonics sample page</li>
-                  <li>Handwriting sample page</li>
-                </ul>
+          <div class="library-stage">
+            <article class="printable-tile">
+              <img src="assets/lulu-ellie/original-adventure/book-10/fun-page.png" alt="Original Adventure Book 10 printable activity page">
+              <div class="printable-tile__caption">
+                <strong>Search, color, imagine</strong>
+                <span>Book 10 activity preview</span>
               </div>
-              <div>
-                <p class="note">
-                  Free printables are being prepared for the official Lulu &amp; Ellie launch.
-                </p>
-                <p>
-                  Join the reader list for launch updates and free printable activities once signup is connected.
-                </p>
+            </article>
+            <article class="printable-tile">
+              <img src="assets/lulu-ellie/original-adventure/book-20/fun-page.png" alt="Original Adventure Book 20 printable activity page">
+              <div class="printable-tile__caption">
+                <strong>Companion activities</strong>
+                <span>Book 20 printable preview</span>
               </div>
-            </div>
+            </article>
+            <article class="printable-tile">
+              <img src="assets/lulu-ellie/original-adventure/book-4/fun-page.png" alt="Original Adventure Book 4 printable activity page">
+              <div class="printable-tile__caption">
+                <strong>Built for return visits</strong>
+                <span>Book 4 printable preview</span>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -1015,7 +1170,7 @@
                 <a href="mailto:darkstarculinary@gmail.com">darkstarculinary@gmail.com</a>
               </p>
               <p>
-                Later, this can shift to the domain mailboxes for hello, books, rights, and press once the site is ready for that layer.
+                Reach out for book, school, library, media, publishing, or licensing conversations connected to Dark Star and the Lulu &amp; Ellie Adventures.
               </p>
               <div class="hero-actions" style="margin-top: 1.2rem;">
                 <a class="button primary" href="mailto:darkstarculinary@gmail.com?subject=General%20Inquiry">General Inquiry</a>
@@ -1025,10 +1180,10 @@
               </div>
             </div>
             <div class="aside-panel">
-              <span class="accent-chip">Deployment note</span>
-              <h3 style="margin-top: 0.9rem;">Static and Netlify-friendly.</h3>
+              <span class="accent-chip">Publishing home</span>
+              <h3 style="margin-top: 0.9rem;">A growing library with a clear creative center.</h3>
               <p>
-                The page stays simple, responsive, and ready to deploy as a single static landing site while the library grows behind it.
+                Dark Star develops character-led books, learning materials, and storyworlds with enough structure to grow cleanly over time.
               </p>
             </div>
           </div>
@@ -1041,14 +1196,32 @@
         <div class="footer-inner">
           <div>© 2026 Dark Star Literary Agency. All rights reserved.</div>
           <div>Dark Star Literary Agency is the creative home of Ambrose Caspian Vale and the Lulu &amp; Ellie Adventures.</div>
-          <div>Public-facing collections, series, and learning lines appear only when available, preorder-ready, sample-ready, or intentionally announced.</div>
+          <div>Magical books, learning adventures, and expandable storyworlds for curious young readers.</div>
         </div>
       </div>
     </footer>
 
-    <!-- Internal visibility note:
-      Future pages and collection structures may be built internally, but public navigation should show only live, preorder-ready,
-      sample-ready, or intentionally announced items.
-    -->
+    <script>
+      const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const animatedCovers = Array.from(document.querySelectorAll("video"));
+
+      if (!motionQuery.matches && "IntersectionObserver" in window) {
+        const coverObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const video = entry.target;
+              if (entry.isIntersecting) {
+                video.play().catch(() => {});
+              } else {
+                video.pause();
+              }
+            });
+          },
+          { threshold: 0.28 }
+        );
+
+        animatedCovers.forEach((video) => coverObserver.observe(video));
+      }
+    </script>
   </body>
 </html>
