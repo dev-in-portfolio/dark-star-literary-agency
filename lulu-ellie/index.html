@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lulu &amp; Ellie Adventures | Dark Star Literary Agency</title>
+    <meta name="description" content="Lulu & Ellie Adventures is the flagship children's storyworld from Dark Star Literary Agency and Ambrose Caspian Vale.">
+    <meta name="theme-color" content="#090d18">
+    <style>
+      :root {
+        color-scheme: dark;
+        --ink: #fff5e6;
+        --muted: #cbd3e3;
+        --gold: #f0c674;
+        --line: rgba(255, 255, 255, 0.14);
+        --panel: rgba(7, 10, 22, 0.78);
+        --max: 1200px;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 20% 10%, rgba(240, 198, 116, 0.14), transparent 28%),
+          linear-gradient(180deg, #050813, #080b16 46%, #04060c);
+        font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+        line-height: 1.55;
+      }
+      a { color: inherit; text-decoration: none; }
+      img, video { display: block; max-width: 100%; }
+      .header { position: sticky; top: 0; z-index: 10; background: rgba(5, 8, 19, 0.84); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
+      .header__inner, .shell { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+      .header__inner { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 0; }
+      .brand { letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.82rem; }
+      .nav { display: flex; flex-wrap: wrap; gap: 0.75rem; color: var(--muted); }
+      .nav a:hover, .nav a:focus-visible { color: var(--gold); }
+      section { padding: 4.5rem 0; }
+      h1, h2, h3, p { margin: 0; }
+      h1 { max-width: 10ch; margin-top: 1rem; font-size: clamp(3.4rem, 8vw, 7.6rem); line-height: 0.9; }
+      h2 { font-size: clamp(2rem, 4vw, 4rem); line-height: 1; }
+      p { color: var(--muted); }
+      .lede { max-width: 64ch; margin-top: 1rem; color: #fff4d9; font-size: 1.15rem; }
+      .eyebrow { display: inline-flex; padding: 0.42rem 0.72rem; border: 1px solid rgba(240, 198, 116, 0.3); border-radius: 999px; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.72rem; background: rgba(240, 198, 116, 0.08); }
+      .actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem; }
+      .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0.8rem 1.15rem; border-radius: 999px; border: 1px solid rgba(240, 198, 116, 0.34); background: rgba(255, 255, 255, 0.04); }
+      .button.primary { background: linear-gradient(180deg, #f8d98f, #c79032); color: #181003; }
+      .hero { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr); gap: 1.2rem; align-items: stretch; padding-top: 2rem; }
+      .hero__copy { align-self: center; }
+      .cinema, .media-card, .card { overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38); }
+      .cinema { min-height: 540px; }
+      .cinema video, .media-card img, .media-card video, .card img, .card video { width: 100%; height: 100%; object-fit: cover; }
+      .section-head { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.72fr); gap: 1rem; align-items: end; margin-bottom: 1.2rem; }
+      .split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(300px, 1.1fr); gap: 1.2rem; align-items: center; }
+      .panel { border: 1px solid var(--line); background: var(--panel); border-radius: 22px; padding: 1.4rem; }
+      .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+      .shelf-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+      .card { min-height: 360px; }
+      .card img, .card video { aspect-ratio: 4 / 5; }
+      .card__copy { padding: 1rem; }
+      .card__copy strong { display: block; color: var(--ink); }
+      footer { padding: 2rem 0 3rem; color: var(--muted); border-top: 1px solid var(--line); }
+      @media (max-width: 980px) { .shelf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 840px) { .header__inner, .hero, .section-head, .split, .grid, .shelf-grid { grid-template-columns: 1fr; } .header__inner { align-items: flex-start; flex-direction: column; } .cinema { min-height: 360px; } }
+
+      .home-hero { min-height: calc(100vh - 74px); position: relative; display: grid; align-items: end; overflow: hidden; }
+      .home-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5, 8, 19, 0.94), rgba(5, 8, 19, 0.58), rgba(5, 8, 19, 0.18)), linear-gradient(0deg, rgba(5, 8, 19, 0.98), transparent 44%); }
+      .home-hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .home-hero .hero__content { position: relative; z-index: 1; padding: 5rem 0; }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <a class="brand" href="../">Dark Star Literary Agency</a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../">Dark Star</a>
+          <a href="./">Lulu &amp; Ellie</a>
+          <a href="./original-adventure/">Original Adventure</a>
+          <a href="../library.html#all-books">All Books</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="home-hero">
+        <video autoplay muted loop playsinline poster="../assets/lulu-ellie/original-adventure/book-10/front-cover.jpg">
+          <source src="../assets/lulu-ellie/original-adventure/book-10/animated-cover.mp4" type="video/mp4">
+        </video>
+        <div class="shell hero__content">
+          <span class="eyebrow">Lulu &amp; Ellie Adventures</span>
+          <h1>Two sisters. One portal. A library of impossible places.</h1>
+          <p class="lede">Lulu and Ellie are the heart of Dark Star's flagship children's storyworld: warm, curious, brave in different ways, and always one step from a magical doorway.</p>
+          <div class="actions"><a class="button primary" href="./original-adventure/">Explore Original Adventure</a><a class="button" href="../parents-teachers.html">Parents &amp; Teachers</a></div>
+        </div>
+      </section>
+      <section>
+        <div class="shell split">
+          <div><span class="eyebrow">Storyworld Tier</span><h2>A tier below Dark Star, built for the whole Lulu &amp; Ellie universe.</h2><p class="lede">This page is the universe doorway. Collection pages sit beneath it, book lines can grow from there, and each release can carry its own art, animated cover, and interior feature pages.</p></div>
+          <div class="panel"><h3>Current public tier</h3><p>Original Adventure is the first active collection tier. It introduces the portal-adventure tone with all 20 books, animated covers, cover art, and interior feature pages from the books.</p><div class="actions"><a class="button primary" href="./original-adventure/">Open Original Adventure</a></div></div>
+        </div>
+      </section>
+      <section>
+        <div class="shell">
+          <div class="section-head"><div><span class="eyebrow">Featured Assets</span><h2>Motion, covers, and interior feature pages all have a place.</h2></div><p>Interior feature pages are book-flavored facts and story-world details from inside the books. They are not activity pages.</p></div>
+          <div class="grid">
+            <article class="card"><video autoplay muted loop playsinline preload="metadata" poster="../assets/lulu-ellie/original-adventure/book-4/front-cover.jpg"><source src="../assets/lulu-ellie/original-adventure/book-4/animated-cover.mp4" type="video/mp4"></video><div class="card__copy"><strong>Animated covers</strong><p>Book covers turned into motion moments.</p></div></article>
+            <article class="card"><img src="../assets/lulu-ellie/original-adventure/book-20/front-cover.jpg" alt="Original Adventure Book 20 cover"><div class="card__copy"><strong>Cover art</strong><p>The visual doorway into each story.</p></div></article>
+            <article class="card"><img src="../assets/lulu-ellie/original-adventure/book-1/feature-page.png" alt="Original Adventure Book 1 interior feature page"><div class="card__copy"><strong>Interior feature pages</strong><p>Book facts and extra story-world details.</p></div></article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer><div class="shell">Lulu &amp; Ellie Adventures is a Dark Star Literary Agency storyworld created by Ambrose Caspian Vale.</div></footer>
+    <script>
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (!reduceMotion.matches && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => entry.isIntersecting ? entry.target.play().catch(() => {}) : entry.target.pause());
+        }, { threshold: 0.25 });
+        document.querySelectorAll("video").forEach((video) => observer.observe(video));
+      }
+    </script>
+  </body>
+</html>
