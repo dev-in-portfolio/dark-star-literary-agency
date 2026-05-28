@@ -492,25 +492,6 @@
         min-height: 100%;
       }
 
-      .vault-media {
-        display: block;
-        width: 100%;
-        margin-top: 0.9rem;
-        border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: #020308;
-        object-fit: cover;
-        aspect-ratio: 4 / 5;
-      }
-
-      .vault-media--tall {
-        aspect-ratio: 4 / 5;
-      }
-
-      .vault-media--video {
-        aspect-ratio: 16 / 9;
-      }
-
       .book-meta {
         display: flex;
         align-items: center;
@@ -682,7 +663,6 @@
           <a href="#ambrose">Ambrose</a>
           <a href="#lulu-ellie">Lulu &amp; Ellie</a>
           <a href="#books">Books</a>
-          <a href="#storage-vault">Storage Vault</a>
           <a href="#parents-teachers">Parents &amp; Teachers</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -707,7 +687,6 @@
               <a class="button secondary" href="#lulu-ellie">Explore Lulu &amp; Ellie</a>
               <a class="button secondary" href="#ambrose">Meet the Author</a>
               <a class="button secondary" href="#books">View the Library</a>
-              <a class="button secondary" href="#storage-vault">Open Storage Vault</a>
             </div>
           </div>
 
@@ -942,91 +921,6 @@
                 <span>Coming soon</span>
               </div>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="storage-vault">
-        <div class="site-shell">
-          <div class="section-heading">
-            <span class="eyebrow">Storage Vault</span>
-            <h2>Assets wired from <code>l_e_storage</code>.</h2>
-            <p class="lede">
-              A curated preview from the storage hub, so the Dark Star site can surface real Lulu &amp; Ellie media without mirroring the entire archive.
-            </p>
-          </div>
-
-          <div class="section-card">
-            <div class="two-col">
-              <div>
-                <h3>Original Adventure previews</h3>
-                <p>
-                  Cover and fun-page previews for three books from the hub.
-                </p>
-                <div class="book-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1rem;">
-                  <article class="book-card">
-                    <span class="status">Book 1</span>
-                    <img class="vault-media" src="assets/lulu-ellie/storage-vault/original-adventure/original-adventure-book-1-front-cover.png" alt="Original Adventure Book 1 front cover">
-                    <img class="vault-media vault-media--tall" src="assets/lulu-ellie/storage-vault/original-adventure/original-adventure-book-1-fun-book.png" alt="Original Adventure Book 1 fun book page">
-                  </article>
-                  <article class="book-card">
-                    <span class="status">Book 10</span>
-                    <img class="vault-media" src="assets/lulu-ellie/storage-vault/original-adventure/original-adventure-book-10-front-cover.jpg" alt="Original Adventure Book 10 front cover">
-                    <img class="vault-media vault-media--tall" src="assets/lulu-ellie/storage-vault/original-adventure/original-adventure-book-10-fun-book.png" alt="Original Adventure Book 10 fun book page">
-                  </article>
-                  <article class="book-card">
-                    <span class="status">Book 20</span>
-                    <img class="vault-media" src="assets/lulu-ellie/storage-vault/original-adventure/original-adventure-book-20-front-cover.jpg" alt="Original Adventure Book 20 front cover">
-                    <img class="vault-media vault-media--tall" src="assets/lulu-ellie/storage-vault/original-adventure/original-adventure-book-20-fun-book.png" alt="Original Adventure Book 20 fun book page">
-                  </article>
-                </div>
-              </div>
-              <div>
-                <h3>Codex preview clips</h3>
-                <p>
-                  A few sample clips from the Codex collection, alongside a quick note about the general clip set.
-                </p>
-                <div class="book-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1rem;">
-                  <article class="book-card">
-                    <span class="status">Book 1</span>
-                    <video class="vault-media vault-media--video" controls preload="metadata">
-                      <source src="assets/lulu-ellie/storage-vault/codex/codex-book-1.mp4" type="video/mp4">
-                    </video>
-                    <div class="book-meta"><span>Codex</span><span>Book 1</span></div>
-                  </article>
-                  <article class="book-card">
-                    <span class="status">Book 10</span>
-                    <video class="vault-media vault-media--video" controls preload="metadata">
-                      <source src="assets/lulu-ellie/storage-vault/codex/codex-book-10.mp4" type="video/mp4">
-                    </video>
-                    <div class="book-meta"><span>Codex</span><span>Book 10</span></div>
-                  </article>
-                  <article class="book-card">
-                    <span class="status">Book 20</span>
-                    <video class="vault-media vault-media--video" controls preload="metadata">
-                      <source src="assets/lulu-ellie/storage-vault/codex/codex-book-20.mp4" type="video/mp4">
-                    </video>
-                    <div class="book-meta"><span>Codex</span><span>Book 20</span></div>
-                  </article>
-                </div>
-                <div class="section-card" style="margin-top: 1rem; background: rgba(255, 255, 255, 0.03);">
-                  <h3>General clips</h3>
-                  <p>
-                    Shared Codex clips live in the storage hub as a general pool for future placements.
-                  </p>
-                  <ul class="panel-list">
-                    <li><code>codex-general-1006720010.mp4</code></li>
-                    <li><code>codex-general-465494924.mp4</code></li>
-                    <li><code>codex-general-567657757.mp4</code></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="hero-actions" style="margin-top: 1.2rem;">
-              <a class="button primary" href="https://github.com/dev-in-portfolio/l_e_storage" target="_blank" rel="noreferrer">Open storage repo</a>
-              <a class="button secondary" href="#books">Back to books</a>
-            </div>
           </div>
         </div>
       </section>
