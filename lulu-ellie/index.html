@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lulu &amp; Ellie Adventures | Dark Star Literary Agency</title>
+    <meta
+      name="description"
+      content="Lulu & Ellie Adventures is the flagship children's storyworld from Dark Star Literary Agency and Ambrose Caspian Vale."
+    >
+    <meta name="theme-color" content="#090d18">
+    <style>
+      :root {
+        color-scheme: dark;
+        --ink: #f8f1e4;
+        --muted: #cbd3e3;
+        --gold: #f0c674;
+        --blue: #8fc0ff;
+        --line: rgba(255, 255, 255, 0.13);
+        --panel: rgba(8, 12, 24, 0.74);
+        --max: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #050813;
+        font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img,
+      video {
+        display: block;
+        max-width: 100%;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(5, 8, 19, 0.84);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(14px);
+      }
+
+      .header__inner,
+      .shell {
+        width: min(calc(100% - 32px), var(--max));
+        margin: 0 auto;
+      }
+
+      .header__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+
+      .brand {
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-size: 0.82rem;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        color: var(--muted);
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible {
+        color: var(--gold);
+      }
+
+      .hero {
+        min-height: calc(100vh - 74px);
+        position: relative;
+        display: grid;
+        align-items: end;
+        overflow: hidden;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(5, 8, 19, 0.94), rgba(5, 8, 19, 0.58), rgba(5, 8, 19, 0.18)),
+          linear-gradient(0deg, rgba(5, 8, 19, 0.98), transparent 44%);
+      }
+
+      .hero video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero__content {
+        position: relative;
+        z-index: 1;
+        padding: 5rem 0;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        padding: 0.42rem 0.72rem;
+        border: 1px solid rgba(240, 198, 116, 0.3);
+        border-radius: 999px;
+        color: var(--gold);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+        background: rgba(240, 198, 116, 0.08);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 10ch;
+        margin-top: 1rem;
+        font-size: clamp(3.4rem, 8vw, 7.6rem);
+        line-height: 0.9;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 1;
+      }
+
+      p {
+        color: var(--muted);
+      }
+
+      .lede {
+        max-width: 60ch;
+        margin-top: 1rem;
+        color: #fff4d9;
+        font-size: 1.15rem;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0.8rem 1.15rem;
+        border-radius: 999px;
+        border: 1px solid rgba(240, 198, 116, 0.34);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .button.primary {
+        background: linear-gradient(180deg, #f8d98f, #c79032);
+        color: #181003;
+      }
+
+      section {
+        padding: 4.5rem 0;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(300px, 1.1fr);
+        gap: 1.2rem;
+        align-items: center;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        border-radius: 22px;
+        padding: 1.4rem;
+      }
+
+      .media-card {
+        position: relative;
+        overflow: hidden;
+        min-height: 460px;
+        border-radius: 24px;
+        border: 1px solid var(--line);
+        background: #050813;
+      }
+
+      .media-card img,
+      .media-card video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .collection-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .tile {
+        overflow: hidden;
+        min-height: 340px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .tile img,
+      .tile video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 4 / 5;
+      }
+
+      .tile__copy {
+        padding: 1rem;
+      }
+
+      .tile__copy strong {
+        display: block;
+      }
+
+      footer {
+        padding: 2rem 0 3rem;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+      }
+
+      @media (max-width: 840px) {
+        .header__inner,
+        .split,
+        .collection-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .header__inner {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .hero {
+          min-height: auto;
+        }
+
+        .hero__content {
+          padding: 4rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <a class="brand" href="../">Dark Star Literary Agency</a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../">Dark Star</a>
+          <a href="./">Lulu &amp; Ellie</a>
+          <a href="./original-adventure/">Original Adventure</a>
+          <a href="../#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <video autoplay muted loop playsinline poster="../assets/lulu-ellie/original-adventure/book-10/front-cover.jpg">
+          <source src="../assets/lulu-ellie/original-adventure/book-10/animated-cover.mp4" type="video/mp4">
+        </video>
+        <div class="shell hero__content">
+          <span class="eyebrow">Lulu &amp; Ellie Adventures</span>
+          <h1>Two sisters. One portal. A library of impossible places.</h1>
+          <p class="lede">
+            Lulu and Ellie are the heart of Dark Star's flagship children's storyworld: warm, curious, brave in different ways, and always one step from a magical doorway.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="./original-adventure/">Explore Original Adventure</a>
+            <a class="button" href="../#parents-teachers">Parents &amp; Teachers</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="shell split">
+          <div>
+            <span class="eyebrow">Storyworld</span>
+            <h2>A tier below Dark Star, built for the whole Lulu &amp; Ellie universe.</h2>
+            <p class="lede">
+              This page is the universe doorway. Collection pages can sit beneath it, book lines can branch out from there, and each release can carry its own art, animated cover, and book feature pages.
+            </p>
+          </div>
+          <div class="panel">
+            <h3>Current public tier</h3>
+            <p>
+              Original Adventure is the first active collection tier. It introduces the portal-adventure tone with animated covers, cover art, and fun pages from the books.
+            </p>
+            <div class="actions">
+              <a class="button primary" href="./original-adventure/">Open Original Adventure</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="shell">
+          <div class="split" style="align-items: end;">
+            <div>
+              <span class="eyebrow">Featured Assets</span>
+              <h2>Motion, covers, and book fun pages all have a place.</h2>
+            </div>
+            <p>
+              Fun pages are book feature pages: extra facts, character flavor, and story-world details from inside the books.
+            </p>
+          </div>
+          <div class="collection-grid" style="margin-top: 1rem;">
+            <article class="tile">
+              <video autoplay muted loop playsinline preload="metadata" poster="../assets/lulu-ellie/original-adventure/book-4/front-cover.jpg">
+                <source src="../assets/lulu-ellie/original-adventure/book-4/animated-cover.mp4" type="video/mp4">
+              </video>
+              <div class="tile__copy">
+                <strong>Animated covers</strong>
+                <p>Book covers turned into motion moments.</p>
+              </div>
+            </article>
+            <article class="tile">
+              <img src="../assets/lulu-ellie/original-adventure/book-20/front-cover.jpg" alt="Original Adventure Book 20 cover">
+              <div class="tile__copy">
+                <strong>Cover art</strong>
+                <p>The visual doorway into each story.</p>
+              </div>
+            </article>
+            <article class="tile">
+              <img src="../assets/lulu-ellie/original-adventure/book-1/fun-page.png" alt="Original Adventure Book 1 fun page">
+              <div class="tile__copy">
+                <strong>Fun pages</strong>
+                <p>Book-flavored facts and extra story details.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell">Lulu &amp; Ellie Adventures is a Dark Star Literary Agency storyworld created by Ambrose Caspian Vale.</div>
+    </footer>
+
+    <script>
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (!reduceMotion.matches && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.play().catch(() => {});
+            } else {
+              entry.target.pause();
+            }
+          });
+        }, { threshold: 0.25 });
+        document.querySelectorAll("video").forEach((video) => observer.observe(video));
+      }
+    </script>
+  </body>
+</html>

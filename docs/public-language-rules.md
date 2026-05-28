@@ -20,5 +20,5 @@ Public navigation should only show pages or items that are:
 
 - Live for purchase
 - Available for preorder
-- Supported by a free sample or printable
+- Supported by a free sample or intentional preview
 - Intentionally announced as coming soon

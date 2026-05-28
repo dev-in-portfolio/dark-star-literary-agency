@@ -2,9 +2,15 @@
 
 Public website for Dark Star Literary Agency, the creative home of Ambrose Caspian Vale and the Lulu & Ellie Adventures.
 
-Dark Star Literary Agency is an independent literary studio, publishing imprint, and creative development house for magical children’s books, learning adventures, activity collections, and expandable storyworlds.
+Dark Star Literary Agency is an independent literary studio, publishing imprint, and creative development house for magical children’s books, learning adventures, book fun pages, and expandable storyworlds.
 
 The public homepage uses a curated set of Lulu & Ellie media assets copied from `l_e_storage`. The storage hub remains internal infrastructure; public pages should use clean, site-owned asset paths.
+
+## Page Tiers
+
+- `/` - Dark Star Literary Agency home
+- `/lulu-ellie/` - Lulu & Ellie Adventures storyworld doorway
+- `/lulu-ellie/original-adventure/` - Original Adventure collection page
 
 ## Public Brand Architecture
 
@@ -32,7 +38,7 @@ All future series, collections, learning lines, and book pages may be built inte
 
 - Live for purchase
 - Available for preorder
-- Supported by a free sample or printable
+- Supported by a free sample or intentional preview
 - Intentionally announced as coming soon
 
 ## Deployment

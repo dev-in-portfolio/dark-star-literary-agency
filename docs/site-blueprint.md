@@ -8,20 +8,13 @@ Dark Star Literary Agency is a public-facing launch site for three connected bra
 
 ## Current Page Strategy
 
-The site is a single-page landing experience with anchor navigation.
+The site is a tiered public experience:
 
-Sections:
+- `/` - Dark Star Literary Agency home
+- `/lulu-ellie/` - Lulu & Ellie Adventures storyworld doorway
+- `/lulu-ellie/original-adventure/` - Original Adventure collection page
 
-1. Hero
-2. Three brand portal cards
-3. About Dark Star
-4. Meet Ambrose Caspian Vale
-5. Lulu & Ellie Adventures
-6. Public catalog preview
-7. Parents & Teachers promise
-8. Free downloads / coming soon
-9. Contact
-10. Footer
+The homepage should introduce the parent agency and route visitors into the correct tier instead of carrying the whole Lulu & Ellie experience on one page.
 
 ## Design Direction
 

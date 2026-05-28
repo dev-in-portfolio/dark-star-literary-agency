@@ -6,7 +6,7 @@
     <title>Dark Star Literary Agency | Ambrose Caspian Vale & Lulu & Ellie Adventures</title>
     <meta
       name="description"
-      content="Dark Star Literary Agency is the creative home of Ambrose Caspian Vale and the Lulu & Ellie Adventures, a growing universe of magical children’s books, learning lines, activity collections, and storyworlds built to grow."
+      content="Dark Star Literary Agency is the creative home of Ambrose Caspian Vale and the Lulu & Ellie Adventures, a growing universe of magical children’s books, learning lines, book fun pages, and storyworlds built to grow."
     >
     <meta name="theme-color" content="#0a1020">
     <meta property="og:title" content="Dark Star Literary Agency | Ambrose Caspian Vale & Lulu & Ellie Adventures">
@@ -665,8 +665,7 @@
       }
 
       .cinema-frame,
-      .cover-tile,
-      .printable-tile {
+      .cover-tile {
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.1);
         background: rgba(255, 255, 255, 0.035);
@@ -678,9 +677,7 @@
       }
 
       .cinema-frame video,
-      .cover-tile img,
-      .printable-tile img,
-      .printable-tile video {
+      .cover-tile img {
         width: 100%;
         height: 100%;
         display: block;
@@ -712,8 +709,7 @@
         margin-top: 1rem;
       }
 
-      .cover-tile,
-      .printable-tile {
+      .cover-tile {
         border-radius: var(--radius-lg);
         position: relative;
         min-height: 260px;
@@ -727,8 +723,7 @@
         aspect-ratio: 4 / 5;
       }
 
-      .cover-tile__caption,
-      .printable-tile__caption {
+      .cover-tile__caption {
         position: absolute;
         left: 0;
         right: 0;
@@ -737,14 +732,12 @@
         background: linear-gradient(0deg, rgba(3, 5, 12, 0.86), transparent);
       }
 
-      .cover-tile__caption strong,
-      .printable-tile__caption strong {
+      .cover-tile__caption strong {
         display: block;
         color: var(--cream);
       }
 
-      .cover-tile__caption span,
-      .printable-tile__caption span {
+      .cover-tile__caption span {
         color: var(--muted);
         font-size: 0.92rem;
       }
@@ -753,10 +746,6 @@
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
-      }
-
-      .printable-tile {
-        min-height: 330px;
       }
 
       @media (max-width: 1024px) {
@@ -850,8 +839,8 @@
         <nav class="nav" aria-label="Primary">
           <a href="#dark-star">Dark Star</a>
           <a href="#ambrose">Ambrose</a>
-          <a href="#lulu-ellie">Lulu &amp; Ellie</a>
-          <a href="#books">Books</a>
+          <a href="./lulu-ellie/">Lulu &amp; Ellie</a>
+          <a href="./lulu-ellie/original-adventure/">Original Adventure</a>
           <a href="#parents-teachers">Parents &amp; Teachers</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -883,8 +872,8 @@
             <span>Original Adventure</span>
           </div>
           <div class="hero-actions" aria-label="Hero actions">
-            <a class="button primary" href="#lulu-ellie">Enter Site</a>
-            <a class="button secondary" href="#books">Explore the Library</a>
+            <a class="button primary" href="./lulu-ellie/">Enter Site</a>
+            <a class="button secondary" href="./lulu-ellie/original-adventure/">Explore Original Adventure</a>
             <a class="button secondary" href="#contact">Contact Dark Star</a>
           </div>
         </div>
@@ -905,7 +894,7 @@
               <span class="card-kicker">Dark Star Literary Agency</span>
               <h3>A literary studio and publishing home.</h3>
               <p>
-                A place for storybook series, activity collections, learning lines, and character-driven creative worlds.
+                A place for storybook series, learning lines, book fun pages, and character-driven creative worlds.
               </p>
             </article>
             <article class="portal-card">
@@ -919,7 +908,7 @@
               <span class="card-kicker">Lulu &amp; Ellie Adventures</span>
               <h3>The flagship children’s universe.</h3>
               <p>
-                Magical portal adventures, learning workbooks, printable activities, and story collections designed to grow into a full library.
+                Magical portal adventures, learning workbooks, book fun pages, and story collections designed to grow into a full library.
               </p>
             </article>
           </div>
@@ -992,91 +981,19 @@
             </div>
             <div class="showcase-copy">
               <span class="asset-chip">Lulu &amp; Ellie Adventures</span>
-              <h2>Storybook worlds with motion, magic, and a growing library.</h2>
+              <h2>A dedicated storyworld now has its own doorway.</h2>
               <p>
-                Lulu &amp; Ellie Adventures blends warm character storytelling with cinematic book art, animated covers, and printable activities built for young readers who like their stories to feel alive.
+                Lulu &amp; Ellie Adventures now lives as its own tier beneath Dark Star, with room for series pages, collection pages, book media, and reader-facing previews to grow without crowding the agency homepage.
               </p>
               <p>
-                The first public window is Original Adventure: a growing collection of portal quests, cozy mysteries, gentle lessons, and playful activity pages.
+                Original Adventure is the first collection tier: animated covers, cover art, and the book fun pages that feel like extra facts and discoveries from the stories.
               </p>
               <div class="hero-actions" aria-label="Lulu and Ellie actions">
-                <a class="button primary" href="#books">View Original Adventure</a>
+                <a class="button primary" href="./lulu-ellie/">Open Lulu &amp; Ellie</a>
+                <a class="button secondary" href="./lulu-ellie/original-adventure/">View Original Adventure</a>
                 <a class="button secondary" href="#parents-teachers">For Parents &amp; Teachers</a>
               </div>
             </div>
-          </div>
-
-          <div class="feature-strip" aria-label="Original Adventure animated highlights">
-            <article class="cover-tile">
-              <video autoplay muted loop playsinline preload="metadata" poster="assets/lulu-ellie/original-adventure/book-4/front-cover.jpg">
-                <source src="assets/lulu-ellie/original-adventure/book-4/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="cover-tile__caption">
-                <strong>Original Adventure</strong>
-                <span>Book 4 animated cover</span>
-              </div>
-            </article>
-            <article class="cover-tile">
-              <video autoplay muted loop playsinline preload="metadata" poster="assets/lulu-ellie/original-adventure/book-16/front-cover.jpg">
-                <source src="assets/lulu-ellie/original-adventure/book-16/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="cover-tile__caption">
-                <strong>Original Adventure</strong>
-                <span>Book 16 animated cover</span>
-              </div>
-            </article>
-            <article class="cover-tile">
-              <img src="assets/lulu-ellie/original-adventure/book-20/front-cover.jpg" alt="Original Adventure Book 20 front cover">
-              <div class="cover-tile__caption">
-                <strong>Original Adventure</strong>
-                <span>Book 20 cover art</span>
-              </div>
-            </article>
-            <article class="cover-tile">
-              <img src="assets/lulu-ellie/original-adventure/book-1/fun-page.png" alt="Original Adventure Book 1 printable activity page">
-              <div class="cover-tile__caption">
-                <strong>Printable play</strong>
-                <span>Activity-page preview</span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="books">
-        <div class="site-shell">
-          <div class="section-heading">
-            <span class="eyebrow">Original Adventure</span>
-            <h2>Explore the first shelf of the Lulu &amp; Ellie Library.</h2>
-            <p class="lede">
-              A curated look at the book covers, animated cover moments, and activity pages that shape the Original Adventure collection.
-            </p>
-          </div>
-
-          <div class="library-stage">
-            <article class="printable-tile">
-              <img src="assets/lulu-ellie/original-adventure/book-4/front-cover.jpg" alt="Original Adventure Book 4 cover">
-              <div class="printable-tile__caption">
-                <strong>Portal Quest</strong>
-                <span>Book 4 cover preview</span>
-              </div>
-            </article>
-            <article class="printable-tile">
-              <video autoplay muted loop playsinline preload="metadata" poster="assets/lulu-ellie/original-adventure/book-20/front-cover.jpg">
-                <source src="assets/lulu-ellie/original-adventure/book-20/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="printable-tile__caption">
-                <strong>Animated Cover</strong>
-                <span>Book 20 motion preview</span>
-              </div>
-            </article>
-            <article class="printable-tile">
-              <img src="assets/lulu-ellie/original-adventure/book-16/fun-page.png" alt="Original Adventure Book 16 printable activity page">
-              <div class="printable-tile__caption">
-                <strong>Activity Pages</strong>
-                <span>Printable companion preview</span>
-              </div>
-            </article>
           </div>
         </div>
       </section>
@@ -1085,7 +1002,7 @@
         <div class="site-shell">
           <div class="section-heading">
             <span class="eyebrow">Parents &amp; Teachers</span>
-            <h2>Gentle books and activities for curious young readers.</h2>
+            <h2>Gentle books and bonus pages for curious young readers.</h2>
             <p class="lede">
               Lulu &amp; Ellie books are designed to be warm, playful, encouraging, and emotionally safe.
             </p>
@@ -1095,7 +1012,7 @@
             <div class="two-col">
               <div>
                 <p>
-                  The stories and activities use curiosity, humor, kindness, and problem-solving instead of fear, shame, or pressure.
+                  The stories and companion pages use curiosity, humor, kindness, and problem-solving instead of fear, shame, or pressure.
                 </p>
                 <p>
                   The goal is simple: help children feel brave, capable, curious, and ready to try.
@@ -1109,46 +1026,10 @@
                   <li>Creative thinking</li>
                   <li>Kindness and problem-solving</li>
                   <li>Warm adventure without harsh fear</li>
-                  <li>Story-powered workbooks and activities</li>
+                  <li>Story-powered workbooks and book fun pages</li>
                 </ul>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="site-shell">
-          <div class="section-heading">
-            <span class="eyebrow">Printables</span>
-            <h2>Story pages that keep the adventure going after reading time.</h2>
-            <p class="lede">
-              The collection includes activity pages and visual companions designed to make the stories feel tangible, playful, and easy to revisit.
-            </p>
-          </div>
-
-          <div class="library-stage">
-            <article class="printable-tile">
-              <img src="assets/lulu-ellie/original-adventure/book-10/fun-page.png" alt="Original Adventure Book 10 printable activity page">
-              <div class="printable-tile__caption">
-                <strong>Search, color, imagine</strong>
-                <span>Book 10 activity preview</span>
-              </div>
-            </article>
-            <article class="printable-tile">
-              <img src="assets/lulu-ellie/original-adventure/book-20/fun-page.png" alt="Original Adventure Book 20 printable activity page">
-              <div class="printable-tile__caption">
-                <strong>Companion activities</strong>
-                <span>Book 20 printable preview</span>
-              </div>
-            </article>
-            <article class="printable-tile">
-              <img src="assets/lulu-ellie/original-adventure/book-4/fun-page.png" alt="Original Adventure Book 4 printable activity page">
-              <div class="printable-tile__caption">
-                <strong>Built for return visits</strong>
-                <span>Book 4 printable preview</span>
-              </div>
-            </article>
           </div>
         </div>
       </section>
