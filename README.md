@@ -1,46 +1,66 @@
 # Dark Star Literary Agency
 
-Public website for Dark Star Literary Agency, the creative home of Ambrose Caspian Vale and the Lulu & Ellie Adventures.
+Static multi-page public-facing website for Dark Star Literary Agency, the creative home of Ambrose Caspian Vale and the Lulu & Ellie Adventures.
 
-Dark Star Literary Agency is an independent literary studio, publishing imprint, and creative development house for magical children’s books, learning adventures, book fun pages, and expandable storyworlds.
+## Site Structure
 
-The public homepage uses a curated set of Lulu & Ellie media assets copied from `l_e_storage`. The storage hub remains internal infrastructure; public pages should use clean, site-owned asset paths.
+- `index.html` - homepage and brand gateway
+- `agency.html` - Dark Star Literary Agency identity page
+- `ambrose-caspian-vale.html` - author page
+- `lulu-and-ellie.html` - flagship universe page
+- `library.html` - library landing and navigation hub
+- `parents-teachers.html` - parent and teacher trust page
+- `contact.html` - public contact page
 
-## Page Tiers
+### Series Pages
 
-- `/` - Dark Star Literary Agency home
-- `/lulu-ellie/` - Lulu & Ellie Adventures storyworld doorway
-- `/lulu-ellie/original-adventure/` - Original Adventure collection page
+- `series/lulu-and-ellie-adventures.html`
+- `series/mystery-tails.html`
+- `series/creature-rescue-club.html`
+- `series/backyard-academy.html`
+- `series/go-to-camp.html`
+- `series/lulu-and-ellie-in-space.html`
+- `series/bedtime-adventures.html`
 
-## Public Brand Architecture
+### Learning Pages
 
-- Dark Star Literary Agency - parent literary studio / imprint
-- Ambrose Caspian Vale - author brand
-- Lulu & Ellie Adventures - flagship children’s book universe
+- `learning/phonics-path.html`
+- `learning/write-and-wag.html`
+- `learning/cursive-club.html`
+- `learning/learning-club.html`
 
-## Public Language Rules
+### Book Pages
 
-Use customer-facing terms such as:
+- `books/` contains one page for every listed book in the catalog, plus public-facing write-ups for the deepest catalog layer.
 
-- Series
-- Collections
-- Book lines
-- Learning lines
-- Activity collections
-- Lulu & Ellie Library
-- Lulu & Ellie Universe
+## Shared Styling
 
-Do not use "branches" in public-facing copy. Branch codes are internal production language only.
+- `styles.css` contains the shared layout, color palette, cards, buttons, status badges, purchase placeholder treatment, and responsive behavior.
+- Every page uses the same header and footer pattern.
 
-## Visibility Rule
+## Public Language
 
-All future series, collections, learning lines, and book pages may be built internally, but they should remain hidden from public navigation until they are:
+The site uses customer-facing terms such as:
 
-- Live for purchase
-- Available for preorder
-- Supported by a free sample or intentional preview
-- Intentionally announced as coming soon
+- series
+- collections
+- book lines
+- learning lines
+- companion books
+- library
+- universe
+- storyworld
+- books
+- adventures
 
-## Deployment
+## Purchase Placeholders
 
-Hosted on Netlify.
+- Individual series, learning line, and book pages include a `Purchase Links Coming Soon` section with a clear placeholder button.
+- Purchase links are not faked and are only added when real official purchase options are ready.
+- Placeholder buttons use `href="#"`, `aria-disabled="true"`, and the `disabled-link` class.
+
+## Contact
+
+Public contact email:
+
+`darstarliteraryagency@gmail.com`
