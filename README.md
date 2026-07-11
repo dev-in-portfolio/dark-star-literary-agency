@@ -74,7 +74,8 @@ See `docs/storage-integration.md` for the mapping and media policy.
 
 - `styles.css` contains the main layout, color palette, cards, buttons, badges, book layouts, archive layouts, and responsive behavior.
 - `accessibility.css` adds reduced-motion safeguards for media-rich pages and the live Library.
-- `media.js` allows only the most visible automatic motion preview to play, preserves user-controlled videos, and pauses automatic media when the page is hidden or reduced motion is requested.
+- `media.js` keeps automatic videos at `preload="none"`, allows only the most visible preview to play, and pauses managed media when the page is hidden or reduced motion is requested.
+- `lulu-ellie/original-adventure/archive.js` creates archive video elements only after a visitor explicitly selects a cover.
 
 ## Validation
 
@@ -86,6 +87,7 @@ python scripts/validate_source_manifest.py
 python scripts/validate_marketplace.py
 python scripts/update_seo.py --check
 python scripts/update_structured_data.py --check
+python scripts/update_media_inventory.py --check
 ```
 
 The checks cover:
@@ -103,8 +105,9 @@ The checks cover:
 - The Library's `Growing library` status and current marketplace explanation
 - Absolute canonical URLs, Open Graph URLs, social-card metadata, `robots.txt`, and `sitemap.xml` consistency
 - Organization, author, website, and canonical Book JSON-LD consistency
+- Exact media paths, sizes, checksums, aggregate budgets, per-file budgets, and deferred-delivery behavior
 
-GitHub Actions compiles and runs the three content validators plus the SEO and structured-data reproducibility checks on pull requests and pushes to `main` or `agent/**`. It uploads a combined validation report even when a future run fails.
+GitHub Actions compiles and runs the three content validators plus the SEO, structured-data, and media-inventory reproducibility checks on pull requests and pushes to `main` or `agent/**`. It uploads a combined validation report even when a future run fails.
 
 ## SEO and Discoverability
 
@@ -117,16 +120,39 @@ GitHub Actions compiles and runs the three content validators plus the SEO and s
 - Both generator scripts support `--check` and fail when generated output drifts from the configuration or marketplace registry.
 - To adopt a future custom domain, change `site_url` once in `data/site-config.json`, run both writers, review the generated diff, and commit the result.
 
+## Public Media Inventory and Budgets
+
+The checked-in public media baseline is recorded in `data/media-inventory.json`:
+
+- 59 public media files
+- 287,757,879 bytes total
+- 39 images using 156,340,193 bytes
+- 20 MP4 files using 131,417,686 bytes
+- Largest image: 12,710,158 bytes
+- Largest video: 8,532,841 bytes
+
+`data/media-budget.json` limits the repository to:
+
+- 300,000,000 total public-media bytes
+- 165,000,000 image bytes
+- 140,000,000 video bytes
+- 13,000,000 bytes per image
+- 9,000,000 bytes per video
+
+Any intentional asset change requires regenerating the inventory with `python scripts/update_media_inventory.py --write`, reviewing the checksum and size diff, and staying within or explicitly revising the budgets.
+
+The Original Adventure archive uses lazy low-priority cover images and creates each controlled MP4 only after selection. Automatic previews use `preload="none"` and are managed by viewport and reduced-motion rules.
+
 ## Deployment
 
 `netlify.toml` defines:
 
 - The static publish directory
 - All three build-time content validators
-- The generated SEO, sitemap, and structured-data consistency checks
+- The generated SEO, sitemap, structured-data, and media-inventory consistency checks
 - The permanent legacy Lulu & Ellie redirect
 - Baseline security headers
-- Conservative cache headers for media, CSS, and JavaScript
+- Browser revalidation plus long-lived deploy-invalidated Netlify CDN caching for assets, CSS, and JavaScript
 
 The latest draft-PR validation pass completed successfully in both GitHub Actions and the Netlify deploy preview. The PR remains unmerged until explicitly approved.
 
@@ -171,7 +197,10 @@ Unapproved drafts, internal production pages, and unfinished downloads stay hidd
 - Keep the media folder number aligned with the canonical public book number.
 - Commit optimized public derivatives rather than production masters.
 - Use poster images and fallback text for every animation.
+- Keep automatic video loading at `preload="none"`.
+- Use click-to-load controls for archive video collections.
 - Avoid simultaneous autoplay; `media.js` manages viewport-aware playback on connected pages.
+- Keep media inventory and budget files current.
 - Use `l_e_storage` as the archive/source layer rather than duplicating its full media set into the website repository.
 
 ## Contact
