@@ -28,21 +28,51 @@
     return element;
   };
 
+  const coverUrl = (item) => `${assetRoot}/book-${item.number}/front-cover.${item.cover}`;
+  const videoUrl = (item) => `${assetRoot}/book-${item.number}/animated-cover.mp4`;
+
+  const loadablePreview = (item) => {
+    const button = make("button", "media-load-button");
+    button.type = "button";
+    button.setAttribute("aria-label", `Load motion preview for ${item.title}`);
+
+    const image = document.createElement("img");
+    image.src = coverUrl(item);
+    image.alt = `${item.title} cover art`;
+    image.loading = "lazy";
+    image.decoding = "async";
+    image.fetchPriority = "low";
+
+    const label = make("span", "media-load-label", "Load motion preview");
+    button.append(image, label);
+
+    button.addEventListener("click", () => {
+      const video = document.createElement("video");
+      video.controls = true;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.preload = "metadata";
+      video.poster = coverUrl(item);
+      video.setAttribute("aria-label", `Motion preview for ${item.title}`);
+
+      const source = document.createElement("source");
+      source.src = videoUrl(item);
+      source.type = "video/mp4";
+      video.append(source, document.createTextNode("Your browser does not support the animated cover preview."));
+      button.replaceWith(video);
+      video.load();
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(() => undefined);
+      }
+    }, { once: true });
+
+    return button;
+  };
+
   const mediaCard = (item, isArchive) => {
     const article = make("article", "card book-media-card");
-    const video = document.createElement("video");
-    video.controls = true;
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-    video.preload = "none";
-    video.poster = `${assetRoot}/book-${item.number}/front-cover.${item.cover}`;
-
-    const source = document.createElement("source");
-    source.src = `${assetRoot}/book-${item.number}/animated-cover.mp4`;
-    source.type = "video/mp4";
-    video.append(source, document.createTextNode("Your browser does not support the animated cover preview."));
-
     const copy = make("div", "card-copy");
     const tags = make("div", "tag-row");
     tags.append(
@@ -68,7 +98,7 @@
       copy.append(actions);
     }
 
-    article.append(video, copy);
+    article.append(loadablePreview(item), copy);
     return article;
   };
 
@@ -80,6 +110,8 @@
       ? `Original Adventure Archive Volume ${item.number} interior feature page`
       : `${item.title} interior feature page`;
     image.loading = "lazy";
+    image.decoding = "async";
+    image.fetchPriority = "low";
 
     const copy = make("div", "card-copy");
     const tags = make("div", "tag-row");
