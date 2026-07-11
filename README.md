@@ -112,6 +112,8 @@ GitHub Actions compiles and runs all three validators on pull requests and pushe
 - Baseline security headers
 - Conservative cache headers for media, CSS, and JavaScript
 
+The latest draft-PR validation pass completed successfully in both GitHub Actions and the Netlify deploy preview. The PR remains unmerged until explicitly approved.
+
 The production domain is not hard-coded in the repository. Add absolute canonical, Open Graph, structured-data, and sitemap URLs after the final public domain strategy is confirmed.
 
 ## Public Language
