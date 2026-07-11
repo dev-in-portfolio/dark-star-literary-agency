@@ -88,6 +88,7 @@ python scripts/validate_marketplace.py
 python scripts/update_seo.py --check
 python scripts/update_structured_data.py --check
 python scripts/update_media_inventory.py --check
+python scripts/validate_pdf_accessibility.py
 ```
 
 The checks cover:
@@ -106,8 +107,10 @@ The checks cover:
 - Absolute canonical URLs, Open Graph URLs, social-card metadata, `robots.txt`, and `sitemap.xml` consistency
 - Organization, author, website, and canonical Book JSON-LD consistency
 - Exact media paths, sizes, checksums, aggregate budgets, per-file budgets, and deferred-delivery behavior
+- Exact reconciliation of all 44 PDF accessibility records with source filenames, page counts, and SHA-256 values
+- Prevention of public PDF links and accessible-edition claims until remediation is approved
 
-GitHub Actions compiles and runs the three content validators plus the SEO, structured-data, and media-inventory reproducibility checks on pull requests and pushes to `main` or `agent/**`. It uploads a combined validation report even when a future run fails.
+GitHub Actions compiles and runs seven permanent checks: the three content validators, SEO, structured data, media inventory, and PDF accessibility release validation on pull requests and pushes to `main` or `agent/**`. It uploads a combined validation report even when a future run fails.
 
 ## SEO and Discoverability
 
@@ -143,13 +146,21 @@ Any intentional asset change requires regenerating the inventory with `python sc
 
 The Original Adventure archive uses lazy low-priority cover images and creates each controlled MP4 only after selection. Automatic previews use `preload="none"` and are managed by viewport and reduced-motion rules.
 
+## PDF Accessibility Baseline
+
+`data/pdf-accessibility-audit.json` records the July 11, 2026 baseline for all 44 supplied companion interiors. The audit found no usable extractable text in the source PDFs, so every source file remains blocked from accessible digital distribution until remediation is manually verified.
+
+`scripts/validate_pdf_accessibility.py` checks source IDs, filenames, page counts, SHA-256 values, remediation states, approval requirements, and public PDF links. A record cannot be approved unless text, semantic tags, reading order, meaningful alternatives, language metadata, and manual QA are verified.
+
+See `docs/pdf-accessibility-remediation.md` for the required workflow and `docs/pdf-accessibility-review-log-template.md` for the manual QA record.
+
 ## Deployment
 
 `netlify.toml` defines:
 
 - The static publish directory
 - All three build-time content validators
-- The generated SEO, sitemap, structured-data, and media-inventory consistency checks
+- The generated SEO, sitemap, structured-data, media-inventory, and PDF-accessibility consistency checks
 - The permanent legacy Lulu & Ellie redirect
 - Baseline security headers
 - Browser revalidation plus long-lived deploy-invalidated Netlify CDN caching for assets, CSS, and JavaScript

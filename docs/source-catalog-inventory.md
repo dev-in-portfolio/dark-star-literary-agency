@@ -14,6 +14,8 @@ The raw PDF interiors are source and production assets. They are intentionally n
 
 A source PDF existing does not automatically mean that the title is publication-ready. The manifest records a separate quality status for every interior.
 
+The July 11, 2026 accessibility baseline found no usable extractable text in the 44 supplied PDFs. The exact source hashes are mirrored in `data/pdf-accessibility-audit.json`, and every source file remains blocked from accessible digital distribution until a remediated edition passes manual verification.
+
 ## Supplied source packages
 
 | Source package | PDF interiors represented |
@@ -78,5 +80,7 @@ The public catalog uses:
 - `companion-library.js` — runtime consistency check; it does not render or replace the static catalog
 
 `validate_source_manifest.py` reconciles the structured catalog, static `data-source-id` entries, and the checksum-backed source manifest before deployment.
+
+`validate_pdf_accessibility.py` reconciles the accessibility registry with the same source IDs, filenames, page counts, and hashes. It also blocks unapproved PDF links and prevents a record from being marked accessible without verified text, tags, reading order, meaningful alternatives, language metadata, and manual QA.
 
 When a title becomes publicly available, update its official book or collection page with a browser-verified purchase link and a verification date. Do not convert the entire Companion Library preview into a purchase-ready catalog based only on the existence of an interior PDF.
