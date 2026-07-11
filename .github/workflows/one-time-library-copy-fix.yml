@@ -1,0 +1,60 @@
+name: One-time Library Copy Fix
+
+on:
+  push:
+    branches:
+      - "agent/site-hardening-and-catalog-fixes"
+
+permissions:
+  contents: write
+
+jobs:
+  patch-library:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: agent/site-hardening-and-catalog-fixes
+
+      - name: Apply exact Library copy corrections
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path("library.html")
+          text = path.read_text(encoding="utf-8")
+
+          replacements = [
+              (
+                  '<link rel="stylesheet" href="styles.css">',
+                  '<link rel="stylesheet" href="styles.css">\n    <link rel="stylesheet" href="accessibility.css">',
+              ),
+              (
+                  '<span class="status-badge">Coming soon</span>',
+                  '<span class="status-badge">Growing library</span>',
+              ),
+              (
+                  '<article class="card"><h3>Where to Purchase</h3><p>Live paperback purchase links are shown on the Lulu &amp; Ellie Adventures pages where available.</p></article>',
+                  '<article class="card"><h3>Marketplace links</h3><p>Recorded Amazon links are shown on canonical storybook pages. Current price, format, and availability must be confirmed on Amazon.</p></article>',
+              ),
+          ]
+
+          for old, new in replacements:
+              if old not in text:
+                  raise SystemExit(f"Expected Library text not found: {old}")
+              text = text.replace(old, new, 1)
+
+          path.write_text(text, encoding="utf-8")
+
+      - name: Commit Library correction
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add library.html
+          git diff --cached --quiet && exit 0
+          git commit -m "fix: correct live Library status and marketplace copy"
+          git push origin HEAD:agent/site-hardening-and-catalog-fixes
