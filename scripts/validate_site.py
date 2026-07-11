@@ -8,6 +8,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import json
+import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,6 +39,8 @@ class PageParser(HTMLParser):
         self.in_title = False
         self.h1_count = 0
         self.meta_description = ""
+        self.meta_refresh_target = ""
+        self.canonical = ""
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = {key.lower(): (value or "") for key, value in attrs}
@@ -52,8 +55,18 @@ class PageParser(HTMLParser):
         if element_id:
             self.ids.append(element_id)
 
-        if tag == "meta" and values.get("name", "").lower() == "description":
-            self.meta_description = values.get("content", "").strip()
+        if tag == "meta":
+            if values.get("name", "").lower() == "description":
+                self.meta_description = values.get("content", "").strip()
+            if values.get("http-equiv", "").lower() == "refresh":
+                content = values.get("content", "")
+                match = re.search(r"url\s*=\s*(.+)$", content, flags=re.IGNORECASE)
+                if match:
+                    self.meta_refresh_target = match.group(1).strip(" '\"")
+                    self.references.append(("meta", "refresh", self.meta_refresh_target))
+
+        if tag == "link" and values.get("rel", "").lower() == "canonical":
+            self.canonical = values.get("href", "").strip()
 
         for attribute in ("href", "src", "poster"):
             value = values.get(attribute, "").strip()
@@ -86,6 +99,10 @@ class PageParser(HTMLParser):
     @property
     def title(self) -> str:
         return " ".join("".join(self.title_parts).split())
+
+    @property
+    def is_redirect(self) -> bool:
+        return bool(self.meta_refresh_target)
 
 
 def html_files() -> list[Path]:
@@ -126,11 +143,10 @@ def validate_html() -> tuple[list[str], list[str]]:
     errors: list[str] = []
     warnings: list[str] = []
     titles: Counter[str] = Counter()
-
     pages = html_files()
+
     if not pages:
-        errors.append("no HTML files found")
-        return errors, warnings
+        return ["no HTML files found"], warnings
 
     for page in pages:
         relative = page.relative_to(ROOT)
@@ -146,11 +162,16 @@ def validate_html() -> tuple[list[str], list[str]]:
         else:
             titles[parser.title] += 1
 
-        if not parser.meta_description:
-            errors.append(f"{relative}: missing meta description")
-
-        if parser.h1_count != 1:
-            errors.append(f"{relative}: expected exactly one <h1>, found {parser.h1_count}")
+        if parser.is_redirect:
+            if not parser.canonical:
+                errors.append(f"{relative}: redirect page is missing a canonical link")
+            if parser.h1_count > 1:
+                errors.append(f"{relative}: redirect page has more than one <h1>")
+        else:
+            if not parser.meta_description:
+                errors.append(f"{relative}: missing meta description")
+            if parser.h1_count != 1:
+                errors.append(f"{relative}: expected exactly one <h1>, found {parser.h1_count}")
 
         for message in parser.errors:
             errors.append(f"{relative}: {message}")
@@ -159,7 +180,12 @@ def validate_html() -> tuple[list[str], list[str]]:
         if duplicate_ids:
             errors.append(f"{relative}: duplicate IDs: {', '.join(duplicate_ids)}")
 
+        seen_refs: set[tuple[str, str, str]] = set()
         for tag, attribute, value in parser.references:
+            key = (tag, attribute, value)
+            if key in seen_refs:
+                continue
+            seen_refs.add(key)
             if value.startswith("http://"):
                 errors.append(f"{relative}: insecure external URL in {tag}[{attribute}]: {value}")
                 continue
@@ -189,7 +215,11 @@ def validate_original_adventure_media() -> tuple[list[str], list[str]]:
             errors.append(f"missing media folder: {folder.relative_to(ROOT)}")
             continue
 
-        covers = [path for path in folder.glob("front-cover.*") if path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"}]
+        covers = [
+            path
+            for path in folder.glob("front-cover.*")
+            if path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"}
+        ]
         if len(covers) != 1:
             errors.append(f"{folder.relative_to(ROOT)}: expected one front cover, found {len(covers)}")
 
@@ -197,7 +227,10 @@ def validate_original_adventure_media() -> tuple[list[str], list[str]]:
         if not animation.is_file():
             errors.append(f"missing animation: {animation.relative_to(ROOT)}")
         elif animation.stat().st_size > 12 * 1024 * 1024:
-            warnings.append(f"large animation ({animation.stat().st_size / 1024 / 1024:.1f} MiB): {animation.relative_to(ROOT)}")
+            warnings.append(
+                f"large animation ({animation.stat().st_size / 1024 / 1024:.1f} MiB): "
+                f"{animation.relative_to(ROOT)}"
+            )
 
         feature = folder / "feature-page.png"
         if number >= 2 and not feature.is_file():
@@ -240,6 +273,34 @@ def validate_canonical_book_pages() -> list[str]:
     return errors
 
 
+def validate_archive_page() -> list[str]:
+    errors: list[str] = []
+    page = ROOT / "lulu-ellie" / "original-adventure" / "index.html"
+    if not page.is_file():
+        return ["missing Original Adventure archive page"]
+
+    text = page.read_text(encoding="utf-8")
+    requirements = {
+        "../../styles.css": "shared stylesheet",
+        "../../accessibility.css": "reduced-motion stylesheet",
+        "../../media.js": "shared media controller",
+        "20-volume media archive": "archive wording",
+        "Archive preview volumes 11–20": "preview-section wording",
+    }
+    for needle, label in requirements.items():
+        if needle not in text:
+            errors.append(f"{page.relative_to(ROOT)}: missing {label}")
+
+    for number in range(11, 21):
+        if f"Archive Volume {number}" not in text:
+            errors.append(f"{page.relative_to(ROOT)}: missing Archive Volume {number} label")
+
+    if "All 20 Original Adventure books" in text or "first 20-book" in text:
+        errors.append(f"{page.relative_to(ROOT)}: still presents all 20 media folders as completed books")
+
+    return errors
+
+
 def validate_companion_catalog() -> list[str]:
     errors: list[str] = []
     catalog_path = ROOT / "data" / "companion-catalog.json"
@@ -256,13 +317,11 @@ def validate_companion_catalog() -> list[str]:
     try:
         catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
     except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
-        errors.append(f"{catalog_path.relative_to(ROOT)}: invalid catalog JSON: {exc}")
-        return errors
+        return [f"{catalog_path.relative_to(ROOT)}: invalid catalog JSON: {exc}"]
 
     collections = catalog.get("collections")
     if not isinstance(collections, list):
-        errors.append(f"{catalog_path.relative_to(ROOT)}: collections must be a list")
-        return errors
+        return [f"{catalog_path.relative_to(ROOT)}: collections must be a list"]
 
     if len(collections) != 12:
         errors.append(f"{catalog_path.relative_to(ROOT)}: expected 12 collections, found {len(collections)}")
@@ -276,6 +335,7 @@ def validate_companion_catalog() -> list[str]:
         if not isinstance(items, list) or not items:
             errors.append(f"{catalog_path.relative_to(ROOT)}: {name or 'unnamed collection'} has no items")
             continue
+
         for item in items:
             title = item.get("title")
             pages = item.get("pages")
@@ -285,15 +345,34 @@ def validate_companion_catalog() -> list[str]:
                 titles.append(title.strip())
             if not isinstance(pages, int) or pages <= 0:
                 errors.append(f"{catalog_path.relative_to(ROOT)}: {title or 'untitled item'} has an invalid page count")
+            if not isinstance(item.get("format"), str) or not item["format"].strip():
+                errors.append(f"{catalog_path.relative_to(ROOT)}: {title or 'untitled item'} is missing format")
 
     if len(titles) != 44:
         errors.append(f"{catalog_path.relative_to(ROOT)}: expected 44 titles, found {len(titles)}")
 
-    duplicates = sorted(title for title, count in Counter(titles).items() if count > 1)
-    if duplicates:
-        errors.append(f"{catalog_path.relative_to(ROOT)}: duplicate titles: {', '.join(duplicates)}")
+    duplicate_titles = sorted(title for title, count in Counter(titles).items() if count > 1)
+    if duplicate_titles:
+        errors.append(f"{catalog_path.relative_to(ROOT)}: duplicate titles: {', '.join(duplicate_titles)}")
 
     return errors
+
+
+def write_report(errors: list[str], warnings: list[str]) -> None:
+    lines = []
+    if warnings:
+        lines.append("Warnings:")
+        lines.extend(f"- {warning}" for warning in warnings)
+        lines.append("")
+    if errors:
+        lines.append("Site validation failed:")
+        lines.extend(f"- {error}" for error in errors)
+    else:
+        lines.append(
+            f"Validated {len(html_files())} HTML pages, all 20 Original Adventure media folders, "
+            "the canonical Books 1–10 sequence, the archive presentation, and 44 companion catalog records."
+        )
+    (ROOT / "validation-report.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def main() -> int:
@@ -302,7 +381,10 @@ def main() -> int:
     errors.extend(media_errors)
     warnings.extend(media_warnings)
     errors.extend(validate_canonical_book_pages())
+    errors.extend(validate_archive_page())
     errors.extend(validate_companion_catalog())
+
+    write_report(errors, warnings)
 
     for warning in warnings:
         print(f"WARNING: {warning}")
@@ -315,7 +397,7 @@ def main() -> int:
 
     print(
         f"Validated {len(html_files())} HTML pages, all 20 Original Adventure media folders, "
-        "the canonical Books 1-10 sequence, and 44 companion catalog titles."
+        "the canonical Books 1–10 sequence, the archive presentation, and 44 companion catalog records."
     )
     if warnings:
         print(f"Completed with {len(warnings)} warning(s).")
