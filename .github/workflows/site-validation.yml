@@ -30,8 +30,9 @@ jobs:
           python -m py_compile scripts/update_seo.py
           python -m py_compile scripts/update_structured_data.py
           python -m py_compile scripts/update_media_inventory.py
+          python -m py_compile scripts/validate_pdf_accessibility.py
 
-      - name: Validate site, catalogs, marketplace claims, generated metadata, and media budgets
+      - name: Validate site, catalogs, marketplace claims, generated metadata, media budgets, and PDF accessibility
         shell: bash
         run: |
           set -euo pipefail
@@ -41,6 +42,7 @@ jobs:
           python scripts/update_seo.py --check | tee -a validation-report.txt
           python scripts/update_structured_data.py --check | tee -a validation-report.txt
           python scripts/update_media_inventory.py --check | tee -a validation-report.txt
+          python scripts/validate_pdf_accessibility.py | tee -a validation-report.txt
 
       - name: Upload validation report
         if: always()
