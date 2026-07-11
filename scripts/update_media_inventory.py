@@ -14,6 +14,9 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSET_ROOT = ROOT / "assets"
 INVENTORY_PATH = ROOT / "data" / "media-inventory.json"
 BUDGET_PATH = ROOT / "data" / "media-budget.json"
+ARCHIVE_PAGE = ROOT / "lulu-ellie" / "original-adventure" / "index.html"
+ARCHIVE_SCRIPT = ROOT / "lulu-ellie" / "original-adventure" / "archive.js"
+MEDIA_SCRIPT = ROOT / "media.js"
 MEDIA_EXTENSIONS = {
     ".avif",
     ".gif",
@@ -26,7 +29,6 @@ MEDIA_EXTENSIONS = {
     ".webp",
 }
 VIDEO_EXTENSIONS = {".mp4", ".webm"}
-IMAGE_EXTENSIONS = MEDIA_EXTENSIONS - VIDEO_EXTENSIONS
 
 
 def sha256(path: Path) -> str:
@@ -107,7 +109,7 @@ def load_json(path: Path) -> dict:
 
 def validate_budget(inventory: dict) -> list[str]:
     if not BUDGET_PATH.is_file():
-        return []
+        return ["data/media-budget.json is missing"]
     budget = load_json(BUDGET_PATH)
     summary = inventory["summary"]
     files = inventory["files"]
@@ -143,6 +145,48 @@ def validate_budget(inventory: dict) -> list[str]:
     return errors
 
 
+def validate_delivery_policy() -> list[str]:
+    errors: list[str] = []
+    required_files = (ARCHIVE_PAGE, ARCHIVE_SCRIPT, MEDIA_SCRIPT)
+    for path in required_files:
+        if not path.is_file():
+            errors.append(f"missing media-delivery file: {path.relative_to(ROOT)}")
+    if errors:
+        return errors
+
+    archive_page = ARCHIVE_PAGE.read_text(encoding="utf-8")
+    archive_script = ARCHIVE_SCRIPT.read_text(encoding="utf-8")
+    media_script = MEDIA_SCRIPT.read_text(encoding="utf-8")
+
+    page_requirements = (
+        'href="archive.css"',
+        'preload="none" poster="../../assets/lulu-ellie/original-adventure/book-10/front-cover.jpg"',
+        "created and loaded only after a visitor selects a cover",
+    )
+    for requirement in page_requirements:
+        if requirement not in archive_page:
+            errors.append(f"archive page is missing deferred-media requirement: {requirement}")
+
+    archive_requirements = (
+        'make("button", "media-load-button")',
+        'button.addEventListener("click"',
+        'image.loading = "lazy"',
+        'image.decoding = "async"',
+        'image.fetchPriority = "low"',
+        'video.preload = "metadata"',
+    )
+    for requirement in archive_requirements:
+        if requirement not in archive_script:
+            errors.append(f"archive.js is missing click-to-load requirement: {requirement}")
+
+    if 'video.preload = "none"' not in media_script:
+        errors.append("media.js must keep automatic videos at preload=none")
+    if 'video.preload = "metadata"' in media_script:
+        errors.append("media.js must not upgrade automatic videos to metadata preload")
+
+    return errors
+
+
 def serialized(inventory: dict) -> str:
     return json.dumps(inventory, indent=2, ensure_ascii=False) + "\n"
 
@@ -151,13 +195,13 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--write", action="store_true", help="Write the current media inventory")
-    mode.add_argument("--check", action="store_true", help="Fail if inventory or budgets are stale")
+    mode.add_argument("--check", action="store_true", help="Fail if inventory, budgets, or delivery policy are stale")
     args = parser.parse_args()
 
     inventory = build_inventory()
     generated = serialized(inventory)
     current = INVENTORY_PATH.read_text(encoding="utf-8") if INVENTORY_PATH.is_file() else ""
-    errors = validate_budget(inventory)
+    errors = validate_budget(inventory) + validate_delivery_policy()
 
     if args.write:
         INVENTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -168,7 +212,7 @@ def main() -> int:
             f"{inventory['summary']['total_bytes']} bytes total."
         )
         if errors:
-            print("Media budget validation failed:")
+            print("Media budget or delivery-policy validation failed:")
             for error in errors:
                 print(f"- {error}")
             return 1
@@ -184,7 +228,7 @@ def main() -> int:
         return 1
 
     print(
-        "Validated media inventory and budgets: "
+        "Validated media inventory, budgets, and deferred-delivery policy: "
         f"{inventory['summary']['files']} files, "
         f"{inventory['summary']['total_bytes']} bytes total."
     )
