@@ -10,6 +10,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 BOOKS_DIR = ROOT / "books"
 SERIES_PAGE = ROOT / "series" / "lulu-and-ellie-adventures.html"
+LIBRARY_PAGE = ROOT / "library.html"
 
 BOOKS = [
     (1, "lulu-and-ellie-and-the-secret-of-blackwater-bay.html", "B0H351G4MG"),
@@ -109,19 +110,52 @@ def validate_series_page() -> list[str]:
     return errors
 
 
+def validate_library_page() -> list[str]:
+    errors: list[str] = []
+    relative = LIBRARY_PAGE.relative_to(ROOT)
+
+    if not LIBRARY_PAGE.is_file():
+        return [f"missing Library page: {relative}"]
+
+    text = LIBRARY_PAGE.read_text(encoding="utf-8")
+    requirements = (
+        '<link rel="stylesheet" href="accessibility.css">',
+        '<span class="status-badge">Growing library</span>',
+        "Recorded Amazon links are shown on canonical storybook pages.",
+        "Current price, format, and availability must be confirmed on Amazon.",
+    )
+    for phrase in requirements:
+        if phrase not in text:
+            errors.append(f"{relative}: missing current Library wording: {phrase}")
+
+    stale_phrases = (
+        '<span class="status-badge">Coming soon</span>',
+        "Live paperback purchase links are shown",
+    )
+    for phrase in stale_phrases:
+        if phrase in text:
+            errors.append(f"{relative}: contains stale Library wording: {phrase}")
+
+    return errors
+
+
 def main() -> int:
     errors: list[str] = []
     for record in BOOKS:
         errors.extend(validate_book(*record))
     errors.extend(validate_series_page())
+    errors.extend(validate_library_page())
 
     if errors:
-        print("Marketplace validation failed:")
+        print("Marketplace and Library copy validation failed:")
         for error in errors:
             print(f"- {error}")
         return 1
 
-    print("Validated evidence-based marketplace wording for canonical Books 1–10 and the series page.")
+    print(
+        "Validated evidence-based marketplace wording for canonical Books 1–10, "
+        "the series page, and the live Library page."
+    )
     return 0
 
 
