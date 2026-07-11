@@ -11,6 +11,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="./lulu-ellie/">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../accessibility.css">
+    <script src="../media.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -46,8 +48,9 @@
             </div>
           </article>
           <aside class="panel tier-hero-media" aria-label="Animated Original Adventure preview">
-            <video autoplay muted loop playsinline poster="../assets/lulu-ellie/original-adventure/book-10/front-cover.jpg">
+            <video muted loop playsinline preload="metadata" poster="../assets/lulu-ellie/original-adventure/book-10/front-cover.jpg">
               <source src="../assets/lulu-ellie/original-adventure/book-10/animated-cover.mp4" type="video/mp4">
+              Your browser does not support the animated cover preview.
             </video>
           </aside>
         </div>
@@ -58,10 +61,10 @@
           <div class="section-head">
             <div class="section-kicker">Tiered Storyworld</div>
             <h2>The bigger universe stays beautiful, and every collection gets its own room.</h2>
-            <p class="section-lede">This is the Lulu &amp; Ellie universe doorway. Collection tiers live underneath it, so the site can grow without flattening every book, cover, activity, and interior feature page into one long mono page.</p>
+            <p class="section-lede">This is the Lulu &amp; Ellie universe doorway. Collection tiers live underneath it, so the site can grow without flattening every book, cover, activity, and interior feature page into one long page.</p>
           </div>
           <div class="tier-stat-grid">
-            <div class="tier-stat"><strong>20</strong><span>Original Adventure books</span></div>
+            <div class="tier-stat"><strong>20</strong><span>Original Adventure volumes</span></div>
             <div class="tier-stat"><strong>3</strong><span>Media types on most featured books</span></div>
             <div class="tier-stat"><strong>1</strong><span>Active public collection tier</span></div>
             <div class="tier-stat"><strong>Many</strong><span>Future story and learning lines</span></div>
@@ -74,7 +77,7 @@
           <article class="panel">
             <div class="eyebrow">Current Public Tier</div>
             <h2>Original Adventure is the first full collection tier.</h2>
-            <p class="lede">The portal-quest shelf now has its own dedicated page with all 20 books, animated covers, finished cover art, and approved interior feature pages from inside the stories.</p>
+            <p class="lede">The portal-quest shelf has its own dedicated 20-volume media archive. Published titles link to full book pages; later volumes remain clearly identified as previews until their official public details are added.</p>
             <div class="section-actions">
               <a class="button" href="./original-adventure/">Explore the tier</a>
               <a class="button secondary" href="./original-adventure/#feature-pages">Interior feature pages</a>
@@ -102,8 +105,9 @@
           </div>
           <div class="tier-media-grid">
             <article class="card tier-media-card">
-              <video autoplay muted loop playsinline preload="metadata" poster="../assets/lulu-ellie/original-adventure/book-4/front-cover.jpg">
+              <video muted loop playsinline preload="metadata" poster="../assets/lulu-ellie/original-adventure/book-4/front-cover.jpg">
                 <source src="../assets/lulu-ellie/original-adventure/book-4/animated-cover.mp4" type="video/mp4">
+                Your browser does not support the animated cover preview.
               </video>
               <div class="card-copy">
                 <h3>Animated covers</h3>
@@ -111,14 +115,14 @@
               </div>
             </article>
             <article class="card tier-media-card">
-              <img src="../assets/lulu-ellie/original-adventure/book-20/front-cover.jpg" alt="Original Adventure Book 20 cover">
+              <img src="../assets/lulu-ellie/original-adventure/book-20/front-cover.jpg" alt="Original Adventure Book 20 cover" loading="lazy">
               <div class="card-copy">
                 <h3>Cover art</h3>
                 <p>Finished covers make every shelf feel like a real place to enter.</p>
               </div>
             </article>
             <article class="card tier-media-card">
-              <img src="../assets/lulu-ellie/original-adventure/book-2/feature-page.png" alt="Original Adventure Book 2 interior feature page">
+              <img src="../assets/lulu-ellie/original-adventure/book-2/feature-page.png" alt="Original Adventure Book 2 interior feature page" loading="lazy">
               <div class="card-copy">
                 <h3>Interior feature pages</h3>
                 <p>Interior feature pages hold clues, characters, and story-world details young readers can linger over.</p>
