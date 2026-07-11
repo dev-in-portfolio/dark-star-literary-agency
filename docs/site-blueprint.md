@@ -1,81 +1,72 @@
-# Site Blueprint
+# Dark Star Literary Agency Site Blueprint
 
-Dark Star Literary Agency is a public-facing launch site for three connected brands:
+## Public Architecture
 
-- Dark Star Literary Agency - the professional umbrella
-- Ambrose Caspian Vale - the author brand
-- Lulu & Ellie Adventures - the flagship children's universe
+- `index.html` — agency gateway
+- `agency.html` — Dark Star identity
+- `ambrose-caspian-vale.html` — author identity
+- `lulu-ellie/` — flagship Lulu & Ellie universe hub
+- `lulu-ellie/original-adventure/` — 20-volume media archive with ten named storybooks and ten archive-preview volumes
+- `library.html` — growing public library
+- `companion-library.html` — source-backed companion catalog
+- `parents-teachers.html` — trust and educational-use page
+- `accessibility.html` — public accessibility statement and feedback route
+- `contact.html` — agency contact page
 
-## Current Page Strategy
+The legacy `/lulu-and-ellie.html` route redirects permanently to `/lulu-ellie/`.
 
-The site is a static multi-page public experience:
+## Catalog Model
 
-- `/` - homepage and brand gateway
-- `/agency.html` - Dark Star Literary Agency identity page
-- `/ambrose-caspian-vale.html` - author page
-- `/lulu-ellie/` - current flagship-universe hub
-- `/lulu-ellie/original-adventure/` - 20-volume media archive with ten named storybooks and ten archive-preview volumes
-- `/lulu-and-ellie.html` - legacy redirect only
-- `/library.html` - live, growing storybook, series, collection, and learning-line navigation hub
-- `/companion-library.html` - static source-backed preview catalog for developed activity and companion interiors
-- `/parents-teachers.html` - parent and teacher trust page
-- `/contact.html` - public contact page
-- `/series/*.html` - second-level series and collection pages
-- `/learning/*.html` - learning line pages
-- `/books/*.html` - individual book pages
+The public site separates:
 
-The homepage introduces the parent agency and routes visitors into the correct area instead of carrying the full Lulu & Ellie experience on one page.
+1. Named and documented storybooks
+2. Clearly labeled media previews
+3. Developed companion interiors
+4. Marketplace verification state
+5. Accessibility release state
 
-The Lulu & Ellie hub owns the top-level storyworld identity. Collection tiers live below it so each collection can grow without flattening the full catalog into a single page.
+The existence of source media or an interior file is not treated as proof of publication, purchase availability, or accessible digital-release readiness.
 
-## Catalog Architecture
+## Companion Source Controls
 
-### Original Adventure
+- `data/companion-catalog.json` represents the public companion catalog.
+- `data/companion-source-manifest.csv` records exact source package, internal PDF path, page count, SHA-256, quality status, and marketplace status.
+- `data/pdf-accessibility-audit.json` records text-layer, tagging, reading-order, alternative-text, language, remediation, and release state for the same 44 source IDs.
+- Raw source PDFs remain outside the public website repository.
 
-- Books 1-10 are presented in canonical story order.
-- Recorded Amazon ASIN links are preserved without claiming current price, format, stock, or orderability.
-- Canonical book pages use evidence-based marketplace wording until a manual review is recorded.
-- Book 6 exposes no Amazon product link while no current listing has been manually verified.
-- Book numbers, individual pages, Previous/Next navigation, and `book-#` media folders must agree.
-- The 20-volume media archive represents later preview volumes without claiming that each has a complete public book page.
+## Marketplace Controls
 
-### Companion Library
+- `data/marketplace-records.json` stores recorded Amazon links and verification state for canonical Books 1–10.
+- A recorded ASIN is not proof of current price, format, stock, or orderability.
+- Book 6 remains in a no-active-link state until manually verified.
 
-- `data/companion-catalog.json` contains the structured public catalog.
-- `data/companion-source-manifest.csv` preserves exact source-file provenance, page counts, SHA-256 values, readiness states, marketplace states, and review dates.
-- `companion-library.html` contains all 44 titles as static, indexable markup.
-- `companion-library.js` verifies runtime totals but does not replace the static catalog.
-- The initial catalog contains 44 supplied interiors across 12 public collection groups.
-- Completed interiors are presented as source-backed previews, not automatic proof of publication readiness or purchase availability.
-- Raw interiors and production masters remain outside the website repository.
+## Media Controls
 
-### Media Archive
+- `data/media-inventory.json` records public-media paths, sizes, types, and SHA-256 values.
+- `data/media-budget.json` limits aggregate and per-file growth.
+- Original Adventure archive videos are click-to-load.
+- Automatic previews use `preload="none"`, visibility-aware playback, and reduced-motion safeguards.
 
-- `dev-in-portfolio/l_e_storage` is the organized archive/source repository for Original Adventure and General Lulu & Ellie media.
-- Storage `Book_#` folders map directly to website `book-#` folders.
-- Publication order, marketplace listing order, file timestamps, and upload order must never change the canonical media mapping.
+## SEO and Discovery
 
-## Catalog Status Model
+- `data/site-config.json` centralizes the production URL, site identity, locale, author identity, series identity, contact email, and social defaults.
+- `scripts/update_seo.py` generates canonical and social metadata, `robots.txt`, and `sitemap.xml`.
+- `scripts/update_structured_data.py` generates conservative homepage and canonical-book JSON-LD.
+- `accessibility.html` is canonicalized and included in the sitemap.
 
-Every public catalog item must be one of the following:
+## Accessibility Direction
 
-- **Live catalog page** - approved public content with evidence-based marketplace or download information
-- **Preorder / Sample Ready** - supported by a working official preorder or sample link
-- **Intentional Preview** - clearly marked `Coming Soon`, `In the Works`, or `Preview`, with no unsupported purchase or release-date claim
-- **Hidden Draft** - internal only and absent from public navigation
+The website uses skip links, semantic headings, visible focus, image alternatives, controlled media, and reduced-motion support.
 
-A recorded marketplace URL is not itself proof that an item is currently purchasable. Current marketplace claims require a manual verification record and refresh process.
+The 44 supplied companion PDFs are image-based source files. The July 11, 2026 baseline found no usable extractable text. They remain blocked from accessible digital distribution until text, semantic tags, reading order, meaningful alternatives, language metadata, manual assistive-technology QA, and an exact release-file checksum are verified.
 
-## Discoverability Architecture
+The public accessibility statement:
 
-- `data/site-config.json` is the single source for the site name, production base URL, locale, contact email, author identity, series identity, and social-card defaults.
-- The current production base URL is `https://dark-star-literary-agency.netlify.app`.
-- `scripts/update_seo.py --write` updates absolute canonical URLs, Open Graph URLs, site metadata, Twitter card metadata, image metadata where a real local image is available, `robots.txt`, and `sitemap.xml`.
-- `scripts/update_structured_data.py --write` generates Organization, Person, and WebSite JSON-LD for the homepage and conservative Book JSON-LD for the ten canonical Original Adventure storybooks.
-- Book structured data intentionally omits prices, offers, stock, format availability, and unverified marketplace claims.
-- Redirect pages canonicalize to their destination and are excluded from `sitemap.xml`.
-- Both generator scripts support `--check` and are required in GitHub Actions and the Netlify build.
-- A future custom-domain migration changes the base URL once in `data/site-config.json`, followed by regeneration with both writers and review of the resulting diff.
+- Describes current website features
+- Discloses known source-PDF limitations
+- Explains third-party boundaries
+- Provides a direct barrier-reporting and accessible-format request route
+- Avoids claiming blanket formal conformance
 
 ## Design Direction
 
@@ -88,14 +79,18 @@ A recorded marketplace URL is not itself proof that an item is currently purchas
 
 ## Technical Direction
 
-- Keep the public output static and indexable.
-- Run `validate_site.py`, `validate_source_manifest.py`, `validate_marketplace.py`, `update_seo.py --check`, and `update_structured_data.py --check` before deployment.
-- Validate links, assets, metadata, media-folder mappings, canonical book order, archive language, companion source reconciliation, marketplace wording, Library status, canonical URLs, social metadata, sitemap output, and generated JSON-LD.
-- Keep book numbers, titles, page slugs, Previous/Next links, and media directories aligned.
-- Use shared CSS and JavaScript instead of introducing new page-specific systems when reusable styling is practical.
-- Keep source archives and full production interiors out of the website repository.
-- Keep production URLs and identity fields centralized rather than hand-editing canonical, social, or structured metadata across pages.
+Run all seven release checks before deployment:
+
+1. `validate_site.py`
+2. `validate_source_manifest.py`
+3. `validate_marketplace.py`
+4. `update_seo.py --check`
+5. `update_structured_data.py --check`
+6. `update_media_inventory.py --check`
+7. `validate_pdf_accessibility.py`
+
+Keep book numbers, titles, page slugs, Previous/Next links, media directories, source hashes, marketplace records, and accessibility records aligned. Keep source archives and production interiors outside the website repository.
 
 ## Public Positioning
 
-The site should feel polished, literary, and magical immediately. Future collections remain hidden unless they are purchase-ready, preorder-ready, sample-ready, or intentionally announced as clearly labeled previews.
+The site should feel polished, literary, and magical immediately. Future collections remain hidden unless they are purchase-ready, preorder-ready, sample-ready, or intentionally announced as clearly labeled previews. Unapproved source PDFs must not be linked or described as accessible digital editions.
