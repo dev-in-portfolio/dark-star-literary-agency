@@ -27,14 +27,16 @@ jobs:
           python -m py_compile scripts/validate_site.py
           python -m py_compile scripts/validate_source_manifest.py
           python -m py_compile scripts/validate_marketplace.py
+          python -m py_compile scripts/update_seo.py
 
-      - name: Validate site, source manifest, and marketplace claims
+      - name: Validate site, source manifest, marketplace claims, and SEO output
         shell: bash
         run: |
           set -euo pipefail
           python scripts/validate_site.py | tee validation-report.txt
           python scripts/validate_source_manifest.py | tee -a validation-report.txt
           python scripts/validate_marketplace.py | tee -a validation-report.txt
+          python scripts/update_seo.py --check | tee -a validation-report.txt
 
       - name: Upload validation report
         if: always()
