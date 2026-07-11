@@ -71,13 +71,12 @@ These labels are internal catalog controls. They do not claim that a title is pu
 
 ## Public catalog files
 
-The public catalog is maintained in:
+The public catalog uses:
 
-- `data/companion-catalog.json`
+- `data/companion-catalog.json` — structured public catalog
+- `companion-library.html` — complete static, indexable presentation of all 44 titles
+- `companion-library.js` — runtime consistency check; it does not render or replace the static catalog
 
-The presentation page and renderer are:
-
-- `companion-library.html`
-- `companion-library.js`
+`validate_source_manifest.py` reconciles the structured catalog, static `data-source-id` entries, and the checksum-backed source manifest before deployment.
 
 When a title becomes publicly available, update its official book or collection page with a browser-verified purchase link and a verification date. Do not convert the entire Companion Library preview into a purchase-ready catalog based only on the existence of an interior PDF.
