@@ -1,27 +1,32 @@
 (() => {
-  const videos = Array.from(document.querySelectorAll("video"));
-  if (!videos.length) return;
+  "use strict";
+
+  const allVideos = Array.from(document.querySelectorAll("video"));
+  if (!allVideos.length) return;
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const managedVideos = allVideos.filter((video) => !video.hasAttribute("controls"));
   const visibility = new Map();
   let observer;
 
-  function pauseAll() {
-    videos.forEach((video) => video.pause());
-  }
-
   function prepareVideos() {
-    videos.forEach((video) => {
+    allVideos.forEach((video) => {
       video.muted = true;
       video.playsInline = true;
-      video.preload = "metadata";
       video.removeAttribute("autoplay");
+      if (!video.hasAttribute("controls")) {
+        video.preload = "metadata";
+      }
     });
   }
 
+  function pauseManagedVideos() {
+    managedVideos.forEach((video) => video.pause());
+  }
+
   function syncPlayback() {
-    if (document.hidden || reducedMotion.matches) {
-      pauseAll();
+    if (!managedVideos.length || document.hidden || reducedMotion.matches) {
+      pauseManagedVideos();
       return;
     }
 
@@ -35,7 +40,7 @@
       }
     });
 
-    videos.forEach((video) => {
+    managedVideos.forEach((video) => {
       if (video === activeVideo && bestRatio >= 0.45) {
         const playPromise = video.play();
         if (playPromise && typeof playPromise.catch === "function") {
@@ -48,8 +53,10 @@
   }
 
   function startObserver() {
+    if (!managedVideos.length) return;
+
     if (!("IntersectionObserver" in window)) {
-      visibility.set(videos[0], 1);
+      visibility.set(managedVideos[0], 1);
       syncPlayback();
       return;
     }
@@ -62,7 +69,7 @@
       { threshold: [0, 0.25, 0.45, 0.65, 0.85] }
     );
 
-    videos.forEach((video) => observer.observe(video));
+    managedVideos.forEach((video) => observer.observe(video));
   }
 
   prepareVideos();
