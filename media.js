@@ -15,7 +15,7 @@
       video.playsInline = true;
       video.removeAttribute("autoplay");
       if (!video.hasAttribute("controls")) {
-        video.preload = "metadata";
+        video.preload = "none";
       }
     });
   }
