@@ -78,15 +78,16 @@ See `docs/storage-integration.md` for the mapping and media policy.
 
 ## Validation
 
-Run all repository validators before publishing:
+Run all repository checks before publishing:
 
 ```bash
 python scripts/validate_site.py
 python scripts/validate_source_manifest.py
 python scripts/validate_marketplace.py
+python scripts/update_seo.py --check
 ```
 
-The validators check:
+The checks cover:
 
 - Broken local links and missing assets
 - Missing page titles, descriptions, primary headings, and duplicate element IDs
@@ -99,22 +100,31 @@ The validators check:
 - Exact reconciliation among the public catalog, static `data-source-id` entries, and the checksum-backed source manifest
 - Evidence-based marketplace wording, recorded ASIN preservation, and the no-link state for Book 6
 - The Library's `Growing library` status and current marketplace explanation
+- Absolute canonical URLs, Open Graph URLs, social-card metadata, `robots.txt`, and `sitemap.xml` consistency
 
-GitHub Actions compiles and runs all three validators on pull requests and pushes to `main` or `agent/**`. It uploads a combined validation report even when a future run fails.
+GitHub Actions compiles and runs the three content validators plus the SEO reproducibility check on pull requests and pushes to `main` or `agent/**`. It uploads a combined validation report even when a future run fails.
+
+## SEO and Discoverability
+
+- `data/site-config.json` is the single source for the public site name, production base URL, locale, and Twitter card defaults.
+- The current production base URL is `https://dark-star-literary-agency.netlify.app`.
+- `scripts/update_seo.py --write` generates or refreshes absolute canonical URLs, `og:url`, `og:site_name`, `og:locale`, Twitter card metadata, image-based Open Graph tags where a real local image exists, `robots.txt`, and `sitemap.xml`.
+- Redirect pages point their canonical URL at the destination and are excluded from the sitemap.
+- `scripts/update_seo.py --check` fails when generated metadata or discovery files drift from `data/site-config.json`.
+- To adopt a future custom domain, change `site_url` once in `data/site-config.json`, run the writer, review the generated diff, and commit the result.
 
 ## Deployment
 
 `netlify.toml` defines:
 
 - The static publish directory
-- All three build-time validators
+- All three build-time content validators
+- The generated SEO and sitemap consistency check
 - The permanent legacy Lulu & Ellie redirect
 - Baseline security headers
 - Conservative cache headers for media, CSS, and JavaScript
 
 The latest draft-PR validation pass completed successfully in both GitHub Actions and the Netlify deploy preview. The PR remains unmerged until explicitly approved.
-
-The production domain is not hard-coded in the repository. Add absolute canonical, Open Graph, structured-data, and sitemap URLs after the final public domain strategy is confirmed.
 
 ## Public Language
 
