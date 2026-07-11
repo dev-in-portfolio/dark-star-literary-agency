@@ -1,0 +1,583 @@
+{
+  "schema_version": 1,
+  "asset_root": "assets",
+  "summary": {
+    "files": 59,
+    "total_bytes": 287757879,
+    "image_files": 39,
+    "image_bytes": 156340193,
+    "video_files": 20,
+    "video_bytes": 131417686,
+    "by_extension": {
+      ".jpg": {
+        "files": 19,
+        "bytes": 47642159
+      },
+      ".mp4": {
+        "files": 20,
+        "bytes": 131417686
+      },
+      ".png": {
+        "files": 20,
+        "bytes": 108698034
+      }
+    }
+  },
+  "largest_files": [
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-16/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 12710158,
+      "sha256": "602597c7404cbb82d4bc49638a7081349120e60973564d5e874c253e4bb63ef4"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-18/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 11768396,
+      "sha256": "1016b2f2a5495ba2515af269fea77e78e4e5e9c9ddc78fc8a4e5df896016192f"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-4/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 10163363,
+      "sha256": "e76b291eadbec5701df6105ec2a762dd0dbd9664275329765d434378c6296edb"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-4/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 8532841,
+      "sha256": "c2d4c138bca1f70fe5bee2ff820be8dd999dd8721f86a60dcf01ef65cb717d35"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-8/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 7941750,
+      "sha256": "1ff049efa56dbf6870d242b6e5482a60fc0f1884af90c1203281ec7a0d2e2cb0"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-3/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 7826901,
+      "sha256": "5e7f3ec85b20ccff23e6096f2f207c12c276336aef223a5478c5ad9b12a1cc82"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-16/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 7369028,
+      "sha256": "ff110b95380bb586f0c58ef2f8f83d6210542acea3ba64a95e4772772e5e1209"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-1/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 7292404,
+      "sha256": "54b32f4d38bf851a9a66b088b5e331e8a67edb152134615c596cc9c5a41e7389"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-17/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 7181804,
+      "sha256": "ae55e495768038d7b6f7638c601d0d0718776ccf5ab1cdf6e5b0a5c5c1b3e6e4"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-7/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 7043772,
+      "sha256": "52772c7603226eaf2e698d7e94ed3dd164b006ea3ea77639682788e6f1d89627"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-18/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 6894546,
+      "sha256": "660a5754e5d11e2d4197b51aa89e4424bed73123877f894eb0867a41bd368367"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-9/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 6668878,
+      "sha256": "c4f158eadb164d963df27950aac060240bf1c0f43b0ec253bfd034bd394b7912"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-11/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 6528469,
+      "sha256": "9c7f5352ebb98ef1ff4c5954da4d0155302a9ccf198d7e04450bbe91823c3c20"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-5/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 6333944,
+      "sha256": "27353fb7d07d6dc8c7af22903396402d01dbebda9ed3a7055714a7076b954f7f"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-6/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 6329487,
+      "sha256": "54599f1742f31846561778e4b07944d343c8b88eab04d7ccaa07892a63c44e60"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-10/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 6196653,
+      "sha256": "2fb3e0bf75f5753b098f227fd050b9a90ad1d787b48b64bc6c7cc0959dd1273d"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-13/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 5915271,
+      "sha256": "b3325a09a2e9610e4d41a831fd46c99e7b564f2b7453f3a282fd0a29001a2ee1"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-12/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 5680071,
+      "sha256": "90d475e0754bc7ae720af876f370ef0f52110b5e1cc56784973573b3d3a02e42"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-14/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 5665774,
+      "sha256": "c8eddd00f3f7510cb730a56e00d3539c47f8baf4680532d8aaa2e53dbe1e67de"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-19/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 5581035,
+      "sha256": "cb91085c4ec42320c3525f91f829cbf1f246cf2ac401cadb421b2d8c5a0910e7"
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-1/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 7292404,
+      "sha256": "54b32f4d38bf851a9a66b088b5e331e8a67edb152134615c596cc9c5a41e7389"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-1/front-cover.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 2896501,
+      "sha256": "f06d24fc747a37149a92cff7dd66360070692d08787b1eaac153efe1d61165d6"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-10/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 6196653,
+      "sha256": "2fb3e0bf75f5753b098f227fd050b9a90ad1d787b48b64bc6c7cc0959dd1273d"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-10/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4488964,
+      "sha256": "b3453995ae4c0223df319667bb4160722ed0c7fd16d51ad8e92b38e5d0c9f0ae"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-10/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2275040,
+      "sha256": "e786445929deb3828d64226dccf8c58cfb9ec062219de2260f712d2fcd463253"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-11/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 6528469,
+      "sha256": "9c7f5352ebb98ef1ff4c5954da4d0155302a9ccf198d7e04450bbe91823c3c20"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-11/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4578471,
+      "sha256": "f1880196a04a3f1a678f2c0c0d63e4f3da8f655de506a3e692c3bfd99c97fa8c"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-11/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2261597,
+      "sha256": "8da6748197149c5d828e2dc62b8805ba6410464d1348b71cdeefcbe3b1f67472"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-12/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 5680071,
+      "sha256": "90d475e0754bc7ae720af876f370ef0f52110b5e1cc56784973573b3d3a02e42"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-12/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4401291,
+      "sha256": "8f45191aff74a323a005ff423d0edb6c76f217d234685fef71c6ef80c7204c2f"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-12/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2003291,
+      "sha256": "a8edc97b24cfd96432f639517aab5012b20312ee5616f05b1ea83cd811e4ec14"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-13/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 5915271,
+      "sha256": "b3325a09a2e9610e4d41a831fd46c99e7b564f2b7453f3a282fd0a29001a2ee1"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-13/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4298806,
+      "sha256": "6ec919fd2c36b8903fa3a582a407561eec083a2272051913c938ee2b00a43380"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-13/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2908229,
+      "sha256": "e29b1d2af5017e9d70b3e7dfcecf6d8ed4a627ad4abef145aaaf9eb8a46a0cf1"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-14/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 5665774,
+      "sha256": "c8eddd00f3f7510cb730a56e00d3539c47f8baf4680532d8aaa2e53dbe1e67de"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-14/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4626345,
+      "sha256": "55d661c89fc7cc61949024c1aa9d4cf27d32d9b8008a7390a2598279cc33f043"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-14/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 3234937,
+      "sha256": "195c6a28f937652df3b8c75ee6c36c35e641a6dc6760b262b5ab5a25daca7c19"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-15/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 5351131,
+      "sha256": "44692004148207a1bbe44ecc6c878aa9e9e56581a3fcfe0233d372fb1bce631f"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-15/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4351270,
+      "sha256": "5464fa2e095de6533390a87c4201023ce33df558929b48ed9bfb8050c3f3ee1b"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-15/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2961274,
+      "sha256": "9e42884c28603a13153f873b953838d0ea07276082a36bcf10b7888429a22883"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-16/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 7369028,
+      "sha256": "ff110b95380bb586f0c58ef2f8f83d6210542acea3ba64a95e4772772e5e1209"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-16/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 12710158,
+      "sha256": "602597c7404cbb82d4bc49638a7081349120e60973564d5e874c253e4bb63ef4"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-16/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2870736,
+      "sha256": "90740cc83f5e75e0b531b8eeb329f2c3a0645244c9c5ae1ff540535bf6d49499"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-17/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 7181804,
+      "sha256": "ae55e495768038d7b6f7638c601d0d0718776ccf5ab1cdf6e5b0a5c5c1b3e6e4"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-17/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4362509,
+      "sha256": "1d911f3669ab8bfee089ea306af9c362d47bf4fc6c0e65fc4363b53d45437fa1"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-17/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2360625,
+      "sha256": "de84aed32acf80dfb7a74241ad68621a918d44581c1313dc9e11fb71db617103"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-18/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 6894546,
+      "sha256": "660a5754e5d11e2d4197b51aa89e4424bed73123877f894eb0867a41bd368367"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-18/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 11768396,
+      "sha256": "1016b2f2a5495ba2515af269fea77e78e4e5e9c9ddc78fc8a4e5df896016192f"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-18/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2675231,
+      "sha256": "88745df4d44ade495666e008f30dab774be0f2cc28fa5d3860d61e51d24a72ee"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-19/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 5581035,
+      "sha256": "cb91085c4ec42320c3525f91f829cbf1f246cf2ac401cadb421b2d8c5a0910e7"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-19/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4604023,
+      "sha256": "1762fa00703e782c12da3b55874ff05c186c0b317e1605d19b1b6a0a55e5f488"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-19/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2171874,
+      "sha256": "a536b605a76ddc3f5b0a0ae14222dfd68bdb789350f6355d5432460707ee3c96"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-2/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 5579754,
+      "sha256": "77684c579f698d1c61d877730d54a28ab99a808e7ad0296bfad3d4b3d0651525"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-2/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4435062,
+      "sha256": "bb3e4822d40afe4ae083737f8640da2ff0db6512dbe2b845dbdedee92ed6491d"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-2/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 3419247,
+      "sha256": "b018875da5475a3e1f396eec8c0429670bfeb7f7863cc15d58c64ad535bfbbe7"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-20/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 5504173,
+      "sha256": "3f23848d6a9d5eb18fdb8636c8aae4fe828f26ba80ecc998198ef3a70e5e122d"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-20/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4684294,
+      "sha256": "7cf190fb790940e661e71520d5314a54f3c16d044d4420d65eefe2851bb811b8"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-20/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2596451,
+      "sha256": "767384af3326a24009e333d6b2bf85bdc7e5bd5b51d73059b12de8ed5f090638"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-3/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 7826901,
+      "sha256": "5e7f3ec85b20ccff23e6096f2f207c12c276336aef223a5478c5ad9b12a1cc82"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-3/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4274907,
+      "sha256": "cefb6ef36f8798746495427ece7bccc5d4279fe04880cccc118e8e34557e04b3"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-3/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2427820,
+      "sha256": "ee10eda903cbf3bccdf82085f77bd4cae4f1f03ddd266d54a55945fbfbd7caee"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-4/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 8532841,
+      "sha256": "c2d4c138bca1f70fe5bee2ff820be8dd999dd8721f86a60dcf01ef65cb717d35"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-4/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 10163363,
+      "sha256": "e76b291eadbec5701df6105ec2a762dd0dbd9664275329765d434378c6296edb"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-4/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2287372,
+      "sha256": "13497b688dd267a5b131329a0b392c66a9ac516a089f454eb24c45dcc88b10dc"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-5/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 6333944,
+      "sha256": "27353fb7d07d6dc8c7af22903396402d01dbebda9ed3a7055714a7076b954f7f"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-5/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4799648,
+      "sha256": "745aff190802d2d9e485cabc68cb2e749998b76873d907d47f4b1e9c1b5c0ae2"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-5/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2100399,
+      "sha256": "c938aa85c3c3d35ef32b79b5df4525c9f7f2191ffdf61249ee6fd1438ad5725e"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-6/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 6329487,
+      "sha256": "54599f1742f31846561778e4b07944d343c8b88eab04d7ccaa07892a63c44e60"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-6/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4563383,
+      "sha256": "4fd5677302ad4e10b287a7a3cd5be6b07f39a6ca4c60e1eae5e48b1fa06dfed8"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-6/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2306146,
+      "sha256": "644242be2c3e5a40b706708c076846d0fd401cda25833f75843cf9b8d66480e3"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-7/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 7043772,
+      "sha256": "52772c7603226eaf2e698d7e94ed3dd164b006ea3ea77639682788e6f1d89627"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-7/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4726654,
+      "sha256": "afd692f61ca5b842071c11d954c3455676f7348c1bb80768fba282b18781573c"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-7/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2461717,
+      "sha256": "9e4c146b0c79b6d9037d8ad23bc77179b4811d5c1b0825bda7a56d95d07a2237"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-8/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 7941750,
+      "sha256": "1ff049efa56dbf6870d242b6e5482a60fc0f1884af90c1203281ec7a0d2e2cb0"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-8/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 3760055,
+      "sha256": "316fe1f6dc183b18de8df8ae32a9c50252047a626bbf872913fde1ca26249bd7"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-8/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2164597,
+      "sha256": "cfb1b6978b7ff2197bbecbb06486480094a1c75e20a6929fe4fb23e54e34a907"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-9/animated-cover.mp4",
+      "kind": "video",
+      "extension": ".mp4",
+      "bytes": 6668878,
+      "sha256": "c4f158eadb164d963df27950aac060240bf1c0f43b0ec253bfd034bd394b7912"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-9/feature-page.png",
+      "kind": "image",
+      "extension": ".png",
+      "bytes": 4203934,
+      "sha256": "d73af73fa9ecb94c326e1a5cf41f3115f32457215f0df71bba625dfa6b771b46"
+    },
+    {
+      "path": "assets/lulu-ellie/original-adventure/book-9/front-cover.jpg",
+      "kind": "image",
+      "extension": ".jpg",
+      "bytes": 2155576,
+      "sha256": "b70dedc536133b2a74751de1c3f77ea45d90cf8f11a390f9454efac32be532e8"
+    }
+  ]
+}
