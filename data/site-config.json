@@ -2,6 +2,11 @@
   "site_name": "Dark Star Literary Agency",
   "site_url": "https://dark-star-literary-agency.netlify.app",
   "language": "en-US",
+  "contact_email": "darstarliteraryagency@gmail.com",
+  "author_name": "Ambrose Caspian Vale",
+  "author_path": "/ambrose-caspian-vale.html",
+  "series_name": "Lulu & Ellie Adventures",
+  "series_path": "/series/lulu-and-ellie-adventures.html",
   "twitter_card_without_image": "summary",
   "twitter_card_with_image": "summary_large_image"
 }
