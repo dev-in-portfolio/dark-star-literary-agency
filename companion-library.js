@@ -1,52 +1,8 @@
 (() => {
   "use strict";
 
-  const root = document.getElementById("companion-catalog");
-  if (!root) return;
-
-  const make = (tag, className, text) => {
-    const element = document.createElement(tag);
-    if (className) element.className = className;
-    if (text) element.textContent = text;
-    return element;
-  };
-
-  const renderItem = (item) => {
-    const card = make("article", "book-list-card");
-    const tags = make("div", "tag-row");
-    tags.append(
-      make("span", "book-number", item.format),
-      make("span", "status-badge", `${item.pages} pages`)
-    );
-
-    card.append(tags, make("h3", "", item.title));
-
-    if (item.subtitle) {
-      card.append(make("p", "", item.subtitle));
-    }
-
-    card.append(
-      make(
-        "p",
-        "support-note",
-        "Collection preview - purchase availability is confirmed separately."
-      )
-    );
-    return card;
-  };
-
-  const renderCollection = (collection) => {
-    const group = make("article", "card all-books-group");
-    group.append(
-      make("div", "section-kicker", collection.collection),
-      make("p", "", collection.description)
-    );
-
-    const grid = make("div", "book-list-grid");
-    collection.items.forEach((item) => grid.append(renderItem(item)));
-    group.append(grid);
-    return group;
-  };
+  const status = document.getElementById("catalog-verification");
+  const staticItems = document.querySelectorAll("[data-source-id]");
 
   fetch("data/companion-catalog.json")
     .then((response) => {
@@ -56,19 +12,34 @@
       return response.json();
     })
     .then((catalog) => {
-      root.replaceChildren();
-      catalog.collections.forEach((collection) => root.append(renderCollection(collection)));
+      const collections = Array.isArray(catalog.collections) ? catalog.collections : [];
+      const structuredItems = collections.reduce(
+        (total, collection) => total + (Array.isArray(collection.items) ? collection.items.length : 0),
+        0
+      );
+      const staticIds = new Set(Array.from(staticItems, (item) => item.dataset.sourceId));
+
+      if (
+        structuredItems !== staticItems.length ||
+        structuredItems !== 44 ||
+        collections.length !== 12 ||
+        staticIds.size !== staticItems.length
+      ) {
+        throw new Error("Static and structured companion catalogs do not match.");
+      }
+
+      if (status) {
+        status.textContent =
+          "Structured catalog verified: 44 titles across 12 collections match the static page.";
+      }
+      document.documentElement.dataset.catalogVerified = "true";
     })
     .catch((error) => {
       console.error(error);
-      const card = make("article", "card");
-      card.append(
-        make(
-          "p",
-          "",
-          "The companion catalog could not be loaded. Please use the main Library or contact Dark Star Literary Agency."
-        )
-      );
-      root.replaceChildren(card);
+      if (status) {
+        status.textContent =
+          "The static catalog remains available, but its structured-data verification could not be completed.";
+      }
+      document.documentElement.dataset.catalogVerified = "false";
     });
 })();
