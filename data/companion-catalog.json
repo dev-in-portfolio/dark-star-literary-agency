@@ -1,0 +1,127 @@
+{
+  "title": "Lulu & Ellie Companion Library",
+  "status": "preview",
+  "source_summary": {
+    "interior_count": 44,
+    "collections": 12,
+    "note": "Cataloged from complete interior PDFs supplied by the creator. Public purchase availability is confirmed separately."
+  },
+  "collections": [
+    {
+      "collection": "Adventure Logs",
+      "description": "Guided keepsake logs for recording quests, rescues, mysteries, space missions, and backyard discoveries.",
+      "items": [
+        {"title": "Lulu & Ellie's Big Adventure Log", "pages": 120, "format": "Guided activity log"},
+        {"title": "Lulu & Ellie's Creature Rescue Log", "pages": 120, "format": "Guided activity log"},
+        {"title": "Lulu & Ellie's Space Rescue Log", "pages": 120, "format": "Guided activity log"},
+        {"title": "Lulu & Ellie's Mystery Case Log", "pages": 120, "format": "Guided activity log"},
+        {"title": "Lulu & Ellie's Backyard Academy Nature Log", "pages": 120, "format": "Guided activity log"}
+      ]
+    },
+    {
+      "collection": "Write & Wag",
+      "description": "Friendly handwriting practice that grows from first letter shapes into words and complete sentences.",
+      "items": [
+        {"title": "Lulu & Ellie Write & Wag: My First Letters", "pages": 120, "format": "Handwriting workbook"},
+        {"title": "Lulu & Ellie Write & Wag: First Words", "pages": 120, "format": "Handwriting workbook"},
+        {"title": "Lulu & Ellie Write & Wag: Super Sentences", "pages": 120, "format": "Handwriting workbook"}
+      ]
+    },
+    {
+      "collection": "Cursive Club",
+      "description": "Cursive practice built around letters, clues, notes, cards, and secret messages.",
+      "items": [
+        {"title": "Lulu & Ellie Cursive Club: Loops, Letters, and Pawprints", "pages": 120, "format": "Cursive workbook"},
+        {"title": "Lulu & Ellie Cursive Club: Secret Notes and Adventure Words", "pages": 120, "format": "Cursive workbook"}
+      ]
+    },
+    {
+      "collection": "Phonics Path",
+      "description": "Early-reading workbook adventures for alphabet knowledge, sounds, blending, and short vowels.",
+      "items": [
+        {"title": "Lulu & Ellie Phonics Path: The Alphabet Adventure", "pages": 120, "format": "Phonics workbook"},
+        {"title": "Lulu & Ellie Phonics Path: The Short Vowel Portal", "pages": 120, "format": "Phonics workbook"}
+      ]
+    },
+    {
+      "collection": "Learning Club",
+      "description": "Warm, story-powered practice for early learning, reading, and math.",
+      "items": [
+        {"title": "Lulu & Ellie Learning Club: My First Adventure Lessons", "pages": 120, "format": "Learning workbook"},
+        {"title": "Lulu & Ellie Learning Club: Reading Adventures Level 1", "pages": 120, "format": "Reading workbook"},
+        {"title": "Lulu & Ellie Learning Club: Math Missions Level 1", "pages": 120, "format": "Math workbook"}
+      ]
+    },
+    {
+      "collection": "Field Guides",
+      "description": "Companion guides for magical creatures, portal worlds, mysteries, and backyard nature.",
+      "items": [
+        {"title": "Lulu & Ellie's Guide to Magical Creatures", "pages": 120, "format": "Field guide"},
+        {"title": "Lulu & Ellie's Portal World Field Guide", "pages": 120, "format": "Field guide"},
+        {"title": "Lulu & Ellie's Mystery Detective Field Guide", "pages": 120, "format": "Field guide"},
+        {"title": "Lulu & Ellie's Backyard Academy Nature Guide", "pages": 120, "format": "Field guide"}
+      ]
+    },
+    {
+      "collection": "Keepsakes and Diaries",
+      "description": "Personal books for memories, friendships, feelings, school years, and private portal thoughts.",
+      "items": [
+        {"title": "Lulu & Ellie's Big Book of Me", "pages": 120, "format": "Keepsake"},
+        {"title": "Lulu & Ellie School Year Keepsake", "pages": 120, "format": "Keepsake"},
+        {"title": "Lulu & Ellie's Secret Garden Diary", "pages": 120, "format": "Guided diary"},
+        {"title": "Lulu & Ellie's Brave Heart Diary", "pages": 120, "format": "Guided diary"},
+        {"title": "Lulu & Ellie's Best Friends Diary", "pages": 120, "format": "Guided diary"},
+        {"title": "Lulu & Ellie's Big Feelings Diary", "pages": 120, "format": "Guided diary"},
+        {"title": "Lulu & Ellie's Private Portal Journal", "pages": 120, "format": "Guided journal"}
+      ]
+    },
+    {
+      "collection": "Search & Find",
+      "description": "Picture-puzzle adventures through portal worlds, charm trails, and space-rescue scenes.",
+      "items": [
+        {"title": "Lulu & Ellie Search & Find: Portal Worlds", "pages": 80, "format": "Search-and-find"},
+        {"title": "Lulu & Ellie Search & Find: Lost Charms", "pages": 80, "format": "Search-and-find"},
+        {"title": "Lulu & Ellie Search & Find: Space Rescue Trail", "pages": 80, "format": "Search-and-find"}
+      ]
+    },
+    {
+      "collection": "Puzzle Quest",
+      "description": "Mazes, codes, hidden objects, word searches, matching games, and portal mysteries.",
+      "items": [
+        {"title": "Lulu & Ellie's First Puzzle Adventure", "pages": 80, "format": "Puzzle book"},
+        {"title": "Lulu & Ellie's Big Puzzle Adventure", "pages": 108, "format": "Puzzle book"},
+        {"title": "Where Are Lulu & Ellie?", "subtitle": "A Hidden Worlds Search-and-Find Puzzle Book", "pages": 96, "format": "Puzzle book"},
+        {"title": "Lulu & Ellie Mystery Puzzle Files", "pages": 108, "format": "Puzzle book"},
+        {"title": "Lulu & Ellie Master Puzzle Quest: The Lost Portal Map", "pages": 150, "format": "Puzzle book"}
+      ]
+    },
+    {
+      "collection": "Coloring Collections",
+      "description": "Black-and-white coloring adventures featuring Lulu, Ellie, portals, rescues, space, charms, patches, and badges.",
+      "items": [
+        {"title": "Lulu & Ellie's First Coloring Book", "pages": 50, "format": "Coloring book"},
+        {"title": "Lulu & Ellie Portal Adventures Coloring Book", "pages": 50, "format": "Coloring book"},
+        {"title": "Lulu & Ellie Space Coloring Adventure", "pages": 50, "format": "Coloring book"},
+        {"title": "Lulu & Ellie Creature Rescue Coloring Book", "pages": 50, "format": "Coloring book"},
+        {"title": "Lulu & Ellie Color Quest: Charms, Patches & Badges", "pages": 50, "format": "Coloring book"}
+      ]
+    },
+    {
+      "collection": "Kitchen Adventures",
+      "description": "Family-friendly recipe collections with simple steps and Lulu & Ellie encouragement.",
+      "items": [
+        {"title": "Lulu & Ellie's Cozy Kitchen Adventures", "subtitle": "25 Magical Recipes for Brave Little Helpers", "pages": 96, "format": "Cookbook"},
+        {"title": "Lulu & Ellie's No-Bake Snack Adventures", "subtitle": "Easy Mix, Stack, Roll, and Build Recipes for Little Helpers", "pages": 80, "format": "Cookbook"}
+      ]
+    },
+    {
+      "collection": "Bedtime Adventures",
+      "description": "Soft, full-color stories designed for quiet reading and calm nighttime endings.",
+      "items": [
+        {"title": "Lulu & Ellie Bedtime Adventures: The Moonbeam That Wouldn't Sleep", "pages": 30, "format": "Full-color storybook"},
+        {"title": "Lulu & Ellie Bedtime Adventures: The Blanket Fort Under the Stars", "pages": 30, "format": "Full-color storybook"},
+        {"title": "Lulu & Ellie Bedtime Adventures: The Firefly Goodnight Parade", "pages": 30, "format": "Full-color storybook"}
+      ]
+    }
+  ]
+}
