@@ -1,6 +1,6 @@
 [build]
   publish = "."
-  command = "python3 scripts/validate_site.py && python3 scripts/validate_source_manifest.py && python3 scripts/validate_marketplace.py && python3 scripts/update_seo.py --check && python3 scripts/update_structured_data.py --check"
+  command = "python3 scripts/validate_site.py && python3 scripts/validate_source_manifest.py && python3 scripts/validate_marketplace.py && python3 scripts/update_seo.py --check && python3 scripts/update_structured_data.py --check && python3 scripts/update_media_inventory.py --check"
 
 [[redirects]]
   from = "/lulu-and-ellie.html"
@@ -20,14 +20,17 @@
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=86400, must-revalidate"
+    Netlify-CDN-Cache-Control = "public, max-age=31536000, must-revalidate"
 
 [[headers]]
   for = "/*.css"
   [headers.values]
-    Cache-Control = "public, max-age=3600"
+    Cache-Control = "public, max-age=3600, must-revalidate"
+    Netlify-CDN-Cache-Control = "public, max-age=31536000, must-revalidate"
 
 [[headers]]
   for = "/*.js"
   [headers.values]
-    Cache-Control = "public, max-age=3600"
+    Cache-Control = "public, max-age=3600, must-revalidate"
+    Netlify-CDN-Cache-Control = "public, max-age=31536000, must-revalidate"
