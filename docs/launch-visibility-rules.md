@@ -6,7 +6,8 @@ This document describes how future content should be handled on the public site.
 
 Public navigation may include:
 
-- Live books and collections with verified official purchase links
+- Live books and collections with evidence-based marketplace information
+- Recorded official marketplace links that clearly require visitors to confirm current price, format, and availability
 - Available learning lines
 - Real downloads
 - Official brand pages
@@ -40,16 +41,19 @@ Keep the following out of public navigation unless they meet the intentional-pre
 - Brand guidelines
 - Production notes, codes, and internal terminology
 
-## Purchase Accuracy
+## Marketplace Accuracy
 
-- Live purchase buttons must point to real official purchase destinations.
+- Marketplace buttons must point to recorded official product destinations.
+- A recorded ASIN or product URL is not treated as proof of current price, format, stock, or orderability.
+- Until a manual marketplace review is recorded, use language such as `Amazon link on file`, `Current status unverified`, and `Check Amazon`.
+- Do not hard-code marketplace prices unless the repository records the verification date and the site has a defined refresh process.
+- When no current official product link is on file, show a non-interactive status rather than a placeholder button.
 - Preview pages must not imply availability.
 - Prefer clear non-interactive status text over `href="#"` purchase placeholders.
-- Prices and formats must match the linked official listing.
 
 ## Original Adventure Preview Entries
 
-The Original Adventure media shelf may retain numbered preview entries before full public book pages are ready. Those entries must remain clearly preview-only until their approved titles, descriptions, and purchase status are published.
+The Original Adventure media archive may retain numbered preview entries before full public book pages are ready. Those entries must remain clearly preview-only until their approved titles, descriptions, and marketplace status are published.
 
 ## Release Rule
 
