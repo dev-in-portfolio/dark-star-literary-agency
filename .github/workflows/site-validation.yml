@@ -29,8 +29,9 @@ jobs:
           python -m py_compile scripts/validate_marketplace.py
           python -m py_compile scripts/update_seo.py
           python -m py_compile scripts/update_structured_data.py
+          python -m py_compile scripts/update_media_inventory.py
 
-      - name: Validate site, source manifest, marketplace claims, SEO, and structured data
+      - name: Validate site, catalogs, marketplace claims, generated metadata, and media budgets
         shell: bash
         run: |
           set -euo pipefail
@@ -39,6 +40,7 @@ jobs:
           python scripts/validate_marketplace.py | tee -a validation-report.txt
           python scripts/update_seo.py --check | tee -a validation-report.txt
           python scripts/update_structured_data.py --check | tee -a validation-report.txt
+          python scripts/update_media_inventory.py --check | tee -a validation-report.txt
 
       - name: Upload validation report
         if: always()
