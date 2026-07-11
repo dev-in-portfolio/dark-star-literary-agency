@@ -1,0 +1,88 @@
+name: One-time PDF Accessibility Registry
+
+on:
+  push:
+    branches:
+      - "agent/site-hardening-and-catalog-fixes"
+
+permissions:
+  contents: write
+
+jobs:
+  generate-pdf-accessibility-registry:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: agent/site-hardening-and-catalog-fixes
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate accessibility audit registry
+        shell: python
+        run: |
+          import csv
+          import json
+          from pathlib import Path
+
+          root = Path('.')
+          manifest_path = root / 'data' / 'companion-source-manifest.csv'
+          output_path = root / 'data' / 'pdf-accessibility-audit.json'
+
+          with manifest_path.open(newline='', encoding='utf-8') as handle:
+              rows = list(csv.DictReader(handle))
+
+          if len(rows) != 44:
+              raise SystemExit(f'Expected 44 source records, found {len(rows)}')
+
+          records = []
+          for row in rows:
+              records.append({
+                  'id': row['id'],
+                  'collection': row['collection'],
+                  'title': row['title'],
+                  'source_file': row['source_file'],
+                  'source_sha256': row['sha256'],
+                  'pages': int(row['pages']),
+                  'text_layer': 'absent',
+                  'tagged_pdf': 'unverified',
+                  'reading_order': 'unverified',
+                  'meaningful_alt_text': 'unverified',
+                  'language_metadata': 'unverified',
+                  'form_controls': 'unverified-or-not-applicable',
+                  'remediation_status': 'not-started',
+                  'release_status': 'blocked-for-accessible-digital-distribution',
+                  'last_accessibility_review': '2026-07-11'
+              })
+
+          payload = {
+              'schema_version': 1,
+              'audit_date': '2026-07-11',
+              'audit_scope': '44 supplied companion source PDF interiors',
+              'audit_method': 'Automated text-extraction inspection during source inventory, followed by visual spot checks.',
+              'baseline_result': 'no-usable-extractable-text-detected',
+              'release_policy': 'A source PDF must not be presented as an accessible digital edition until text, semantic tags, reading order, language metadata, meaningful alternatives, and manual assistive-technology QA are verified.',
+              'records': records
+          }
+          output_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+      - name: Validate generated registry
+        run: |
+          set -euo pipefail
+          python -m py_compile scripts/validate_pdf_accessibility.py
+          python scripts/validate_pdf_accessibility.py
+
+      - name: Commit registry
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pdf-accessibility-audit.json
+          git diff --cached --quiet && exit 0
+          git commit -m "docs: record PDF accessibility audit baseline"
+          git push origin HEAD:agent/site-hardening-and-catalog-fixes
