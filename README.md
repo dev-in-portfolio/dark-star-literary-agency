@@ -11,6 +11,7 @@ Static multi-page public website for Dark Star Literary Agency, the creative hom
 - `lulu-ellie/original-adventure/` - Original Adventure collection tier
 - `lulu-and-ellie.html` - legacy redirect to the current Lulu & Ellie hub
 - `library.html` - library landing and navigation hub
+- `companion-library.html` - source-backed preview of activity, learning, keepsake, puzzle, coloring, cookbook, and bedtime collections
 - `parents-teachers.html` - parent and teacher trust page
 - `contact.html` - public contact page
 
@@ -36,6 +37,36 @@ Static multi-page public website for Dark Star Literary Agency, the creative hom
 - `books/` contains the public catalog's individual book pages.
 - Live books may include official purchase links.
 - Intentionally announced previews must use clear `Coming Soon`, `In the Works`, or `Preview` language and must not imply availability.
+- Original Adventure Books 1-10 use canonical story order rather than Amazon publication/listing order.
+
+## Companion Catalog
+
+The Companion Library is generated from:
+
+- `data/companion-catalog.json`
+- `companion-library.js`
+- `companion-library.html`
+
+It currently represents:
+
+- 44 developed interiors
+- 12 public collection groups
+- Activity logs, handwriting, cursive, phonics, learning, field guides, keepsakes, diaries, search-and-find, puzzles, coloring books, cookbooks, and bedtime stories
+
+The underlying source PDFs remain production assets and are not duplicated into this repository. A completed interior proves that a title is developed; it does not by itself prove that the title is currently available for purchase.
+
+See `docs/source-catalog-inventory.md` for the source-package inventory.
+
+## Media Source Repository
+
+The organized Lulu & Ellie media source is:
+
+- `dev-in-portfolio/l_e_storage`
+- Default branch: `l_e_storage`
+
+It contains the Original Adventure Book 1-20 cover, feature/fun-page, and MP4 mappings plus shared General media. The website preserves a strict number-to-number relationship between storage `Book_#` folders and website `book-#` folders.
+
+See `docs/storage-integration.md` for the mapping and media policy.
 
 ## Shared Presentation
 
@@ -58,7 +89,9 @@ The validator checks:
 - Duplicate element IDs
 - Missing image alt text
 - Unsafe autoplay video markup
-- Original Adventure cover, animation, and feature-page mapping
+- Original Adventure cover, animation, and feature-page mapping for Books 1-20
+- Canonical book numbers, media folders, and Previous/Next navigation for Books 1-10
+- Companion catalog structure, 12 collection groups, 44 unique titles, and valid page counts
 
 GitHub Actions runs the same validation on pull requests and pushes to `main` or `agent/**` branches.
 
@@ -101,18 +134,21 @@ Public navigation may contain:
 
 Unapproved drafts, internal production pages, and unfinished downloads stay hidden.
 
-## Purchase Placeholders
+## Purchase Links
 
-- Purchase links are added only when real official options are ready.
+- Purchase links are added only when a real official option is ready.
 - Preview pages must not use an active-looking purchase control.
 - Prefer non-interactive status text over `href="#"` placeholders.
+- The current Original Adventure series page retains the official Amazon ASIN links already recorded in the repository.
+- Mushroom Moon Maze remains marked temporarily unavailable until a verified listing returns.
 
 ## Media Handling
 
-- Keep the media folder number aligned with the public book number.
+- Keep the media folder number aligned with the canonical public book number.
 - Commit optimized public derivatives rather than production masters.
 - Use poster images for every animation.
 - Avoid simultaneous autoplay; `media.js` manages viewport-aware playback on connected pages.
+- Use `l_e_storage` as the archive/source layer rather than duplicating its full media set into the website repository.
 
 ## Contact
 
