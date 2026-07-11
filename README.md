@@ -85,6 +85,7 @@ python scripts/validate_site.py
 python scripts/validate_source_manifest.py
 python scripts/validate_marketplace.py
 python scripts/update_seo.py --check
+python scripts/update_structured_data.py --check
 ```
 
 The checks cover:
@@ -101,17 +102,20 @@ The checks cover:
 - Evidence-based marketplace wording, recorded ASIN preservation, and the no-link state for Book 6
 - The Library's `Growing library` status and current marketplace explanation
 - Absolute canonical URLs, Open Graph URLs, social-card metadata, `robots.txt`, and `sitemap.xml` consistency
+- Organization, author, website, and canonical Book JSON-LD consistency
 
-GitHub Actions compiles and runs the three content validators plus the SEO reproducibility check on pull requests and pushes to `main` or `agent/**`. It uploads a combined validation report even when a future run fails.
+GitHub Actions compiles and runs the three content validators plus the SEO and structured-data reproducibility checks on pull requests and pushes to `main` or `agent/**`. It uploads a combined validation report even when a future run fails.
 
 ## SEO and Discoverability
 
-- `data/site-config.json` is the single source for the public site name, production base URL, locale, and Twitter card defaults.
+- `data/site-config.json` is the single source for the public site name, production base URL, locale, contact email, author identity, series identity, and Twitter card defaults.
 - The current production base URL is `https://dark-star-literary-agency.netlify.app`.
 - `scripts/update_seo.py --write` generates or refreshes absolute canonical URLs, `og:url`, `og:site_name`, `og:locale`, Twitter card metadata, image-based Open Graph tags where a real local image exists, `robots.txt`, and `sitemap.xml`.
+- `scripts/update_structured_data.py --write` generates conservative JSON-LD for the homepage organization, author, and website identities plus the ten canonical Original Adventure storybooks.
+- Book JSON-LD intentionally omits prices, offers, stock, format availability, and unverified Amazon claims.
 - Redirect pages point their canonical URL at the destination and are excluded from the sitemap.
-- `scripts/update_seo.py --check` fails when generated metadata or discovery files drift from `data/site-config.json`.
-- To adopt a future custom domain, change `site_url` once in `data/site-config.json`, run the writer, review the generated diff, and commit the result.
+- Both generator scripts support `--check` and fail when generated output drifts from the configuration or marketplace registry.
+- To adopt a future custom domain, change `site_url` once in `data/site-config.json`, run both writers, review the generated diff, and commit the result.
 
 ## Deployment
 
@@ -119,7 +123,7 @@ GitHub Actions compiles and runs the three content validators plus the SEO repro
 
 - The static publish directory
 - All three build-time content validators
-- The generated SEO and sitemap consistency check
+- The generated SEO, sitemap, and structured-data consistency checks
 - The permanent legacy Lulu & Ellie redirect
 - Baseline security headers
 - Conservative cache headers for media, CSS, and JavaScript
