@@ -23,6 +23,22 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Remove unsupported founder relationship
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path("scripts/update_structured_data.py")
+          text = path.read_text(encoding="utf-8")
+          old = '''                "email": email,
+                "founder": {"@id": f"{site_url}/#author"},
+'''
+          new = '''                "email": email,
+'''
+          if old not in text:
+              raise SystemExit("Expected founder relationship was not found")
+          path.write_text(text.replace(old, new, 1), encoding="utf-8")
+
       - name: Generate structured data
         run: |
           set -euo pipefail
@@ -34,7 +50,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html books/*.html
+          git add scripts/update_structured_data.py index.html books/*.html
           git diff --cached --quiet && exit 0
-          git commit -m "feat: add organization and book structured data"
+          git commit -m "fix: keep structured identity claims source-backed"
           git push origin HEAD:agent/site-hardening-and-catalog-fixes
