@@ -1,6 +1,6 @@
 [build]
   publish = "."
-  command = "python3 scripts/run_release_checks.py"
+  command = "python3 scripts/validate_site.py && python3 scripts/validate_source_manifest.py && python3 scripts/validate_marketplace.py && python3 scripts/update_seo.py --check && python3 scripts/update_structured_data.py --check && python3 scripts/update_media_inventory.py --check && python3 scripts/validate_pdf_accessibility.py"
 
 [[redirects]]
   from = "/lulu-and-ellie.html"
