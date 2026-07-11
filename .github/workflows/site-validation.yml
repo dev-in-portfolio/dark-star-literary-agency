@@ -22,14 +22,17 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Compile validation script
-        run: python -m py_compile scripts/validate_site.py
+      - name: Compile validation scripts
+        run: |
+          python -m py_compile scripts/validate_site.py
+          python -m py_compile scripts/validate_source_manifest.py
 
-      - name: Validate HTML, links, metadata, and media
+      - name: Validate site and source manifest
         shell: bash
         run: |
-          set -o pipefail
+          set -euo pipefail
           python scripts/validate_site.py | tee validation-report.txt
+          python scripts/validate_source_manifest.py | tee -a validation-report.txt
 
       - name: Upload validation report
         if: always()
