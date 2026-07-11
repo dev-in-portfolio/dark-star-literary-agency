@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "baseline_note": "Measured from the public assets directory after the July 11, 2026 media-delivery pass. Budget changes require explicit review and inventory regeneration.",
+  "max_total_bytes": 300000000,
+  "max_video_bytes": 140000000,
+  "max_image_bytes": 165000000,
+  "max_video_file_bytes": 9000000,
+  "max_image_file_bytes": 13000000
+}

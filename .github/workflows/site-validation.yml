@@ -1,0 +1,55 @@
+name: Validate static site
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - "agent/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile validation scripts
+        run: |
+          python -m py_compile scripts/validate_site.py
+          python -m py_compile scripts/validate_source_manifest.py
+          python -m py_compile scripts/validate_marketplace.py
+          python -m py_compile scripts/update_seo.py
+          python -m py_compile scripts/update_structured_data.py
+          python -m py_compile scripts/update_media_inventory.py
+          python -m py_compile scripts/validate_pdf_accessibility.py
+          python -m py_compile scripts/validate_interaction_semantics.py
+
+      - name: Run all eight release checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_site.py | tee validation-report.txt
+          python scripts/validate_source_manifest.py | tee -a validation-report.txt
+          python scripts/validate_marketplace.py | tee -a validation-report.txt
+          python scripts/update_seo.py --check | tee -a validation-report.txt
+          python scripts/update_structured_data.py --check | tee -a validation-report.txt
+          python scripts/update_media_inventory.py --check | tee -a validation-report.txt
+          python scripts/validate_pdf_accessibility.py | tee -a validation-report.txt
+          python scripts/validate_interaction_semantics.py | tee -a validation-report.txt
+
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-validation-report
+          path: validation-report.txt
+          if-no-files-found: warn

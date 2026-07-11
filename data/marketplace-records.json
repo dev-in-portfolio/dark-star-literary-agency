@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "marketplace": "Amazon US",
+  "last_automated_audit": "2026-07-11",
+  "audit_result": "unverified-amazon-access-blocked",
+  "audit_notes": "Exact-title and ASIN web searches returned no indexed results. Direct Amazon product requests failed through automated access. No current price, format, stock, or orderability claim is supported by this audit.",
+  "records": [
+    {
+      "book_number": 1,
+      "filename": "lulu-and-ellie-and-the-secret-of-blackwater-bay.html",
+      "title": "Lulu & Ellie and the Secret of Blackwater Bay",
+      "asin": "B0H351G4MG",
+      "url": "https://www.amazon.com/dp/B0H351G4MG",
+      "status": "link-on-file-current-state-unverified",
+      "manual_verification_date": null
+    },
+    {
+      "book_number": 2,
+      "filename": "lulu-and-ellie-and-the-lost-valley-of-thunder.html",
+      "title": "Lulu & Ellie and the Lost Valley of Thunder",
+      "asin": "B0H35QR6C6",
+      "url": "https://www.amazon.com/dp/B0H35QR6C6",
+      "status": "link-on-file-current-state-unverified",
+      "manual_verification_date": null
+    },
+    {
+      "book_number": 3,
+      "filename": "lulu-and-ellie-and-the-clockwork-forest.html",
+      "title": "Lulu & Ellie and the Clockwork Forest",
+      "asin": "B0H32KRFDF",
+      "url": "https://www.amazon.com/dp/B0H32KRFDF",
+      "status": "link-on-file-current-state-unverified",
+      "manual_verification_date": null
+    },
+    {
+      "book_number": 4,
+      "filename": "lulu-and-ellie-and-the-moonlit-circus.html",
+      "title": "Lulu & Ellie and the Moonlit Circus",
+      "asin": "B0H36D98XX",
+      "url": "https://www.amazon.com/dp/B0H36D98XX",
+      "status": "link-on-file-current-state-unverified",
+      "manual_verification_date": null
+    },
+    {
+      "book_number": 5,
+      "filename": "lulu-and-ellie-and-the-snow-dragons-bell.html",
+      "title": "Lulu & Ellie and the Snow Dragon's Bell",
+      "asin": "B0H33K2RDN",
+      "url": "https://www.amazon.com/dp/B0H33K2RDN",
+      "status": "link-on-file-current-state-unverified",
+      "manual_verification_date": null
+    },
+    {
+      "book_number": 6,
+      "filename": "lulu-and-ellie-and-the-mushroom-moon-maze.html",
+      "title": "Lulu & Ellie and the Mushroom Moon Maze",
+      "asin": null,
+      "url": null,
+      "status": "no-active-link-on-file-current-state-unverified",
+      "manual_verification_date": null
+    },
+    {
+      "book_number": 7,
+      "filename": "lulu-and-ellie-and-the-lanterns-of-the-deep.html",
+      "title": "Lulu & Ellie and the Lanterns of the Deep",
+      "asin": "B0H3351L1P",
+      "url": "https://www.amazon.com/dp/B0H3351L1P",
+      "status": "link-on-file-current-state-unverified",
+      "manual_verification_date": null
+    },
+    {
+      "book_number": 8,
+      "filename": "lulu-and-ellie-and-the-book-that-lost-its-ending.html",
+      "title": "Lulu & Ellie and the Book That Lost Its Ending",
+      "asin": "B0H35JL3PQ",
+      "url": "https://www.amazon.com/dp/B0H35JL3PQ",
+      "status": "link-on-file-current-state-unverified",
+      "manual_verification_date": null
+    },
+    {
+      "book_number": 9,
+      "filename": "lulu-and-ellie-and-the-island-that-drifted-away.html",
+      "title": "Lulu & Ellie and the Island That Drifted Away",
+      "asin": "B0H33NFZYB",
+      "url": "https://www.amazon.com/dp/B0H33NFZYB",
+      "status": "link-on-file-current-state-unverified",
+      "manual_verification_date": null
+    },
+    {
+      "book_number": 10,
+      "filename": "lulu-and-ellie-and-the-star-map-of-everywhere.html",
+      "title": "Lulu & Ellie and the Star Map of Everywhere",
+      "asin": "B0H33RFB7T",
+      "url": "https://www.amazon.com/dp/B0H33RFB7T",
+      "status": "link-on-file-current-state-unverified",
+      "manual_verification_date": null
+    }
+  ]
+}
