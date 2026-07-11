@@ -13,6 +13,7 @@ Static multi-page public website for Dark Star Literary Agency, the creative hom
 - `library.html` - live, growing library landing and navigation hub
 - `companion-library.html` - source-backed static preview of activity, learning, keepsake, puzzle, coloring, cookbook, and bedtime collections
 - `parents-teachers.html` - parent and teacher trust page
+- `accessibility.html` - public accessibility statement, known limitations, feedback route, and accessible-format request guidance
 - `contact.html` - public contact page
 
 ### Series Pages
@@ -46,6 +47,7 @@ The Companion Library uses:
 
 - `data/companion-catalog.json` - structured public catalog
 - `data/companion-source-manifest.csv` - exact source ZIP, internal PDF path, page count, SHA-256, readiness status, marketplace status, and review date
+- `data/pdf-accessibility-audit.json` - exact source-linked accessibility baseline and release status for all 44 interiors
 - `companion-library.html` - complete static catalog markup
 - `companion-library.js` - runtime consistency check only; it does not replace the static catalog
 
@@ -55,9 +57,9 @@ It currently represents:
 - 12 public collection groups
 - Activity logs, handwriting, cursive, phonics, learning, field guides, keepsakes, diaries, search-and-find, puzzles, coloring books, cookbooks, and bedtime stories
 
-The underlying source PDFs remain production assets and are not duplicated into this repository. A completed interior proves that a title exists as a developed source file; it does not by itself prove that the title is publication-ready or currently available for purchase.
+The underlying source PDFs remain production assets and are not duplicated into this repository. A completed interior proves that a developed source exists; it does not by itself prove publication readiness, marketplace availability, searchable text, screen-reader support, or accessible digital-release approval.
 
-See `docs/source-catalog-inventory.md` for the source-package inventory.
+See `docs/source-catalog-inventory.md`, `docs/pdf-accessibility-remediation.md`, and `docs/pdf-accessibility-review-log-template.md`.
 
 ## Media Source Repository
 
@@ -73,7 +75,7 @@ See `docs/storage-integration.md` for the mapping and media policy.
 ## Shared Presentation
 
 - `styles.css` contains the main layout, color palette, cards, buttons, badges, book layouts, archive layouts, and responsive behavior.
-- `accessibility.css` adds reduced-motion safeguards for media-rich pages and the live Library.
+- `accessibility.css` adds visible focus and reduced-motion safeguards.
 - `media.js` keeps automatic videos at `preload="none"`, allows only the most visible preview to play, and pauses managed media when the page is hidden or reduced motion is requested.
 - `lulu-ellie/original-adventure/archive.js` creates archive video elements only after a visitor explicitly selects a cover.
 
@@ -110,25 +112,24 @@ The checks cover:
 - Exact reconciliation of all 44 PDF accessibility records with source filenames, page counts, and SHA-256 values
 - Prevention of public PDF links and accessible-edition claims until remediation is approved
 
-GitHub Actions compiles and runs seven permanent checks: the three content validators, SEO, structured data, media inventory, and PDF accessibility release validation on pull requests and pushes to `main` or `agent/**`. It uploads a combined validation report even when a future run fails.
+GitHub Actions and Netlify run all seven permanent checks. GitHub uploads a combined validation report even when a future run fails.
 
 ## SEO and Discoverability
 
 - `data/site-config.json` is the single source for the public site name, production base URL, locale, contact email, author identity, series identity, and Twitter card defaults.
 - The current production base URL is `https://dark-star-literary-agency.netlify.app`.
-- `scripts/update_seo.py --write` generates or refreshes absolute canonical URLs, `og:url`, `og:site_name`, `og:locale`, Twitter card metadata, image-based Open Graph tags where a real local image exists, `robots.txt`, and `sitemap.xml`.
-- `scripts/update_structured_data.py --write` generates conservative JSON-LD for the homepage organization, author, and website identities plus the ten canonical Original Adventure storybooks.
+- `scripts/update_seo.py --write` generates absolute canonical URLs, social metadata, `robots.txt`, and `sitemap.xml`.
+- `scripts/update_structured_data.py --write` generates conservative JSON-LD for the homepage identities and ten canonical Original Adventure storybooks.
 - Book JSON-LD intentionally omits prices, offers, stock, format availability, and unverified Amazon claims.
-- Redirect pages point their canonical URL at the destination and are excluded from the sitemap.
-- Both generator scripts support `--check` and fail when generated output drifts from the configuration or marketplace registry.
-- To adopt a future custom domain, change `site_url` once in `data/site-config.json`, run both writers, review the generated diff, and commit the result.
+- Redirect pages canonicalize to their destination and are excluded from the sitemap.
+- A future custom-domain change requires one `site_url` edit followed by deterministic regeneration and review.
 
 ## Public Media Inventory and Budgets
 
-The checked-in public media baseline is recorded in `data/media-inventory.json`:
+`data/media-inventory.json` records:
 
 - 59 public media files
-- 287,757,879 bytes total
+- 287,757,879 total bytes
 - 39 images using 156,340,193 bytes
 - 20 MP4 files using 131,417,686 bytes
 - Largest image: 12,710,158 bytes
@@ -142,25 +143,20 @@ The checked-in public media baseline is recorded in `data/media-inventory.json`:
 - 13,000,000 bytes per image
 - 9,000,000 bytes per video
 
-Any intentional asset change requires regenerating the inventory with `python scripts/update_media_inventory.py --write`, reviewing the checksum and size diff, and staying within or explicitly revising the budgets.
-
-The Original Adventure archive uses lazy low-priority cover images and creates each controlled MP4 only after selection. Automatic previews use `preload="none"` and are managed by viewport and reduced-motion rules.
+Intentional asset changes require regenerating the inventory, reviewing size and checksum changes, and staying within or explicitly revising the budgets.
 
 ## PDF Accessibility Baseline
 
-`data/pdf-accessibility-audit.json` records the July 11, 2026 baseline for all 44 supplied companion interiors. The audit found no usable extractable text in the source PDFs, so every source file remains blocked from accessible digital distribution until remediation is manually verified.
+`data/pdf-accessibility-audit.json` records the July 11, 2026 baseline for all 44 supplied interiors. The audit found no usable extractable text, so every source PDF remains `blocked-for-accessible-digital-distribution` until remediation is manually verified.
 
-`scripts/validate_pdf_accessibility.py` checks source IDs, filenames, page counts, SHA-256 values, remediation states, approval requirements, and public PDF links. A record cannot be approved unless text, semantic tags, reading order, meaningful alternatives, language metadata, and manual QA are verified.
-
-See `docs/pdf-accessibility-remediation.md` for the required workflow and `docs/pdf-accessibility-review-log-template.md` for the manual QA record.
+Approval requires verified text, semantic tags, reading order, meaningful alternatives, language metadata, manual assistive-technology QA, and an exact approved-file checksum. The public accessibility statement explains the current website features, known PDF limitations, third-party boundaries, feedback route, and accessible-format request process.
 
 ## Deployment
 
 `netlify.toml` defines:
 
 - The static publish directory
-- All three build-time content validators
-- The generated SEO, sitemap, structured-data, media-inventory, and PDF-accessibility consistency checks
+- All seven release checks
 - The permanent legacy Lulu & Ellie redirect
 - Baseline security headers
 - Browser revalidation plus long-lived deploy-invalidated Netlify CDN caching for assets, CSS, and JavaScript
@@ -169,20 +165,7 @@ The latest draft-PR validation pass completed successfully in both GitHub Action
 
 ## Public Language
 
-Use customer-facing terms such as:
-
-- series
-- collections
-- book lines
-- learning lines
-- companion books
-- library
-- universe
-- storyworld
-- books
-- adventures
-
-Do not use internal production terms such as `branches` in public copy.
+Use customer-facing terms such as series, collections, book lines, learning lines, companion books, library, universe, storyworld, books, and adventures. Do not use internal production terms such as `branches` in public copy.
 
 ## Release and Preview Rules
 
@@ -192,30 +175,25 @@ Public navigation may contain:
 2. Preorder or sample-ready content with working official links.
 3. Intentional preview pages that are clearly labeled and make no unsupported purchase or release-date claim.
 
-Unapproved drafts, internal production pages, and unfinished downloads stay hidden.
+Unapproved drafts, internal production pages, unfinished downloads, and unapproved source PDFs stay hidden.
 
 ## Marketplace Links
 
-- The current Original Adventure pages preserve recorded Amazon ASIN links from existing publishing records.
-- An ASIN link is not treated as proof of current price, format, stock, or orderability.
-- Canonical book pages use `Amazon link on file`, `Current status unverified`, and `Check Amazon` wording until a manual review is recorded.
-- Mushroom Moon Maze has no active Amazon product link while no current public listing is manually verified.
+- An ASIN link is not proof of current price, format, stock, or orderability.
+- Canonical pages use `Amazon link on file`, `Current status unverified`, and `Check Amazon` until a manual review is recorded.
+- Mushroom Moon Maze has no active Amazon product link while no current listing is manually verified.
 - Preview pages must not use active-looking placeholder purchase controls.
-- Prefer non-interactive status text over `href="#"` placeholders.
 
 ## Media Handling
 
-- Keep the media folder number aligned with the canonical public book number.
+- Keep media folder and canonical book numbers aligned.
 - Commit optimized public derivatives rather than production masters.
-- Use poster images and fallback text for every animation.
+- Use poster images and fallback text for animations.
 - Keep automatic video loading at `preload="none"`.
 - Use click-to-load controls for archive video collections.
-- Avoid simultaneous autoplay; `media.js` manages viewport-aware playback on connected pages.
 - Keep media inventory and budget files current.
-- Use `l_e_storage` as the archive/source layer rather than duplicating its full media set into the website repository.
+- Use `l_e_storage` as the source layer rather than duplicating its full media set.
 
 ## Contact
 
-Public contact email:
-
-`darstarliteraryagency@gmail.com`
+Public contact email: `darstarliteraryagency@gmail.com`
