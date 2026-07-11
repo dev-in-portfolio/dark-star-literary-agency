@@ -7,11 +7,25 @@ from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
+import json
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 IGNORED_PARTS = {".git", ".github", "node_modules"}
 EXTERNAL_SCHEMES = {"http", "https", "mailto", "tel", "sms", "data", "javascript"}
+
+CANONICAL_BOOKS = [
+    (1, "lulu-and-ellie-and-the-secret-of-blackwater-bay.html", None, "lulu-and-ellie-and-the-lost-valley-of-thunder.html"),
+    (2, "lulu-and-ellie-and-the-lost-valley-of-thunder.html", "lulu-and-ellie-and-the-secret-of-blackwater-bay.html", "lulu-and-ellie-and-the-clockwork-forest.html"),
+    (3, "lulu-and-ellie-and-the-clockwork-forest.html", "lulu-and-ellie-and-the-lost-valley-of-thunder.html", "lulu-and-ellie-and-the-moonlit-circus.html"),
+    (4, "lulu-and-ellie-and-the-moonlit-circus.html", "lulu-and-ellie-and-the-clockwork-forest.html", "lulu-and-ellie-and-the-snow-dragons-bell.html"),
+    (5, "lulu-and-ellie-and-the-snow-dragons-bell.html", "lulu-and-ellie-and-the-moonlit-circus.html", "lulu-and-ellie-and-the-mushroom-moon-maze.html"),
+    (6, "lulu-and-ellie-and-the-mushroom-moon-maze.html", "lulu-and-ellie-and-the-snow-dragons-bell.html", "lulu-and-ellie-and-the-lanterns-of-the-deep.html"),
+    (7, "lulu-and-ellie-and-the-lanterns-of-the-deep.html", "lulu-and-ellie-and-the-mushroom-moon-maze.html", "lulu-and-ellie-and-the-book-that-lost-its-ending.html"),
+    (8, "lulu-and-ellie-and-the-book-that-lost-its-ending.html", "lulu-and-ellie-and-the-lanterns-of-the-deep.html", "lulu-and-ellie-and-the-island-that-drifted-away.html"),
+    (9, "lulu-and-ellie-and-the-island-that-drifted-away.html", "lulu-and-ellie-and-the-book-that-lost-its-ending.html", "lulu-and-ellie-and-the-star-map-of-everywhere.html"),
+    (10, "lulu-and-ellie-and-the-star-map-of-everywhere.html", "lulu-and-ellie-and-the-island-that-drifted-away.html", None),
+]
 
 
 class PageParser(HTMLParser):
@@ -177,17 +191,13 @@ def validate_original_adventure_media() -> tuple[list[str], list[str]]:
 
         covers = [path for path in folder.glob("front-cover.*") if path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"}]
         if len(covers) != 1:
-            errors.append(
-                f"{folder.relative_to(ROOT)}: expected one front cover, found {len(covers)}"
-            )
+            errors.append(f"{folder.relative_to(ROOT)}: expected one front cover, found {len(covers)}")
 
         animation = folder / "animated-cover.mp4"
         if not animation.is_file():
             errors.append(f"missing animation: {animation.relative_to(ROOT)}")
         elif animation.stat().st_size > 12 * 1024 * 1024:
-            warnings.append(
-                f"large animation ({animation.stat().st_size / 1024 / 1024:.1f} MiB): {animation.relative_to(ROOT)}"
-            )
+            warnings.append(f"large animation ({animation.stat().st_size / 1024 / 1024:.1f} MiB): {animation.relative_to(ROOT)}")
 
         feature = folder / "feature-page.png"
         if number >= 2 and not feature.is_file():
@@ -196,11 +206,103 @@ def validate_original_adventure_media() -> tuple[list[str], list[str]]:
     return errors, warnings
 
 
+def validate_canonical_book_pages() -> list[str]:
+    errors: list[str] = []
+    books_dir = ROOT / "books"
+
+    for number, filename, previous_file, next_file in CANONICAL_BOOKS:
+        page = books_dir / filename
+        if not page.is_file():
+            errors.append(f"missing canonical book page: {page.relative_to(ROOT)}")
+            continue
+
+        text = page.read_text(encoding="utf-8")
+        if f"<span>Book {number}</span>" not in text:
+            errors.append(f"{page.relative_to(ROOT)}: canonical Book {number} label is missing")
+        if f"original-adventure/book-{number}/" not in text:
+            errors.append(f"{page.relative_to(ROOT)}: media is not mapped to book-{number}")
+        if previous_file and previous_file not in text:
+            errors.append(f"{page.relative_to(ROOT)}: previous-book link should point to {previous_file}")
+        if next_file and next_file not in text:
+            errors.append(f"{page.relative_to(ROOT)}: next-book link should point to {next_file}")
+
+    series_page = ROOT / "series" / "lulu-and-ellie-adventures.html"
+    if not series_page.is_file():
+        errors.append("missing Original Adventure series page")
+    else:
+        series_text = series_page.read_text(encoding="utf-8")
+        for number, filename, _, _ in CANONICAL_BOOKS:
+            if f'<span class="book-number">Book {number}</span>' not in series_text:
+                errors.append(f"{series_page.relative_to(ROOT)}: missing canonical Book {number} card")
+            if filename not in series_text:
+                errors.append(f"{series_page.relative_to(ROOT)}: missing link to {filename}")
+
+    return errors
+
+
+def validate_companion_catalog() -> list[str]:
+    errors: list[str] = []
+    catalog_path = ROOT / "data" / "companion-catalog.json"
+    page_path = ROOT / "companion-library.html"
+    script_path = ROOT / "companion-library.js"
+
+    for required in (catalog_path, page_path, script_path):
+        if not required.is_file():
+            errors.append(f"missing companion catalog file: {required.relative_to(ROOT)}")
+
+    if not catalog_path.is_file():
+        return errors
+
+    try:
+        catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        errors.append(f"{catalog_path.relative_to(ROOT)}: invalid catalog JSON: {exc}")
+        return errors
+
+    collections = catalog.get("collections")
+    if not isinstance(collections, list):
+        errors.append(f"{catalog_path.relative_to(ROOT)}: collections must be a list")
+        return errors
+
+    if len(collections) != 12:
+        errors.append(f"{catalog_path.relative_to(ROOT)}: expected 12 collections, found {len(collections)}")
+
+    titles: list[str] = []
+    for collection in collections:
+        name = collection.get("collection")
+        items = collection.get("items")
+        if not isinstance(name, str) or not name.strip():
+            errors.append(f"{catalog_path.relative_to(ROOT)}: collection is missing a public name")
+        if not isinstance(items, list) or not items:
+            errors.append(f"{catalog_path.relative_to(ROOT)}: {name or 'unnamed collection'} has no items")
+            continue
+        for item in items:
+            title = item.get("title")
+            pages = item.get("pages")
+            if not isinstance(title, str) or not title.strip():
+                errors.append(f"{catalog_path.relative_to(ROOT)}: item is missing a title")
+            else:
+                titles.append(title.strip())
+            if not isinstance(pages, int) or pages <= 0:
+                errors.append(f"{catalog_path.relative_to(ROOT)}: {title or 'untitled item'} has an invalid page count")
+
+    if len(titles) != 44:
+        errors.append(f"{catalog_path.relative_to(ROOT)}: expected 44 titles, found {len(titles)}")
+
+    duplicates = sorted(title for title, count in Counter(titles).items() if count > 1)
+    if duplicates:
+        errors.append(f"{catalog_path.relative_to(ROOT)}: duplicate titles: {', '.join(duplicates)}")
+
+    return errors
+
+
 def main() -> int:
     errors, warnings = validate_html()
     media_errors, media_warnings = validate_original_adventure_media()
     errors.extend(media_errors)
     warnings.extend(media_warnings)
+    errors.extend(validate_canonical_book_pages())
+    errors.extend(validate_companion_catalog())
 
     for warning in warnings:
         print(f"WARNING: {warning}")
@@ -211,7 +313,10 @@ def main() -> int:
             print(f"- {error}")
         return 1
 
-    print(f"Validated {len(html_files())} HTML pages and all 20 Original Adventure media folders.")
+    print(
+        f"Validated {len(html_files())} HTML pages, all 20 Original Adventure media folders, "
+        "the canonical Books 1-10 sequence, and 44 companion catalog titles."
+    )
     if warnings:
         print(f"Completed with {len(warnings)} warning(s).")
     return 0
