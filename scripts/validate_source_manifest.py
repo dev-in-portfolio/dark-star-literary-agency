@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Reconcile the public companion catalog with the creator-supplied PDF manifest."""
+"""Reconcile the public companion catalog with creator-supplied PDF records."""
 
 from __future__ import annotations
 
 from collections import Counter
+from html.parser import HTMLParser
 from pathlib import Path
 import csv
 import json
@@ -13,6 +14,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "data" / "companion-catalog.json"
 MANIFEST_PATH = ROOT / "data" / "companion-source-manifest.csv"
+PAGE_PATH = ROOT / "companion-library.html"
 REQUIRED_COLUMNS = {
     "id",
     "collection",
@@ -31,6 +33,18 @@ ALLOWED_QUALITY = {
     "revision-pass-pending",
     "character-continuity-review",
 }
+
+
+class SourceIdParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.ids: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = {key.lower(): (value or "") for key, value in attrs}
+        source_id = values.get("data-source-id", "").strip()
+        if source_id:
+            self.ids.append(source_id)
 
 
 def load_catalog() -> dict[tuple[str, str], int]:
@@ -62,16 +76,24 @@ def load_manifest() -> tuple[list[dict[str, str]], list[str]]:
     return rows, errors
 
 
+def load_static_ids() -> list[str]:
+    parser = SourceIdParser()
+    parser.feed(PAGE_PATH.read_text(encoding="utf-8"))
+    return parser.ids
+
+
 def validate() -> list[str]:
     errors: list[str] = []
-    if not CATALOG_PATH.is_file():
-        return [f"missing catalog: {CATALOG_PATH.relative_to(ROOT)}"]
-    if not MANIFEST_PATH.is_file():
-        return [f"missing manifest: {MANIFEST_PATH.relative_to(ROOT)}"]
+    for required in (CATALOG_PATH, MANIFEST_PATH, PAGE_PATH):
+        if not required.is_file():
+            errors.append(f"missing source file: {required.relative_to(ROOT)}")
+    if errors:
+        return errors
 
     try:
         catalog_records = load_catalog()
         rows, row_errors = load_manifest()
+        static_ids = load_static_ids()
         errors.extend(row_errors)
     except (OSError, UnicodeDecodeError, json.JSONDecodeError, csv.Error, ValueError) as exc:
         return [f"could not read companion source data: {exc}"]
@@ -116,6 +138,8 @@ def validate() -> list[str]:
             errors.append(f"row {row_number}: invalid SHA-256")
         if quality_status not in ALLOWED_QUALITY:
             errors.append(f"row {row_number}: invalid quality status {quality_status!r}")
+        if marketplace_status != "unverified":
+            errors.append(f"row {row_number}: marketplace status must remain unverified until manually checked")
         if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", last_reviewed):
             errors.append(f"row {row_number}: invalid review date")
 
@@ -144,6 +168,20 @@ def validate() -> list[str]:
         if key not in catalog_records:
             errors.append(f"manifest item missing from catalog: {key[0]} / {key[1]}")
 
+    manifest_ids = set(ids)
+    static_id_set = set(static_ids)
+    if len(static_ids) != 44:
+        errors.append(f"expected 44 static catalog entries, found {len(static_ids)}")
+    if len(static_id_set) != len(static_ids):
+        errors.append("static companion page contains duplicate data-source-id values")
+
+    missing_from_page = sorted(manifest_ids - static_id_set)
+    extra_on_page = sorted(static_id_set - manifest_ids)
+    if missing_from_page:
+        errors.append(f"manifest IDs missing from static page: {', '.join(missing_from_page)}")
+    if extra_on_page:
+        errors.append(f"static page IDs missing from manifest: {', '.join(extra_on_page)}")
+
     return errors
 
 
@@ -155,7 +193,9 @@ def main() -> int:
             print(f"- {error}")
         return 1
 
-    print("Validated 44 companion catalog entries against exact PDF source records.")
+    print(
+        "Validated 44 companion catalog records against exact PDF sources and the static public page."
+    )
     return 0
 
 
