@@ -9,6 +9,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 STYLES = ROOT / "styles.css"
 
+# These checks prove that global safeguards remain present; they do not claim
+# formal conformance or replace manual keyboard and assistive-technology QA.
 REQUIRED_CSS = {
     "global safeguard marker": "/* Global keyboard and contrast safeguards */",
     "native-control focus coverage": "input:focus-visible",
