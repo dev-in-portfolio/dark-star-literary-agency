@@ -4,27 +4,30 @@ This document records the source packages used to build the public Companion Lib
 
 ## Public catalog result
 
-- 44 developed interiors
+- 44 source PDF interiors
 - 12 public collection groups
 - Page lengths ranging from 30 to 150 pages
-- All titles remain previews unless a separate official purchase listing is confirmed
+- Approximately 2.02 GB of source material
+- All marketplace availability remains unverified unless a separate official listing is manually confirmed
 
-The raw PDF interiors are source/production assets. They are intentionally not copied into this public website repository because the supplied packages expand to roughly 2 GB and the website repository already contains a substantial media library.
+The raw PDF interiors are source and production assets. They are intentionally not copied into this public website repository because the supplied packages expand to more than 2 GB and the website repository already contains a substantial media library.
+
+A source PDF existing does not automatically mean that the title is publication-ready. The manifest records a separate quality status for every interior.
 
 ## Supplied source packages
 
-| Source package | Developed interiors represented |
+| Source package | PDF interiors represented |
 |---|---:|
 | Adventure Logs.zip | 5 |
 | Branches (1).zip | 5 |
 | Branches (2).zip | 6 |
 | Branches (3).zip | 6 |
 | Branches (4).zip | 7 |
-| Branches.zip | 7 |
+| Branches.zip | 5 |
 | Coloring Books.zip | 5 |
 | Diary.zip | 5 |
 
-Some packages contain more than one public collection. After deduplication and public grouping, the packages represent 44 distinct interiors.
+The packages represent 44 distinct PDF interiors after public grouping.
 
 ## Public collection groups
 
@@ -41,7 +44,32 @@ Some packages contain more than one public collection. After deduplication and p
 11. Kitchen Adventures — 2 titles
 12. Bedtime Adventures — 3 titles
 
-## Structured source of truth
+## Source manifest
+
+`data/companion-source-manifest.csv` is the traceability record for the supplied PDFs. Each row contains:
+
+- Stable catalog ID
+- Public collection and title
+- Source ZIP package
+- Exact internal PDF path
+- Page count
+- SHA-256 checksum
+- Quality-review status
+- Marketplace-verification status
+- Last review date
+
+This lets future audits prove which source PDF supports each public catalog entry instead of relying only on matching collection totals.
+
+## Quality statuses
+
+- `polished-preview` — strong preview; final editorial, accessibility, and production QA is still required
+- `final-qa-pending` — developed interior awaiting a full final QA pass
+- `revision-pass-pending` — developed interior requiring a focused layout and/or character revision pass
+- `character-continuity-review` — developed interior requiring a Lulu and Ellie character-continuity review
+
+These labels are internal catalog controls. They do not claim that a title is published or available for purchase.
+
+## Public catalog files
 
 The public catalog is maintained in:
 
@@ -52,4 +80,4 @@ The presentation page and renderer are:
 - `companion-library.html`
 - `companion-library.js`
 
-When a title becomes publicly available, update its official book or collection page with a verified purchase link. Do not convert the entire Companion Library preview into a purchase-ready catalog based only on the existence of an interior PDF.
+When a title becomes publicly available, update its official book or collection page with a browser-verified purchase link and a verification date. Do not convert the entire Companion Library preview into a purchase-ready catalog based only on the existence of an interior PDF.
