@@ -1,0 +1,112 @@
+name: One-time Keyboard Accessibility Patch
+
+on:
+  push:
+    branches:
+      - "agent/site-hardening-and-catalog-fixes"
+
+permissions:
+  contents: write
+
+jobs:
+  patch-shared-styles:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: agent/site-hardening-and-catalog-fixes
+
+      - name: Append global safeguards
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path('styles.css')
+          css = path.read_text(encoding='utf-8')
+          marker = '/* Global keyboard and contrast safeguards */'
+          if marker in css:
+              raise SystemExit('Global keyboard safeguard block already exists')
+
+          block = r'''
+
+/* Global keyboard and contrast safeguards */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: 3px solid var(--gold-soft);
+  outline-offset: 3px;
+}
+
+main p a:not(.button):not(.contact-link),
+main li a:not(.button),
+.site-footer a,
+.support-note a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.2em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (forced-colors: active) {
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  summary:focus-visible,
+  [tabindex]:not([tabindex="-1"]):focus-visible {
+    outline-color: Highlight;
+  }
+
+  .button,
+  .nav a,
+  .card,
+  .panel,
+  .hero-panel,
+  .section-card,
+  .portal-card {
+    border-color: CanvasText;
+  }
+
+  .brand-orb,
+  .eyebrow::before,
+  .section-kicker::before {
+    forced-color-adjust: auto;
+  }
+}
+'''
+          path.write_text(css.rstrip() + block + '\n', encoding='utf-8')
+
+      - name: Validate safeguards
+        run: |
+          set -euo pipefail
+          python -m py_compile scripts/validate_keyboard_accessibility.py
+          python scripts/validate_keyboard_accessibility.py
+
+      - name: Commit shared-style patch
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add styles.css
+          git diff --cached --quiet && exit 0
+          git commit -m "fix: add global keyboard and contrast safeguards"
+          git push origin HEAD:agent/site-hardening-and-catalog-fixes
