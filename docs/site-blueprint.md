@@ -66,6 +66,15 @@ Every public catalog item must be one of the following:
 
 A recorded marketplace URL is not itself proof that an item is currently purchasable. Current marketplace claims require a manual verification record and refresh process.
 
+## Discoverability Architecture
+
+- `data/site-config.json` is the single source for the site name, production base URL, locale, and social-card defaults.
+- The current production base URL is `https://dark-star-literary-agency.netlify.app`.
+- `scripts/update_seo.py --write` updates absolute canonical URLs, Open Graph URLs, site metadata, Twitter card metadata, image metadata where a real local image is available, `robots.txt`, and `sitemap.xml`.
+- Redirect pages canonicalize to their destination and are excluded from `sitemap.xml`.
+- `scripts/update_seo.py --check` is required in GitHub Actions and the Netlify build.
+- A future custom-domain migration changes the base URL once in `data/site-config.json`, followed by regeneration and review of the resulting diff.
+
 ## Design Direction
 
 - Midnight navy and black-blue background
@@ -78,12 +87,12 @@ A recorded marketplace URL is not itself proof that an item is currently purchas
 ## Technical Direction
 
 - Keep the public output static and indexable.
-- Run `validate_site.py`, `validate_source_manifest.py`, and `validate_marketplace.py` before deployment.
-- Validate links, assets, metadata, media-folder mappings, canonical book order, archive language, companion source reconciliation, marketplace wording, and Library status.
+- Run `validate_site.py`, `validate_source_manifest.py`, `validate_marketplace.py`, and `update_seo.py --check` before deployment.
+- Validate links, assets, metadata, media-folder mappings, canonical book order, archive language, companion source reconciliation, marketplace wording, Library status, canonical URLs, social metadata, and sitemap output.
 - Keep book numbers, titles, page slugs, Previous/Next links, and media directories aligned.
 - Use shared CSS and JavaScript instead of introducing new page-specific systems when reusable styling is practical.
 - Keep source archives and full production interiors out of the website repository.
-- Add absolute canonical, Open Graph, structured-data, and sitemap URLs only after the production domain strategy is confirmed.
+- Keep production URLs centralized rather than hand-editing canonical or social metadata across pages.
 
 ## Public Positioning
 
