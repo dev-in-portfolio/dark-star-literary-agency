@@ -70,11 +70,18 @@ def json_script(payload: dict) -> str:
 
 def insert_generated(text: str, payload: dict) -> str:
     cleaned = GENERATED_RE.sub("", text)
+    block = json_script(payload)
+    canonical = CANONICAL_RE.search(cleaned)
+    if canonical:
+        line_start = cleaned.rfind("\n", 0, canonical.start()) + 1
+        prefix = cleaned[:line_start].rstrip()
+        suffix = cleaned[line_start:].lstrip("\n")
+        return prefix + "\n" + block + "\n" + suffix
     if "</head>" not in cleaned.lower():
         raise ValueError("missing </head>")
     return re.sub(
         r"\s*</head>",
-        "\n" + json_script(payload) + "\n  </head>",
+        "\n" + block + "\n  </head>",
         cleaned,
         count=1,
         flags=re.IGNORECASE,
