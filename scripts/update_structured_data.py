@@ -98,7 +98,6 @@ def homepage_payload(config: dict[str, str]) -> dict:
                 "name": site_name,
                 "url": f"{site_url}/",
                 "email": email,
-                "founder": {"@id": f"{site_url}/#author"},
             },
             {
                 "@type": "Person",
