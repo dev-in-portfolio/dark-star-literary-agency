@@ -26,4 +26,15 @@ jobs:
         run: python -m py_compile scripts/validate_site.py
 
       - name: Validate HTML, links, metadata, and media
-        run: python scripts/validate_site.py
+        shell: bash
+        run: |
+          set -o pipefail
+          python scripts/validate_site.py | tee validation-report.txt
+
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-validation-report
+          path: validation-report.txt
+          if-no-files-found: warn
