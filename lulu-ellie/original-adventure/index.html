@@ -1,421 +1,153 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-nav="library">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Original Adventure | Lulu &amp; Ellie Adventures</title>
-    <meta name="description" content="Original Adventure is the first Lulu & Ellie collection shelf, with animated covers, cover art, and story-world feature pages.">
-    <meta name="theme-color" content="#090d18">
-    <style>
-      :root {
-        color-scheme: dark;
-        --ink: #fff5e6;
-        --muted: #cbd3e3;
-        --gold: #f0c674;
-        --line: rgba(255, 255, 255, 0.14);
-        --panel: rgba(7, 10, 22, 0.78);
-        --max: 1200px;
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        color: var(--ink);
-        background:
-          radial-gradient(circle at 20% 10%, rgba(240, 198, 116, 0.14), transparent 28%),
-          linear-gradient(180deg, #050813, #080b16 46%, #04060c);
-        font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
-        line-height: 1.55;
-      }
-      a { color: inherit; text-decoration: none; }
-      img, video { display: block; max-width: 100%; }
-      .header { position: sticky; top: 0; z-index: 10; background: rgba(5, 8, 19, 0.84); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
-      .header__inner, .shell { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
-      .header__inner { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 0; }
-      .brand { letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.82rem; }
-      .nav { display: flex; flex-wrap: wrap; gap: 0.75rem; color: var(--muted); }
-      .nav a:hover, .nav a:focus-visible { color: var(--gold); }
-      section { padding: 4.5rem 0; }
-      h1, h2, h3, p { margin: 0; }
-      h1 { max-width: 10ch; margin-top: 1rem; font-size: clamp(3.4rem, 8vw, 7.6rem); line-height: 0.9; }
-      h2 { font-size: clamp(2rem, 4vw, 4rem); line-height: 1; }
-      p { color: var(--muted); }
-      .lede { max-width: 64ch; margin-top: 1rem; color: #fff4d9; font-size: 1.15rem; }
-      .eyebrow { display: inline-flex; padding: 0.42rem 0.72rem; border: 1px solid rgba(240, 198, 116, 0.3); border-radius: 999px; color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.72rem; background: rgba(240, 198, 116, 0.08); }
-      .actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem; }
-      .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0.8rem 1.15rem; border-radius: 999px; border: 1px solid rgba(240, 198, 116, 0.34); background: rgba(255, 255, 255, 0.04); }
-      .button.primary { background: linear-gradient(180deg, #f8d98f, #c79032); color: #181003; }
-      .hero { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr); gap: 1.2rem; align-items: stretch; padding-top: 2rem; }
-      .hero__copy { align-self: center; }
-      .cinema, .media-card, .card { overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38); }
-      .cinema { min-height: 540px; }
-      .cinema video, .media-card img, .media-card video, .card img, .card video { width: 100%; height: 100%; object-fit: cover; }
-      .section-head { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.72fr); gap: 1rem; align-items: end; margin-bottom: 1.2rem; }
-      .split { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(300px, 1.1fr); gap: 1.2rem; align-items: center; }
-      .panel { border: 1px solid var(--line); background: var(--panel); border-radius: 22px; padding: 1.4rem; }
-      .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-      .shelf-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
-      .card { min-height: 360px; }
-      .card img, .card video { aspect-ratio: 4 / 5; }
-      .card__copy { padding: 1rem; }
-      .purchase-list { display: grid; gap: 0.8rem; }
-      .purchase-card { min-height: auto; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: center; padding: 1rem; }
-      .purchase-meta { display: grid; gap: 0.25rem; }
-      .purchase-meta strong { color: var(--ink); }
-      .card__copy strong { display: block; color: var(--ink); }
-      footer { padding: 2rem 0 3rem; color: var(--muted); border-top: 1px solid var(--line); }
-      @media (max-width: 980px) { .shelf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-      @media (max-width: 840px) { .header__inner, .hero, .section-head, .split, .grid, .shelf-grid, .purchase-card { grid-template-columns: 1fr; } .header__inner { align-items: flex-start; flex-direction: column; } .cinema { min-height: 360px; } }
-
-    </style>
+    <title>Original Adventure Media Archive | Lulu &amp; Ellie Adventures</title>
+    <meta name="description" content="Explore the Lulu & Ellie Original Adventure 20-volume media archive, including named Books 1-10 and clearly labeled preview media for Volumes 11-20.">
+    <meta name="theme-color" content="#050812">
+    <meta property="og:title" content="Original Adventure Media Archive | Lulu &amp; Ellie Adventures">
+    <meta property="og:description" content="Named storybooks, cover art, motion previews, and interior feature pages from the 20-volume Original Adventure media archive.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="./">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../accessibility.css">
+    <script src="archive.js" defer></script>
+    <script src="../../media.js" defer></script>
   </head>
-  <body>
-    <header class="header">
-      <div class="header__inner">
-        <a class="brand" href="../../">Dark Star Literary Agency</a>
+  <body data-nav="library">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../../index.html" aria-label="Dark Star Literary Agency home">
+          <span class="brand-orb" aria-hidden="true"></span>
+          <span>Dark Star Literary Agency</span>
+        </a>
         <nav class="nav" aria-label="Primary">
-          <a href="../../">Dark Star</a>
-          <a href="../">Lulu &amp; Ellie</a>
-          <a href="./">Original Adventure</a>
-          <a href="../../library.html#all-books">All Books</a>
+          <a href="../../index.html">Home</a>
+          <a href="../../agency.html">Dark Star</a>
+          <a href="../../ambrose-caspian-vale.html">About the Author</a>
+          <a href="../" aria-current="page">Lulu &amp; Ellie</a>
+          <a href="../../library.html">Library</a>
+          <a href="../../parents-teachers.html">Parents &amp; Teachers</a>
           <a href="../../contact.html">Contact</a>
         </nav>
       </div>
     </header>
-    <main>
-      <section class="shell hero">
-        <div class="hero__copy">
-          <span class="eyebrow">Original Adventure</span>
-          <h1>The first 20-book Lulu &amp; Ellie collection.</h1>
-          <p class="lede">Original Adventure is the portal-quest shelf of Lulu &amp; Ellie: a magical run of covers, motion previews, and story-world feature pages from inside the adventures.</p>
-          <div class="actions">
-            <a class="button primary" href="#complete-shelf">View all 20 books</a>
-            <a class="button" href="#feature-pages">Interior feature pages</a>
-          </div>
-        </div>
-        <div class="cinema">
-          <video autoplay muted loop playsinline poster="../../assets/lulu-ellie/original-adventure/book-20/front-cover.jpg">
-            <source src="../../assets/lulu-ellie/original-adventure/book-20/animated-cover.mp4" type="video/mp4">
-          </video>
-        </div>
-      </section>
-      <section id="complete-shelf">
-        <div class="shell">
-          <div class="section-head">
-            <div><span class="eyebrow">Complete Shelf</span><h2>All 20 Original Adventure books.</h2></div>
-            <p>Every book on this shelf has cover art and a motion preview. Interior feature pages live below when available.</p>
-          </div>
-          <div class="shelf-grid">
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-1/front-cover.png">
-                <source src="../../assets/lulu-ellie/original-adventure/book-1/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Secret of Blackwater Bay</strong><p><a href="../../books/lulu-and-ellie-and-the-secret-of-blackwater-bay.html">Explore Book</a></p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-2/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-2/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Lost Valley of Thunder</strong><p><a href="../../books/lulu-and-ellie-and-the-lost-valley-of-thunder.html">Explore Book</a></p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-3/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-3/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Clockwork Forest</strong><p><a href="../../books/lulu-and-ellie-and-the-clockwork-forest.html">Explore Book</a></p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-4/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-4/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Moonlit Circus</strong><p><a href="../../books/lulu-and-ellie-and-the-moonlit-circus.html">Explore Book</a></p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-5/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-5/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Snow Dragon’s Bell</strong><p><a href="../../books/lulu-and-ellie-and-the-snow-dragons-bell.html">Explore Book</a></p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-6/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-6/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Mushroom Moon Maze</strong><p><a href="../../books/lulu-and-ellie-and-the-mushroom-moon-maze.html">Explore Book</a></p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-7/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-7/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Lanterns of the Deep</strong><p><a href="../../books/lulu-and-ellie-and-the-lanterns-of-the-deep.html">Explore Book</a></p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-8/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-8/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Book That Lost Its Ending</strong><p><a href="../../books/lulu-and-ellie-and-the-book-that-lost-its-ending.html">Explore Book</a></p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-9/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-9/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Island That Drifted Away</strong><p><a href="../../books/lulu-and-ellie-and-the-island-that-drifted-away.html">Explore Book</a></p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-10/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-10/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Star Map of Everywhere</strong><p><a href="../../books/lulu-and-ellie-and-the-star-map-of-everywhere.html">Explore Book</a></p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-11/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-11/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Book 11</strong><p>Animated cover and finished cover art.</p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-12/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-12/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Book 12</strong><p>Animated cover and finished cover art.</p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-13/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-13/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Book 13</strong><p>Animated cover and finished cover art.</p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-14/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-14/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Book 14</strong><p>Animated cover and finished cover art.</p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-15/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-15/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Book 15</strong><p>Animated cover and finished cover art.</p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-16/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-16/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Book 16</strong><p>Animated cover and finished cover art.</p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-17/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-17/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Book 17</strong><p>Animated cover and finished cover art.</p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-18/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-18/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Book 18</strong><p>Animated cover and finished cover art.</p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-19/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-19/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Book 19</strong><p>Animated cover and finished cover art.</p></div>
-            </article>
-            <article class="card">
-              <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-20/front-cover.jpg">
-                <source src="../../assets/lulu-ellie/original-adventure/book-20/animated-cover.mp4" type="video/mp4">
-              </video>
-              <div class="card__copy"><strong>Book 20</strong><p>Animated cover and finished cover art.</p></div>
-            </article>
-          </div>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="site-shell hero-grid">
+          <article class="hero-panel">
+            <div class="eyebrow">Original Adventure</div>
+            <h1>A 20-volume media archive with ten named storybooks.</h1>
+            <p class="lede">Books 1–10 have official public titles and book pages. Volumes 11–20 are presented only as archive previews until their public titles and publication details are confirmed.</p>
+            <div class="hero-actions">
+              <a class="button" href="#named-books">Books 1–10</a>
+              <a class="button secondary" href="#archive-previews">Volumes 11–20</a>
+              <a class="button secondary" href="#feature-pages">Interior media</a>
+            </div>
+          </article>
+          <aside class="panel tier-hero-media" aria-label="Animated Original Adventure archive preview">
+            <video muted loop playsinline preload="metadata" poster="../../assets/lulu-ellie/original-adventure/book-10/front-cover.jpg">
+              <source src="../../assets/lulu-ellie/original-adventure/book-10/animated-cover.mp4" type="video/mp4">
+              Your browser does not support the animated cover preview.
+            </video>
+          </aside>
         </div>
       </section>
-      <section id="feature-pages">
-        <div class="shell">
-          <div class="section-head">
-            <div><span class="eyebrow">Interior Feature Pages</span><h2>Extra story-world flavor from inside the books.</h2></div>
-            <p>These feature pages bring forward character notes, clues, and story-world details from inside the books.</p>
-          </div>
-          <div class="shelf-grid">
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-2/feature-page.png" alt="Original Adventure Book 2 interior feature page">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Lost Valley of Thunder</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-3/feature-page.png" alt="Original Adventure Book 3 interior feature page">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Clockwork Forest</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-4/feature-page.png" alt="Original Adventure Book 4 interior feature page">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Moonlit Circus</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-5/feature-page.png" alt="Original Adventure Book 5 interior feature page">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Snow Dragon’s Bell</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-6/feature-page.png" alt="Original Adventure Book 6 interior feature page">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Mushroom Moon Maze</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-7/feature-page.png" alt="Original Adventure Book 7 interior feature page">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Lanterns of the Deep</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-8/feature-page.png" alt="Original Adventure Book 8 interior feature page">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Book That Lost Its Ending</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-9/feature-page.png" alt="Original Adventure Book 9 interior feature page">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Island That Drifted Away</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-10/feature-page.png" alt="Original Adventure Book 10 interior feature page">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Star Map of Everywhere</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-11/feature-page.png" alt="Original Adventure Book 11 interior feature page">
-              <div class="card__copy"><strong>Book 11</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-12/feature-page.png" alt="Original Adventure Book 12 interior feature page">
-              <div class="card__copy"><strong>Book 12</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-13/feature-page.png" alt="Original Adventure Book 13 interior feature page">
-              <div class="card__copy"><strong>Book 13</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-14/feature-page.png" alt="Original Adventure Book 14 interior feature page">
-              <div class="card__copy"><strong>Book 14</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-15/feature-page.png" alt="Original Adventure Book 15 interior feature page">
-              <div class="card__copy"><strong>Book 15</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-16/feature-page.png" alt="Original Adventure Book 16 interior feature page">
-              <div class="card__copy"><strong>Book 16</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-17/feature-page.png" alt="Original Adventure Book 17 interior feature page">
-              <div class="card__copy"><strong>Book 17</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-18/feature-page.png" alt="Original Adventure Book 18 interior feature page">
-              <div class="card__copy"><strong>Book 18</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-19/feature-page.png" alt="Original Adventure Book 19 interior feature page">
-              <div class="card__copy"><strong>Book 19</strong><p>Interior feature page.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-20/feature-page.png" alt="Original Adventure Book 20 interior feature page">
-              <div class="card__copy"><strong>Book 20</strong><p>Interior feature page.</p></div>
-            </article>
-          </div>
-        </div>
-      </section>
+
       <section>
-        <div class="shell">
+        <div class="site-shell section-card">
           <div class="section-head">
-            <div><span class="eyebrow">Cover Art</span><h2>The shelf should feel real before every book page exists.</h2></div>
-            <p>This shelf keeps the media-rich Original Adventure experience together under Lulu &amp; Ellie, while the broader Library helps readers browse the full storyworld.</p>
+            <div class="section-kicker">Archive status</div>
+            <h2>Media existence and publication status are different things.</h2>
+            <p class="section-lede">A numbered archive folder confirms that media exists for that volume. It does not, by itself, confirm a public title, release status, price, or purchase listing.</p>
           </div>
-          <div class="shelf-grid">
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-1/front-cover.png" alt="Original Adventure Book 1 cover">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Secret of Blackwater Bay</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-2/front-cover.jpg" alt="Original Adventure Book 2 cover">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Lost Valley of Thunder</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-3/front-cover.jpg" alt="Original Adventure Book 3 cover">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Clockwork Forest</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-4/front-cover.jpg" alt="Original Adventure Book 4 cover">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Moonlit Circus</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-5/front-cover.jpg" alt="Original Adventure Book 5 cover">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Snow Dragon’s Bell</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-6/front-cover.jpg" alt="Original Adventure Book 6 cover">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Mushroom Moon Maze</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-7/front-cover.jpg" alt="Original Adventure Book 7 cover">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Lanterns of the Deep</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-8/front-cover.jpg" alt="Original Adventure Book 8 cover">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Book That Lost Its Ending</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-9/front-cover.jpg" alt="Original Adventure Book 9 cover">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Island That Drifted Away</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-10/front-cover.jpg" alt="Original Adventure Book 10 cover">
-              <div class="card__copy"><strong>Lulu &amp; Ellie and the Star Map of Everywhere</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-11/front-cover.jpg" alt="Original Adventure Book 11 cover">
-              <div class="card__copy"><strong>Book 11</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-12/front-cover.jpg" alt="Original Adventure Book 12 cover">
-              <div class="card__copy"><strong>Book 12</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-13/front-cover.jpg" alt="Original Adventure Book 13 cover">
-              <div class="card__copy"><strong>Book 13</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-14/front-cover.jpg" alt="Original Adventure Book 14 cover">
-              <div class="card__copy"><strong>Book 14</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-15/front-cover.jpg" alt="Original Adventure Book 15 cover">
-              <div class="card__copy"><strong>Book 15</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-16/front-cover.jpg" alt="Original Adventure Book 16 cover">
-              <div class="card__copy"><strong>Book 16</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-17/front-cover.jpg" alt="Original Adventure Book 17 cover">
-              <div class="card__copy"><strong>Book 17</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-18/front-cover.jpg" alt="Original Adventure Book 18 cover">
-              <div class="card__copy"><strong>Book 18</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-19/front-cover.jpg" alt="Original Adventure Book 19 cover">
-              <div class="card__copy"><strong>Book 19</strong><p>Original Adventure cover art.</p></div>
-            </article>
-            <article class="card">
-              <img src="../../assets/lulu-ellie/original-adventure/book-20/front-cover.jpg" alt="Original Adventure Book 20 cover">
-              <div class="card__copy"><strong>Book 20</strong><p>Original Adventure cover art.</p></div>
-            </article>
+          <div class="card-grid">
+            <article class="card"><h3>Books 1–10</h3><p>Named storybooks with public pages in canonical story order.</p></article>
+            <article class="card"><h3>Volumes 11–20</h3><p>Cover, motion, and interior media previews awaiting confirmed public details.</p></article>
+            <article class="card"><h3>Motion controls</h3><p>Archive videos load only when selected and include visible playback controls.</p></article>
+            <article class="card"><h3>Reduced motion</h3><p>The automatic hero preview pauses when reduced motion is requested.</p></article>
           </div>
         </div>
       </section>
 
-      <section id="purchase"><div class="shell"><div class="section-head"><div><span class="eyebrow">Where to Purchase</span><h2>Where to Purchase</h2></div><p>Live paperback purchase links are listed plainly below.</p></div><div class="purchase-list"><article class="card purchase-card"><div class="purchase-meta"><strong>Lulu &amp; Ellie and the Secret of Blackwater Bay</strong><span>Paperback · $12.99</span></div><a class="button" href="https://www.amazon.com/dp/B0H351G4MG">Buy on Amazon</a></article><article class="card purchase-card"><div class="purchase-meta"><strong>Lulu &amp; Ellie and the Lost Valley of Thunder</strong><span>Paperback · $12.99</span></div><a class="button" href="https://www.amazon.com/dp/B0H35QR6C6">Buy on Amazon</a></article><article class="card purchase-card"><div class="purchase-meta"><strong>Lulu &amp; Ellie and the Moonlit Circus</strong><span>Paperback · $12.99</span></div><a class="button" href="https://www.amazon.com/dp/B0H36D98XX">Buy on Amazon</a></article><article class="card purchase-card"><div class="purchase-meta"><strong>Lulu &amp; Ellie and the Snow Dragon’s Bell</strong><span>Paperback · $12.99</span></div><a class="button" href="https://www.amazon.com/dp/B0H33K2RDN">Buy on Amazon</a></article><article class="card purchase-card"><div class="purchase-meta"><strong>Lulu &amp; Ellie and the Mushroom Moon Maze</strong><span>Temporarily unavailable.</span></div></article><article class="card purchase-card"><div class="purchase-meta"><strong>Lulu &amp; Ellie and the Lanterns of the Deep</strong><span>Paperback · $12.99</span></div><a class="button" href="https://www.amazon.com/dp/B0H3351L1P">Buy on Amazon</a></article><article class="card purchase-card"><div class="purchase-meta"><strong>Lulu &amp; Ellie and the Book That Lost Its Ending</strong><span>Paperback · $12.99</span></div><a class="button" href="https://www.amazon.com/dp/B0H35JL3PQ">Buy on Amazon</a></article><article class="card purchase-card"><div class="purchase-meta"><strong>Lulu &amp; Ellie and the Island That Drifted Away</strong><span>Paperback · $12.99</span></div><a class="button" href="https://www.amazon.com/dp/B0H33NFZYB">Buy on Amazon</a></article><article class="card purchase-card"><div class="purchase-meta"><strong>Lulu &amp; Ellie and the Star Map of Everywhere</strong><span>Paperback · $12.99</span></div><a class="button" href="https://www.amazon.com/dp/B0H33RFB7T">Buy on Amazon</a></article><article class="card purchase-card"><div class="purchase-meta"><strong>Lulu &amp; Ellie and the Clockwork Forest</strong><span>Paperback · $12.99</span></div><a class="button" href="https://www.amazon.com/dp/B0H32KRFDF">Buy on Amazon</a></article></div></div></section>
+      <section id="named-books">
+        <div class="site-shell section-card">
+          <div class="section-head">
+            <div class="section-kicker">Named storybooks</div>
+            <h2>Original Adventure Books 1–10</h2>
+            <p class="section-lede">These titles follow the canonical story and media-folder sequence.</p>
+          </div>
+          <ol class="bullets">
+            <li>Book 1 — Lulu &amp; Ellie and the Secret of Blackwater Bay</li>
+            <li>Book 2 — Lulu &amp; Ellie and the Lost Valley of Thunder</li>
+            <li>Book 3 — Lulu &amp; Ellie and the Clockwork Forest</li>
+            <li>Book 4 — Lulu &amp; Ellie and the Moonlit Circus</li>
+            <li>Book 5 — Lulu &amp; Ellie and the Snow Dragon’s Bell</li>
+            <li>Book 6 — Lulu &amp; Ellie and the Mushroom Moon Maze</li>
+            <li>Book 7 — Lulu &amp; Ellie and the Lanterns of the Deep</li>
+            <li>Book 8 — Lulu &amp; Ellie and the Book That Lost Its Ending</li>
+            <li>Book 9 — Lulu &amp; Ellie and the Island That Drifted Away</li>
+            <li>Book 10 — Lulu &amp; Ellie and the Star Map of Everywhere</li>
+          </ol>
+          <div id="named-media-grid" class="book-media-grid" aria-label="Named Original Adventure media"></div>
+        </div>
+      </section>
+
+      <section id="archive-previews">
+        <div class="site-shell section-card">
+          <div class="section-head">
+            <div class="section-kicker">Archive preview volumes 11–20</div>
+            <h2>Numbered media previews—not unnamed purchase-ready books.</h2>
+            <p class="section-lede">These entries remain deliberately generic until their official titles, descriptions, and release details are confirmed.</p>
+          </div>
+          <ol class="bullets">
+            <li>Archive Volume 11 — media preview</li>
+            <li>Archive Volume 12 — media preview</li>
+            <li>Archive Volume 13 — media preview</li>
+            <li>Archive Volume 14 — media preview</li>
+            <li>Archive Volume 15 — media preview</li>
+            <li>Archive Volume 16 — media preview</li>
+            <li>Archive Volume 17 — media preview</li>
+            <li>Archive Volume 18 — media preview</li>
+            <li>Archive Volume 19 — media preview</li>
+            <li>Archive Volume 20 — media preview</li>
+          </ol>
+          <div id="archive-media-grid" class="book-media-grid" aria-label="Original Adventure archive preview media"></div>
+        </div>
+      </section>
+
+      <section id="feature-pages">
+        <div class="site-shell section-card">
+          <div class="section-head">
+            <div class="section-kicker">Interior feature pages</div>
+            <h2>Story-world details from the archive.</h2>
+            <p class="section-lede">Interior images are labeled by confirmed book title where available and by archive volume where public details remain pending.</p>
+          </div>
+          <div id="feature-media-grid" class="book-media-grid" aria-label="Original Adventure interior feature media"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="site-shell section-card">
+          <div class="section-actions">
+            <a class="button" href="../../series/lulu-and-ellie-adventures.html">Named Books 1–10</a>
+            <a class="button secondary" href="../">Lulu &amp; Ellie Hub</a>
+            <a class="button secondary" href="../../companion-library.html">Companion Library</a>
+            <a class="button secondary" href="../../contact.html">Contact Dark Star</a>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer><div class="shell">Original Adventure is the first public collection tier in the Lulu &amp; Ellie Adventures storyworld.</div></footer>
-    <script>
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (!reduceMotion.matches && "IntersectionObserver" in window) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => entry.isIntersecting ? entry.target.play().catch(() => {}) : entry.target.pause());
-        }, { threshold: 0.25 });
-        document.querySelectorAll("video").forEach((video) => observer.observe(video));
-      }
-    </script>
+
+    <footer class="site-footer">
+      <div class="site-shell footer-inner">
+        <strong>&copy; 2026 Dark Star Literary Agency. All rights reserved.</strong>
+        <div>Lulu &amp; Ellie Adventures is a Dark Star Literary Agency storyworld created by Ambrose Caspian Vale.</div>
+        <div>Contact: <a href="mailto:darstarliteraryagency@gmail.com">darstarliteraryagency@gmail.com</a></div>
+      </div>
+    </footer>
   </body>
 </html>
