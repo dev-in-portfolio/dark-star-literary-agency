@@ -1,0 +1,84 @@
+name: One-time Generator Ordering Fix
+
+on:
+  push:
+    branches:
+      - "agent/site-hardening-and-catalog-fixes"
+
+permissions:
+  contents: write
+
+jobs:
+  stabilize-order:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: agent/site-hardening-and-catalog-fixes
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Make the generators converge on one head order
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path("scripts/update_structured_data.py")
+          text = path.read_text(encoding="utf-8")
+          old = '''def insert_generated(text: str, payload: dict) -> str:
+              cleaned = GENERATED_RE.sub("", text)
+              if "</head>" not in cleaned.lower():
+                  raise ValueError("missing </head>")
+              return re.sub(
+                  r"\\s*</head>",
+                  "\\n" + json_script(payload) + "\\n  </head>",
+                  cleaned,
+                  count=1,
+                  flags=re.IGNORECASE,
+              )
+          '''
+          new = '''def insert_generated(text: str, payload: dict) -> str:
+              cleaned = GENERATED_RE.sub("", text)
+              block = json_script(payload)
+              canonical = CANONICAL_RE.search(cleaned)
+              if canonical:
+                  line_start = cleaned.rfind("\\n", 0, canonical.start()) + 1
+                  prefix = cleaned[:line_start].rstrip()
+                  suffix = cleaned[line_start:].lstrip("\\n")
+                  return prefix + "\\n" + block + "\\n" + suffix
+              if "</head>" not in cleaned.lower():
+                  raise ValueError("missing </head>")
+              return re.sub(
+                  r"\\s*</head>",
+                  "\\n" + block + "\\n  </head>",
+                  cleaned,
+                  count=1,
+                  flags=re.IGNORECASE,
+              )
+          '''
+          if old not in text:
+              raise SystemExit("Expected insert_generated function was not found")
+          path.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+      - name: Regenerate structured data
+        run: |
+          set -euo pipefail
+          python -m py_compile scripts/update_structured_data.py
+          python scripts/update_structured_data.py --write
+          python scripts/update_seo.py --check
+          python scripts/update_structured_data.py --check
+
+      - name: Commit stable generated output
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/update_structured_data.py index.html books/*.html
+          git diff --cached --quiet && exit 0
+          git commit -m "fix: stabilize SEO and structured-data ordering"
+          git push origin HEAD:agent/site-hardening-and-catalog-fixes
