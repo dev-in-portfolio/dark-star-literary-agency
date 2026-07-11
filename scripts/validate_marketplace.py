@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Validate evidence-based marketplace wording on canonical Lulu & Ellie pages."""
+"""Validate evidence-based marketplace wording against the marketplace registry."""
 
 from __future__ import annotations
 
 from pathlib import Path
+import json
 import re
 import sys
 
@@ -11,19 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BOOKS_DIR = ROOT / "books"
 SERIES_PAGE = ROOT / "series" / "lulu-and-ellie-adventures.html"
 LIBRARY_PAGE = ROOT / "library.html"
-
-BOOKS = [
-    (1, "lulu-and-ellie-and-the-secret-of-blackwater-bay.html", "B0H351G4MG"),
-    (2, "lulu-and-ellie-and-the-lost-valley-of-thunder.html", "B0H35QR6C6"),
-    (3, "lulu-and-ellie-and-the-clockwork-forest.html", "B0H32KRFDF"),
-    (4, "lulu-and-ellie-and-the-moonlit-circus.html", "B0H36D98XX"),
-    (5, "lulu-and-ellie-and-the-snow-dragons-bell.html", "B0H33K2RDN"),
-    (6, "lulu-and-ellie-and-the-mushroom-moon-maze.html", None),
-    (7, "lulu-and-ellie-and-the-lanterns-of-the-deep.html", "B0H3351L1P"),
-    (8, "lulu-and-ellie-and-the-book-that-lost-its-ending.html", "B0H35JL3PQ"),
-    (9, "lulu-and-ellie-and-the-island-that-drifted-away.html", "B0H33NFZYB"),
-    (10, "lulu-and-ellie-and-the-star-map-of-everywhere.html", "B0H33RFB7T"),
-]
+REGISTRY_PATH = ROOT / "data" / "marketplace-records.json"
 
 FORBIDDEN_PHRASES = (
     "Paperback available",
@@ -33,10 +22,101 @@ FORBIDDEN_PHRASES = (
 )
 
 PRICE_PATTERN = re.compile(r"\$\d+(?:\.\d{2})?")
+ASIN_PATTERN = re.compile(r"^[A-Z0-9]{10}$")
+ALLOWED_STATUSES = {
+    "link-on-file-current-state-unverified",
+    "no-active-link-on-file-current-state-unverified",
+    "manually-verified-current",
+}
 
 
-def validate_book(number: int, filename: str, asin: str | None) -> list[str]:
+def load_registry() -> tuple[list[dict[str, object]], list[str]]:
     errors: list[str] = []
+
+    if not REGISTRY_PATH.is_file():
+        return [], [f"missing marketplace registry: {REGISTRY_PATH.relative_to(ROOT)}"]
+
+    try:
+        registry = json.loads(REGISTRY_PATH.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        return [], [f"{REGISTRY_PATH.relative_to(ROOT)}: invalid JSON: {exc}"]
+
+    if registry.get("schema_version") != 1:
+        errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: unsupported schema version")
+
+    if registry.get("marketplace") != "Amazon US":
+        errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: marketplace must be Amazon US")
+
+    if not isinstance(registry.get("last_automated_audit"), str):
+        errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: missing last automated audit date")
+
+    records = registry.get("records")
+    if not isinstance(records, list):
+        return [], errors + [f"{REGISTRY_PATH.relative_to(ROOT)}: records must be a list"]
+
+    if len(records) != 10:
+        errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: expected 10 records, found {len(records)}")
+
+    numbers: list[int] = []
+    filenames: list[str] = []
+    asins: list[str] = []
+
+    for index, record in enumerate(records, start=1):
+        if not isinstance(record, dict):
+            errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: record {index} must be an object")
+            continue
+
+        number = record.get("book_number")
+        filename = record.get("filename")
+        title = record.get("title")
+        asin = record.get("asin")
+        url = record.get("url")
+        status = record.get("status")
+
+        if not isinstance(number, int) or not 1 <= number <= 10:
+            errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: record {index} has invalid book number")
+        else:
+            numbers.append(number)
+
+        if not isinstance(filename, str) or not filename.endswith(".html"):
+            errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: Book {number} has invalid filename")
+        else:
+            filenames.append(filename)
+
+        if not isinstance(title, str) or not title.strip():
+            errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: Book {number} is missing a title")
+
+        if status not in ALLOWED_STATUSES:
+            errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: Book {number} has invalid status {status}")
+
+        if number == 6:
+            if asin is not None or url is not None:
+                errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: Book 6 must not have an active ASIN or URL")
+            if status != "no-active-link-on-file-current-state-unverified":
+                errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: Book 6 must use the no-link status")
+        else:
+            if not isinstance(asin, str) or not ASIN_PATTERN.fullmatch(asin):
+                errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: Book {number} has invalid ASIN")
+            else:
+                asins.append(asin)
+                expected_url = f"https://www.amazon.com/dp/{asin}"
+                if url != expected_url:
+                    errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: Book {number} URL does not match its ASIN")
+
+    if sorted(numbers) != list(range(1, 11)):
+        errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: book numbers must be exactly 1 through 10")
+    if len(set(filenames)) != len(filenames):
+        errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: duplicate filenames")
+    if len(set(asins)) != len(asins):
+        errors.append(f"{REGISTRY_PATH.relative_to(ROOT)}: duplicate ASINs")
+
+    return records, errors
+
+
+def validate_book(record: dict[str, object]) -> list[str]:
+    errors: list[str] = []
+    number = int(record["book_number"])
+    filename = str(record["filename"])
     path = BOOKS_DIR / filename
     relative = path.relative_to(ROOT)
 
@@ -78,14 +158,14 @@ def validate_book(number: int, filename: str, asin: str | None) -> list[str]:
         if phrase not in text:
             errors.append(f"{relative}: missing evidence-based marketplace wording: {phrase}")
 
-    expected_url = f"https://www.amazon.com/dp/{asin}"
+    expected_url = str(record["url"])
     if expected_url not in text:
-        errors.append(f"{relative}: missing recorded ASIN link {asin}")
+        errors.append(f"{relative}: missing registry marketplace link {expected_url}")
 
     return errors
 
 
-def validate_series_page() -> list[str]:
+def validate_series_page(records: list[dict[str, object]]) -> list[str]:
     errors: list[str] = []
     relative = SERIES_PAGE.relative_to(ROOT)
 
@@ -100,12 +180,14 @@ def validate_series_page() -> list[str]:
     if "Amazon link on file" not in text:
         errors.append(f"{relative}: missing evidence-based marketplace wording")
 
-    for number, _, asin in BOOKS:
-        if number == 6:
+    for record in records:
+        if record.get("url") is None:
             continue
-        expected_url = f"https://www.amazon.com/dp/{asin}"
+        expected_url = str(record["url"])
         if expected_url not in text:
-            errors.append(f"{relative}: missing recorded Book {number} ASIN link {asin}")
+            errors.append(
+                f"{relative}: missing recorded Book {record.get('book_number')} marketplace link {expected_url}"
+            )
 
     return errors
 
@@ -140,20 +222,21 @@ def validate_library_page() -> list[str]:
 
 
 def main() -> int:
-    errors: list[str] = []
-    for record in BOOKS:
-        errors.extend(validate_book(*record))
-    errors.extend(validate_series_page())
+    records, errors = load_registry()
+    for record in records:
+        if isinstance(record, dict):
+            errors.extend(validate_book(record))
+    errors.extend(validate_series_page(records))
     errors.extend(validate_library_page())
 
     if errors:
-        print("Marketplace and Library copy validation failed:")
+        print("Marketplace registry, page, and Library validation failed:")
         for error in errors:
             print(f"- {error}")
         return 1
 
     print(
-        "Validated evidence-based marketplace wording for canonical Books 1–10, "
+        "Validated the marketplace registry, evidence-based wording for canonical Books 1–10, "
         "the series page, and the live Library page."
     )
     return 0
