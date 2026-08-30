@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dark-star-literary-agency.netlify.app/sitemap.xml
+Sitemap: https://literaryagency.darkstarconsultinggroup.com/sitemap.xml

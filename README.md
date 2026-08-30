@@ -117,7 +117,7 @@ GitHub Actions and Netlify run all seven permanent checks. GitHub uploads a comb
 ## SEO and Discoverability
 
 - `data/site-config.json` is the single source for the public site name, production base URL, locale, contact email, author identity, series identity, and Twitter card defaults.
-- The current production base URL is `https://dark-star-literary-agency.netlify.app`.
+- The current production base URL is `https://literaryagency.darkstarconsultinggroup.com`.
 - `scripts/update_seo.py --write` generates absolute canonical URLs, social metadata, `robots.txt`, and `sitemap.xml`.
 - `scripts/update_structured_data.py --write` generates conservative JSON-LD for the homepage identities and ten canonical Original Adventure storybooks.
 - Book JSON-LD intentionally omits prices, offers, stock, format availability, and unverified Amazon claims.
@@ -196,4 +196,4 @@ Unapproved drafts, internal production pages, unfinished downloads, and unapprov
 
 ## Contact
 
-Public contact email: `darstarliteraryagency@gmail.com`
+Public contact email: `literary@darkstarconsultinggroup.com`
