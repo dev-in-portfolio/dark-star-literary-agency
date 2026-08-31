@@ -139,8 +139,13 @@ def main() -> int:
 
     for page in ROOT.rglob("*.html"):
         text = page.read_text(encoding="utf-8")
-        if "#purchase" in text:
-            fail(f"{page.relative_to(ROOT)}: stale #purchase fragment remains", errors)
+        stale_purchase_targets = (
+            "series/lulu-and-ellie-adventures.html#purchase",
+            "../series/lulu-and-ellie-adventures.html#purchase",
+        )
+        for stale_target in stale_purchase_targets:
+            if stale_target in text:
+                fail(f"{page.relative_to(ROOT)}: stale cross-page purchase fragment remains: {stale_target}", errors)
         if "http-equiv=\"refresh\"" in text.lower() or "http-equiv='refresh'" in text.lower():
             continue
         if "favicon.svg" not in text:
