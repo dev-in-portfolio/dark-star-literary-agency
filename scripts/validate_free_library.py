@@ -164,7 +164,7 @@ def main() -> int:
     library_page = ROOT / "free-library.html"
     if library_page.is_file():
         text = library_page.read_text(encoding="utf-8")
-        for phrase in ("Free Library", "Download free", "free-library.js"):
+        for phrase in ("Free Library", "free viewing and free download", "free-library.js"):
             if phrase not in text:
                 fail(f"free-library.html missing required public access language: {phrase}", errors)
 
