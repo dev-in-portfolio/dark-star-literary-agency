@@ -151,7 +151,7 @@ def build_metadata(page: Path, text: str, config: dict[str, str]) -> tuple[str, 
     description = find_content(OG_DESCRIPTION_RE, text) or find_content(DESCRIPTION_RE, text)
     image = first_local_image(page, page_url, text)
     if image is None:
-        image = (config["site_url"].rstrip("/") + "/og-image.png", config["site_name"])
+        image = (config["site_url"].rstrip("/") + "/web-image/og-image.png", config["site_name"])
     robots = find_content(ROBOTS_META_RE, text).lower()
     is_noindex = "noindex" in {part.strip() for part in robots.split(",")} if robots else False
 
