@@ -42,7 +42,7 @@ def main() -> int:
         series_list = []
     by_id = {item.get("id"): item for item in series_list if isinstance(item, dict)}
 
-    required_ids = {"original-adventure","in-space","creature-rescue-club","mystery-tails","time-tails","go-to-camp"}
+    required_ids = {"original-adventure","in-space","creature-rescue-club","mystery-tails","time-tails","go-to-camp","backyard-academy","bedtime-adventures"}
     if not required_ids.issubset(by_id):
         fail("library master is missing required story-series entries", errors)
 
@@ -152,6 +152,17 @@ def main() -> int:
             fail(f"{page.relative_to(ROOT)}: missing favicon link", errors)
         if "accessibility.css" not in text:
             fail(f"{page.relative_to(ROOT)}: missing accessibility stylesheet", errors)
+
+        raw_media_refs = re.findall(
+            r'\\b(?:src|poster)=["\\']([^"\\']+\\.(?:png|jpe?g|webp))["\\']',
+            text,
+            flags=re.I,
+        )
+        for source in raw_media_refs:
+            if source.startswith(("http://", "https://", "data:", "/web-image/")):
+                continue
+            if "assets/" in source:
+                fail(f"{page.relative_to(ROOT)}: public image bypasses /web-image/ delivery: {source}", errors)
 
     if errors:
         print("Library master validation failed:")
