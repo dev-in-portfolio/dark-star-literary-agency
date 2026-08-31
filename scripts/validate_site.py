@@ -15,18 +15,43 @@ ROOT = Path(__file__).resolve().parents[1]
 IGNORED_PARTS = {".git", ".github", "node_modules"}
 EXTERNAL_SCHEMES = {"http", "https", "mailto", "tel", "sms", "data", "javascript"}
 
-CANONICAL_BOOKS = [
-    (1, "lulu-and-ellie-and-the-secret-of-blackwater-bay.html", None, "lulu-and-ellie-and-the-lost-valley-of-thunder.html"),
-    (2, "lulu-and-ellie-and-the-lost-valley-of-thunder.html", "lulu-and-ellie-and-the-secret-of-blackwater-bay.html", "lulu-and-ellie-and-the-clockwork-forest.html"),
-    (3, "lulu-and-ellie-and-the-clockwork-forest.html", "lulu-and-ellie-and-the-lost-valley-of-thunder.html", "lulu-and-ellie-and-the-moonlit-circus.html"),
-    (4, "lulu-and-ellie-and-the-moonlit-circus.html", "lulu-and-ellie-and-the-clockwork-forest.html", "lulu-and-ellie-and-the-snow-dragons-bell.html"),
-    (5, "lulu-and-ellie-and-the-snow-dragons-bell.html", "lulu-and-ellie-and-the-moonlit-circus.html", "lulu-and-ellie-and-the-mushroom-moon-maze.html"),
-    (6, "lulu-and-ellie-and-the-mushroom-moon-maze.html", "lulu-and-ellie-and-the-snow-dragons-bell.html", "lulu-and-ellie-and-the-lanterns-of-the-deep.html"),
-    (7, "lulu-and-ellie-and-the-lanterns-of-the-deep.html", "lulu-and-ellie-and-the-mushroom-moon-maze.html", "lulu-and-ellie-and-the-book-that-lost-its-ending.html"),
-    (8, "lulu-and-ellie-and-the-book-that-lost-its-ending.html", "lulu-and-ellie-and-the-lanterns-of-the-deep.html", "lulu-and-ellie-and-the-island-that-drifted-away.html"),
-    (9, "lulu-and-ellie-and-the-island-that-drifted-away.html", "lulu-and-ellie-and-the-book-that-lost-its-ending.html", "lulu-and-ellie-and-the-star-map-of-everywhere.html"),
-    (10, "lulu-and-ellie-and-the-star-map-of-everywhere.html", "lulu-and-ellie-and-the-island-that-drifted-away.html", None),
-]
+MASTER_CATALOG_PATH = ROOT / "data" / "library-master.json"
+
+def load_canonical_books() -> list[tuple[int, str, str | None, str | None]]:
+    try:
+        master = json.loads(MASTER_CATALOG_PATH.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise SystemExit(f"Could not read {MASTER_CATALOG_PATH.relative_to(ROOT)}: {exc}") from exc
+
+    series = master.get("series")
+    if not isinstance(series, list):
+        raise SystemExit("library master series must be a list")
+    original = next(
+        (item for item in series if isinstance(item, dict) and item.get("id") == "original-adventure"),
+        None,
+    )
+    if not isinstance(original, dict):
+        raise SystemExit("library master is missing original-adventure")
+    books = original.get("books")
+    if not isinstance(books, list) or len(books) != 20:
+        raise SystemExit("library master must contain exactly twenty Original Adventure books")
+
+    result: list[tuple[int, str, str | None, str | None]] = []
+    for index, book in enumerate(books):
+        if not isinstance(book, dict):
+            raise SystemExit("Original Adventure book records must be objects")
+        number = book.get("number")
+        slug = book.get("slug")
+        if not isinstance(number, int) or not isinstance(slug, str) or not slug.strip():
+            raise SystemExit("Original Adventure catalog contains an invalid book record")
+        filename = slug + ".html"
+        previous_file = books[index - 1]["slug"] + ".html" if index else None
+        next_file = books[index + 1]["slug"] + ".html" if index + 1 < len(books) else None
+        result.append((number, filename, previous_file, next_file))
+    return result
+
+
+CANONICAL_BOOKS = load_canonical_books()
 
 
 class PageParser(HTMLParser):
@@ -196,6 +221,23 @@ def validate_html() -> tuple[list[str], list[str]]:
                 continue
             if target is not None and not target.exists():
                 errors.append(f"{relative}: missing local target for {tag}[{attribute}]={value}")
+                continue
+
+            parsed_reference = urlsplit(value)
+            fragment = unquote(parsed_reference.fragment)
+            if fragment:
+                fragment_target = page if value.startswith("#") else target
+                if fragment_target is not None and fragment_target.is_file() and fragment_target.suffix.lower() == ".html":
+                    try:
+                        target_text = fragment_target.read_text(encoding="utf-8")
+                    except (OSError, UnicodeDecodeError) as exc:
+                        errors.append(f"{relative}: could not read fragment target {fragment_target.relative_to(ROOT)}: {exc}")
+                    else:
+                        if not re.search(r'\\bid=[\"\']' + re.escape(fragment) + r'[\"\']', target_text):
+                            errors.append(
+                                f"{relative}: missing fragment target #{fragment} in "
+                                f"{fragment_target.relative_to(ROOT)}"
+                            )
 
     for title, count in sorted(titles.items()):
         if count > 1:
@@ -284,19 +326,28 @@ def validate_archive_page() -> list[str]:
         "../../styles.css": "shared stylesheet",
         "../../accessibility.css": "reduced-motion stylesheet",
         "../../media.js": "shared media controller",
-        "20-volume media archive": "archive wording",
-        "Archive preview volumes 11–20": "preview-section wording",
+        "complete 20-book": "complete archive wording",
+        "Books 1–20": "complete sequence wording",
     }
     for needle, label in requirements.items():
         if needle not in text:
             errors.append(f"{page.relative_to(ROOT)}: missing {label}")
 
-    for number in range(11, 21):
-        if f"Archive Volume {number}" not in text:
-            errors.append(f"{page.relative_to(ROOT)}: missing Archive Volume {number} label")
+    for number, filename, _, _ in CANONICAL_BOOKS:
+        if f"Book {number} —" not in text:
+            errors.append(f"{page.relative_to(ROOT)}: missing canonical Book {number} label")
+        if filename not in (ROOT / "series" / "lulu-and-ellie-adventures.html").read_text(encoding="utf-8"):
+            errors.append(f"series/lulu-and-ellie-adventures.html: missing canonical link to {filename}")
 
-    if "All 20 Original Adventure books" in text or "first 20-book" in text:
-        errors.append(f"{page.relative_to(ROOT)}: still presents all 20 media folders as completed books")
+    stale_phrases = (
+        "Archive preview volumes 11–20",
+        "Archive Volume 11",
+        "ten named storybooks",
+        "Volumes 11–20 are presented only as archive previews",
+    )
+    for phrase in stale_phrases:
+        if phrase in text:
+            errors.append(f"{page.relative_to(ROOT)}: contains stale archive wording: {phrase}")
 
     return errors
 
@@ -370,7 +421,7 @@ def write_report(errors: list[str], warnings: list[str]) -> None:
     else:
         lines.append(
             f"Validated {len(html_files())} HTML pages, all 20 Original Adventure media folders, "
-            "the canonical Books 1–10 sequence, the archive presentation, and 44 companion catalog records."
+            "the canonical Books 1–20 sequence, the archive presentation, and 44 companion catalog records."
         )
     (ROOT / "validation-report.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -397,7 +448,7 @@ def main() -> int:
 
     print(
         f"Validated {len(html_files())} HTML pages, all 20 Original Adventure media folders, "
-        "the canonical Books 1–10 sequence, the archive presentation, and 44 companion catalog records."
+        "the canonical Books 1–20 sequence, the archive presentation, and 44 companion catalog records."
     )
     if warnings:
         print(f"Completed with {len(warnings)} warning(s).")
