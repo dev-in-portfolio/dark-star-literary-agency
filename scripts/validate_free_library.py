@@ -158,7 +158,7 @@ def main() -> int:
         script_text = library_script.read_text(encoding="utf-8")
         if 'repo.textContent = asset.repo' in script_text:
             fail("raw repository names must not be rendered as reader-facing card labels", errors)
-        for phrase in ("PAGE_SIZE", "free-shelf-tab", "Show more", "displayTitle"):
+        for phrase in ("PAGE_SIZE", "free-shelf-tab", "free-load-more", "displayTitle"):
             if phrase not in script_text:
                 fail(f"free-library.js missing redesigned browsing behavior: {phrase}", errors)
 
