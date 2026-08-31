@@ -293,14 +293,14 @@ def render_library(master: dict) -> str:
     original = original_series(master)
     book_cards = "".join(f'<article class="book-list-card"><div class="tag-row"><span class="book-number">Book {b["number"]}</span><span class="status-badge">Book</span></div><h3>{esc(b["title"])}</h3><p>Canonical Original Adventure Book {b["number"]}.</p><div class="section-actions"><a class="button ghost" href="books/{b["slug"]}.html">Explore Book</a></div></article>' for b in original["books"])
     series_cards = [
-        ("Lulu &amp; Ellie Adventures","Flagship storyworld","Twenty source-confirmed Original Adventure books.","series/lulu-and-ellie-adventures.html"),
-        ("Lulu &amp; Ellie Mystery Tails","Source-backed preview","Canonical source titles are being restored to the public catalog.","series/mystery-tails.html"),
-        ("Lulu &amp; Ellie Creature Rescue Club","In the works","Warm magical-creature rescue adventures.","series/creature-rescue-club.html"),
-        ("Lulu &amp; Ellie Backyard Academy","In the works","Nature, science, and discovery adventures.","series/backyard-academy.html"),
-        ("Lulu &amp; Ellie Go To Camp","In the works","Campfire-cozy adventures about teamwork and trying new things.","series/go-to-camp.html"),
-        ("Lulu &amp; Ellie in Space","In the works","Cozy space-rescue adventures across friendly worlds.","series/lulu-and-ellie-in-space.html"),
-        ("Lulu &amp; Ellie Time Tails","In the works","Time-bending adventures joining the public library architecture.","series/time-tails.html"),
-        ("Lulu &amp; Ellie Bedtime Adventures","Coming soon","Soft, low-stimulation bedtime stories.","series/bedtime-adventures.html"),
+        ("Lulu & Ellie Adventures","Flagship storyworld","Twenty source-confirmed Original Adventure books.","series/lulu-and-ellie-adventures.html"),
+        ("Lulu & Ellie Mystery Tails","Source-backed preview","Canonical source titles are being restored to the public catalog.","series/mystery-tails.html"),
+        ("Lulu & Ellie Creature Rescue Club","In the works","Warm magical-creature rescue adventures.","series/creature-rescue-club.html"),
+        ("Lulu & Ellie Backyard Academy","In the works","Nature, science, and discovery adventures.","series/backyard-academy.html"),
+        ("Lulu & Ellie Go To Camp","In the works","Campfire-cozy adventures about teamwork and trying new things.","series/go-to-camp.html"),
+        ("Lulu & Ellie in Space","In the works","Cozy space-rescue adventures across friendly worlds.","series/lulu-and-ellie-in-space.html"),
+        ("Lulu & Ellie Time Tails","In the works","Time-bending adventures joining the public library architecture.","series/time-tails.html"),
+        ("Lulu & Ellie Bedtime Adventures","Coming soon","Soft, low-stimulation bedtime stories.","series/bedtime-adventures.html"),
     ]
     series_html = "".join(f'<article class="mini-card"><div class="tag-row"><span class="tag">Storybook series</span><span class="status">{esc(status)}</span></div><h3>{esc(name)}</h3><p>{esc(desc)}</p><a class="button ghost" href="{href}">Explore</a></article>' for name,status,desc,href in series_cards)
     learning_cards = "".join([
