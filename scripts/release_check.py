@@ -17,6 +17,7 @@ GENERATORS = [
 ]
 
 VALIDATORS = [
+    ["python3", "scripts/validate_free_library.py"],
     ["python3", "scripts/validate_library_master.py"],
     ["python3", "scripts/validate_site.py"],
     ["python3", "scripts/validate_source_manifest.py"],

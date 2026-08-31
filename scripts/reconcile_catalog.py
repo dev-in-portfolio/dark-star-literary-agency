@@ -34,6 +34,7 @@ def header(prefix: str, current: str = "library") -> str:
         ("author", "About the Author", f"{prefix}ambrose-caspian-vale.html"),
         ("lulu", "Lulu &amp; Ellie", f"{prefix}lulu-ellie/"),
         ("library", "Library", f"{prefix}library.html"),
+        ("free", "Free Library", f"{prefix}free-library.html"),
         ("parents", "Parents &amp; Teachers", f"{prefix}parents-teachers.html"),
         ("contact", "Contact", f"{prefix}contact.html"),
     ]
@@ -327,7 +328,7 @@ def render_library(master: dict) -> str:
     return f"""<!doctype html><html lang="en">
 {head("The Lulu & Ellie Library | Series, Learning Lines & Books", "The Lulu & Ellie Library brings together the canonical Original Adventure sequence, storybook series, learning lines, and companion collections.", "")}
 <body>{header("", "library")}<main id="main">
-<section class="page-hero"><div class="site-shell hero-grid"><article class="hero-panel"><div class="eyebrow">The Lulu &amp; Ellie Library</div><h1>One library, with one source of truth.</h1><p class="lede">Storybook series, learning lines, companion books, and the complete twenty-book Original Adventure sequence.</p><p class="lede">Book existence, public announcement state, and marketplace availability are tracked separately so the catalog stays useful without making unsupported claims.</p><div class="hero-actions"><a class="button" href="#all-books">Original Adventure Books 1–20</a><a class="button secondary" href="companion-library.html">Companion Library</a></div></article><aside class="tier-hero-media"><img src="assets/lulu-ellie/original-adventure/book-20/front-cover.jpg" alt="Lulu &amp; Ellie and the Keeper Ring cover art" loading="eager" decoding="async"></aside></div></section>
+<section class="page-hero"><div class="site-shell hero-grid"><article class="hero-panel"><div class="eyebrow">The Lulu &amp; Ellie Library</div><h1>One library, with one source of truth.</h1><p class="lede">Storybook series, learning lines, companion books, and the complete twenty-book Original Adventure sequence.</p><p class="lede">Book existence, public announcement state, and marketplace availability are tracked separately so the catalog stays useful without making unsupported claims.</p><div class="hero-actions"><a class="button" href="free-library.html">Read &amp; Download Free</a><a class="button secondary" href="#all-books">Original Adventure Books 1–20</a><a class="button secondary" href="companion-library.html">Companion Library</a></div></article><aside class="tier-hero-media"><img src="assets/lulu-ellie/original-adventure/book-20/front-cover.jpg" alt="Lulu &amp; Ellie and the Keeper Ring cover art" loading="eager" decoding="async"></aside></div></section>
 <section id="storybook-series"><div class="site-shell section-card"><div class="section-head"><div class="section-kicker">Storybook Series</div><h2>Choose a storyworld.</h2></div><div class="mini-grid">{series_html}</div></div></section>
 <section><div class="site-shell section-card"><div class="section-head"><div class="section-kicker">Learning &amp; Companion Lines</div><h2>Practice, play, make, and explore.</h2></div><div class="mini-grid">{learning_cards}</div></div></section>
 <section id="all-books"><div class="site-shell section-card"><div class="section-head"><div class="section-kicker">Canonical Original Adventure</div><h2>Books 1–20</h2><p class="section-lede">These book numbers follow canonical story order. Marketplace links, where recorded, live on the individual book pages and remain subject to current verification.</p></div><div class="book-list-grid">{book_cards}</div></div></section>
@@ -349,6 +350,20 @@ def patch_all_html(master: dict) -> None:
             continue
         prefix = root_prefix(page)
         relative_name = page.relative_to(ROOT).as_posix()
+        nav_match = re.search(r'(<nav class="nav" aria-label="Primary">)(.*?)(</nav>)', text, re.I | re.S)
+        if nav_match:
+            nav_html = nav_match.group(2)
+            free_href = f'{prefix}free-library.html'
+            if 'free-library.html"' not in nav_html:
+                library_link = re.search(
+                    r'(<a\b[^>]*href=["\']' + re.escape(f'{prefix}library.html') + r'["\'][^>]*>\s*Library\s*</a>)',
+                    nav_html,
+                    re.I,
+                )
+                if library_link:
+                    insertion = library_link.group(1) + f'<a href="{free_href}">Free Library</a>'
+                    nav_html = nav_html[:library_link.start()] + insertion + nav_html[library_link.end():]
+                    text = text[:nav_match.start(2)] + nav_html + text[nav_match.end(2):]
         text = text.replace("series/lulu-and-ellie-adventures.html#purchase", "series/lulu-and-ellie-adventures.html#marketplace-links")
         text = text.replace("../series/lulu-and-ellie-adventures.html#purchase", "../series/lulu-and-ellie-adventures.html#marketplace-links")
         if relative_name in {"index.html", "agency.html", "ambrose-caspian-vale.html", "parents-teachers.html"} and "hero-brand-art" not in text and '<aside class="hero-side">' in text:

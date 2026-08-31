@@ -27,6 +27,7 @@ jobs:
         run: |
           python -m py_compile scripts/reconcile_catalog.py
           python -m py_compile scripts/release_check.py
+          python -m py_compile scripts/validate_free_library.py
           python -m py_compile scripts/validate_library_master.py
           python -m py_compile scripts/validate_site.py
           python -m py_compile scripts/validate_source_manifest.py
