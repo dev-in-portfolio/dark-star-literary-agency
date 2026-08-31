@@ -1,0 +1,428 @@
+{
+  "schema_version": 1,
+  "generated_from": "verified GitHub storage repositories plus full-book cover/title-page review for Original Adventure Books 11-20",
+  "site_policy": {
+    "source_exists_is_not_marketplace_proof": true,
+    "public_states": [
+      "live",
+      "preview",
+      "hidden"
+    ],
+    "marketplace_states": [
+      "verified",
+      "link-on-file-unverified",
+      "no-link-unverified"
+    ]
+  },
+  "storage_sources": [
+    {
+      "repo": "dev-in-portfolio/l_e_storage",
+      "branch": "l_e_storage",
+      "collections": [
+        "original-adventure"
+      ]
+    },
+    {
+      "repo": "dev-in-portfolio/l_e_storage2",
+      "branch": "main",
+      "collections": [
+        "in-space"
+      ]
+    },
+    {
+      "repo": "dev-in-portfolio/l_e_storage3",
+      "branch": "main",
+      "collections": [
+        "creature-rescue-club"
+      ]
+    },
+    {
+      "repo": "dev-in-portfolio/l_e_storage4",
+      "branch": "main",
+      "collections": [
+        "mystery-tails",
+        "time-tails"
+      ]
+    },
+    {
+      "repo": "dev-in-portfolio/l_e_storage5",
+      "branch": "main",
+      "collections": [
+        "go-to-camp"
+      ]
+    },
+    {
+      "repo": "dev-in-portfolio/l_e_storage6",
+      "branch": "main",
+      "collections": [
+        "academy",
+        "learning",
+        "phonics",
+        "handwriting",
+        "cursive"
+      ]
+    },
+    {
+      "repo": "dev-in-portfolio/l_e_storage7",
+      "branch": "main",
+      "collections": [
+        "companion-activity-library"
+      ]
+    }
+  ],
+  "series": [
+    {
+      "id": "original-adventure",
+      "name": "Lulu & Ellie Adventures",
+      "storage_repo": "dev-in-portfolio/l_e_storage",
+      "expected_books": 20,
+      "complete_books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "missing_books": [],
+      "public_state": "live",
+      "catalog_reconciled": true,
+      "books": [
+        {
+          "number": 1,
+          "title": "Lulu & Ellie and the Secret of Blackwater Bay",
+          "slug": "lulu-and-ellie-and-the-secret-of-blackwater-bay"
+        },
+        {
+          "number": 2,
+          "title": "Lulu & Ellie and the Lost Valley of Thunder",
+          "slug": "lulu-and-ellie-and-the-lost-valley-of-thunder"
+        },
+        {
+          "number": 3,
+          "title": "Lulu & Ellie and the Clockwork Forest",
+          "slug": "lulu-and-ellie-and-the-clockwork-forest"
+        },
+        {
+          "number": 4,
+          "title": "Lulu & Ellie and the Moonlit Circus",
+          "slug": "lulu-and-ellie-and-the-moonlit-circus"
+        },
+        {
+          "number": 5,
+          "title": "Lulu & Ellie and the Snow Dragon's Bell",
+          "slug": "lulu-and-ellie-and-the-snow-dragons-bell"
+        },
+        {
+          "number": 6,
+          "title": "Lulu & Ellie and the Mushroom Moon Maze",
+          "slug": "lulu-and-ellie-and-the-mushroom-moon-maze"
+        },
+        {
+          "number": 7,
+          "title": "Lulu & Ellie and the Lanterns of the Deep",
+          "slug": "lulu-and-ellie-and-the-lanterns-of-the-deep"
+        },
+        {
+          "number": 8,
+          "title": "Lulu & Ellie and the Book That Lost Its Ending",
+          "slug": "lulu-and-ellie-and-the-book-that-lost-its-ending"
+        },
+        {
+          "number": 9,
+          "title": "Lulu & Ellie and the Island That Drifted Away",
+          "slug": "lulu-and-ellie-and-the-island-that-drifted-away"
+        },
+        {
+          "number": 10,
+          "title": "Lulu & Ellie and the Star Map of Everywhere",
+          "slug": "lulu-and-ellie-and-the-star-map-of-everywhere"
+        },
+        {
+          "number": 11,
+          "title": "Lulu & Ellie and the Lanterns of Firefly Hollow",
+          "slug": "lulu-and-ellie-and-the-lanterns-of-firefly-hollow"
+        },
+        {
+          "number": 12,
+          "title": "Lulu & Ellie and the Acorn Crown",
+          "slug": "lulu-and-ellie-and-the-acorn-crown"
+        },
+        {
+          "number": 13,
+          "title": "Lulu & Ellie and the Red Kite in the Impossible Wind",
+          "slug": "lulu-and-ellie-and-the-red-kite-in-the-impossible-wind"
+        },
+        {
+          "number": 14,
+          "title": "Lulu & Ellie and the Silver Door Garden",
+          "slug": "lulu-and-ellie-and-the-silver-door-garden"
+        },
+        {
+          "number": 15,
+          "title": "Lulu & Ellie and the Moon That Forgot to Laugh",
+          "slug": "lulu-and-ellie-and-the-moon-that-forgot-to-laugh"
+        },
+        {
+          "number": 16,
+          "title": "Lulu & Ellie and the Emberleaf Kingdom",
+          "slug": "lulu-and-ellie-and-the-emberleaf-kingdom"
+        },
+        {
+          "number": 17,
+          "title": "Lulu & Ellie and the Waterfall That Climbed the Stars",
+          "slug": "lulu-and-ellie-and-the-waterfall-that-climbed-the-stars"
+        },
+        {
+          "number": 18,
+          "title": "Lulu & Ellie and the Crystal Pawprint",
+          "slug": "lulu-and-ellie-and-the-crystal-pawprint"
+        },
+        {
+          "number": 19,
+          "title": "Lulu & Ellie and the Feather of Two Shadows",
+          "slug": "lulu-and-ellie-and-the-feather-of-two-shadows"
+        },
+        {
+          "number": 20,
+          "title": "Lulu & Ellie and the Keeper Ring",
+          "slug": "lulu-and-ellie-and-the-keeper-ring"
+        }
+      ]
+    },
+    {
+      "id": "in-space",
+      "name": "Lulu & Ellie in Space",
+      "storage_repo": "dev-in-portfolio/l_e_storage2",
+      "expected_books": 20,
+      "complete_books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "missing_books": [],
+      "public_state": "preview",
+      "catalog_reconciled": false
+    },
+    {
+      "id": "creature-rescue-club",
+      "name": "Lulu & Ellie Creature Rescue Club",
+      "storage_repo": "dev-in-portfolio/l_e_storage3",
+      "expected_books": 20,
+      "complete_books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "missing_books": [],
+      "public_state": "preview",
+      "catalog_reconciled": false
+    },
+    {
+      "id": "mystery-tails",
+      "name": "Lulu & Ellie Mystery Tails",
+      "storage_repo": "dev-in-portfolio/l_e_storage4",
+      "expected_books": 20,
+      "complete_books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "missing_books": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "public_state": "preview",
+      "catalog_reconciled": false,
+      "source_confirmed_titles": {
+        "1": "The Case of the Missing Moon Biscuit",
+        "2": "The Secret of the Whispering Mailbox",
+        "3": "The Pawprints That Walked Backward",
+        "4": "The Haunted Treat Truck",
+        "5": "The Lighthouse That Barked",
+        "16": "The Case of the Lantern That Winked",
+        "17": "The Case of the Borrowed Starlight"
+      }
+    },
+    {
+      "id": "time-tails",
+      "name": "Lulu & Ellie Time Tails",
+      "storage_repo": "dev-in-portfolio/l_e_storage4",
+      "expected_books": 20,
+      "complete_books": [
+        1,
+        3,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "missing_books": [
+        2,
+        5,
+        6
+      ],
+      "public_state": "preview",
+      "catalog_reconciled": false,
+      "source_confirmed_titles": {
+        "7": "The Tick-Tock Acorn",
+        "9": "The Acorn That Ticked Tomorrow",
+        "13": "The Tick-Tock Seedling",
+        "15": "The Clockflower Promise",
+        "17": "The Clockseed Promise",
+        "20": "The Tomorrow Bell"
+      }
+    },
+    {
+      "id": "go-to-camp",
+      "name": "Lulu & Ellie Go To Camp",
+      "storage_repo": "dev-in-portfolio/l_e_storage5",
+      "expected_books": 20,
+      "complete_books": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "missing_books": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "public_state": "preview",
+      "catalog_reconciled": false
+    }
+  ],
+  "learning_library": {
+    "storage_repo": "dev-in-portfolio/l_e_storage6",
+    "collections": {
+      "academy": {
+        "complete": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "learning": {
+        "complete": [
+          1,
+          2,
+          3
+        ]
+      },
+      "phonics": {
+        "complete": [
+          1,
+          2
+        ]
+      },
+      "handwriting": {
+        "complete": [
+          1,
+          2,
+          3
+        ]
+      },
+      "cursive": {
+        "complete": [
+          1,
+          2
+        ]
+      }
+    }
+  },
+  "companion_library": {
+    "storage_repo": "dev-in-portfolio/l_e_storage7",
+    "source_backed": true,
+    "note": "Public release state is independent of source-file existence."
+  }
+}
