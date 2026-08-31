@@ -280,13 +280,26 @@ def render_mystery_series(master: dict) -> str:
 </main>{footer("../")}</body></html>"""
 
 
-def render_time_tails() -> str:
+def render_source_status_series(master: dict, series_id: str, eyebrow: str, lede: str) -> str:
+    series = next(s for s in master["series"] if s["id"] == series_id)
+    count = len(series.get("complete_books", []))
+    name = series["name"]
+    description = f"{name} is a source-backed Lulu & Ellie collection. {count} full source book" + (" is" if count == 1 else "s are") + " archived while the public catalog is reconciled."
     return f"""<!doctype html><html lang="en" data-nav="library">
-{head("Lulu & Ellie Time Tails | Time-Adventure Series", "Lulu & Ellie Time Tails is a time-bending adventure series in the Lulu & Ellie universe, currently presented as an intentional preview.", "../")}
+{head(name + " | Lulu & Ellie", description, "../")}
 <body data-nav="library">{header("../", "library")}<main id="main">
-<section class="page-hero"><div class="site-shell hero-grid"><article class="hero-panel"><div class="eyebrow">Time-adventure series</div><h1>Lulu &amp; Ellie Time Tails</h1><p class="lede">A time-bending Lulu &amp; Ellie series where clocks, seeds, promises, and tomorrow-sized mysteries open new paths.</p><p class="support-note">Intentional preview: public book pages and marketplace claims will appear only as individual titles are fully reconciled for the public catalog.</p></article><aside class="hero-side"><div class="portal-card"><div class="portal-top"><div><div class="eyebrow">Series status</div><div class="portal-title">In the works</div></div><span class="status-badge">Intentional preview</span></div><p class="portal-copy">The series is represented in the source archive; this page keeps public claims conservative while the catalog is finalized.</p></div></aside></div></section>
-<section><div class="site-shell section-card"><div class="section-head"><div class="section-kicker">Keep Exploring</div><h2>More doors into the Lulu &amp; Ellie universe.</h2></div><div class="section-actions"><a class="button" href="../library.html">Full Library</a><a class="button secondary" href="../lulu-ellie/">Lulu &amp; Ellie Hub</a></div></div></section>
+<section class="page-hero"><div class="site-shell hero-grid"><article class="hero-panel"><div class="eyebrow">{esc(eyebrow)}</div><h1>{esc(name)}</h1><p class="lede">{esc(lede)}</p><p class="support-note">Source-backed preview: {count} full source book{" is" if count == 1 else "s are"} archived. Individual public titles, release claims, and marketplace links stay withheld until the title-by-title catalog review is complete.</p></article><aside class="hero-side"><div class="portal-card"><div class="portal-top"><div><div class="eyebrow">Catalog status</div><div class="portal-title">Archive verified · public catalog reconciling</div></div><span class="status-badge">Intentional preview</span></div><p class="portal-copy">Source-file existence confirms the developed books. It does not, by itself, prove a current public release, price, or orderability.</p></div></aside></div></section>
+<section><div class="site-shell section-card"><div class="section-head"><div class="section-kicker">Source Status</div><h2>{count} full source book{" is" if count == 1 else "s are"} archived.</h2><p class="section-lede">This series page deliberately avoids old concept titles while the canonical public catalog is being reconciled against the archive.</p></div><div class="section-actions"><a class="button" href="../library.html">Full Library</a><a class="button secondary" href="../lulu-ellie/">Lulu &amp; Ellie Hub</a><a class="button secondary" href="../contact.html">Contact Dark Star</a></div></div></section>
 </main>{footer("../")}</body></html>"""
+
+
+def render_time_tails(master: dict) -> str:
+    return render_source_status_series(
+        master,
+        "time-tails",
+        "Time-adventure series",
+        "A time-bending Lulu & Ellie series where clocks, seeds, promises, and tomorrow-sized mysteries open new paths.",
+    )
 
 
 def render_library(master: dict) -> str:
@@ -334,8 +347,15 @@ def patch_all_html(master: dict) -> None:
         if "http-equiv=\"refresh\"" in text.lower() or "http-equiv='refresh'" in text.lower():
             continue
         prefix = root_prefix(page)
+        relative_name = page.relative_to(ROOT).as_posix()
         text = text.replace("series/lulu-and-ellie-adventures.html#purchase", "series/lulu-and-ellie-adventures.html#marketplace-links")
         text = text.replace("../series/lulu-and-ellie-adventures.html#purchase", "../series/lulu-and-ellie-adventures.html#marketplace-links")
+        if relative_name in {"index.html", "agency.html", "ambrose-caspian-vale.html", "parents-teachers.html"} and "hero-brand-art" not in text and '<aside class="hero-side">' in text:
+            art_number = 1 if relative_name != "agency.html" else 20
+            art_ext = "png" if art_number == 1 else "jpg"
+            art_title = "Lulu & Ellie and the Secret of Blackwater Bay" if art_number == 1 else "Lulu & Ellie and the Keeper Ring"
+            art = f'<figure class="hero-brand-art"><img src="{prefix}assets/lulu-ellie/original-adventure/book-{art_number}/front-cover.{art_ext}" alt="{art_title} cover art" loading="eager" decoding="async"></figure>'
+            text = text.replace("</aside>", art + "</aside>", 1)
         if "favicon.svg" not in text and "</head>" in text.lower():
             text = re.sub(r"\s*</head>", f'\n    <link rel="icon" href="{prefix}favicon.svg" type="image/svg+xml">\n  </head>', text, count=1, flags=re.I)
         if "accessibility.css" not in text and "</head>" in text.lower():
@@ -377,15 +397,28 @@ def write_site() -> None:
     (ROOT / "series" / "mystery-tails.html").write_text(render_mystery_series(master), encoding="utf-8")
     for book in mystery_books(master):
         (ROOT / "books" / f'{book["slug"]}.html').write_text(render_mystery_page(book), encoding="utf-8")
-    (ROOT / "series" / "time-tails.html").write_text(render_time_tails(), encoding="utf-8")
-    for stale in (
-        "mystery-tails-the-case-of-the-missing-mooncake.html",
-        "mystery-tails-the-lighthouse-that-blinked-twice.html",
-        "mystery-tails-the-pawprints-in-the-pumpkin-patch.html",
-    ):
+    (ROOT / "series" / "time-tails.html").write_text(render_time_tails(master), encoding="utf-8")
+    source_status_pages = {
+        "lulu-and-ellie-in-space.html": ("in-space", "Space rescue series", "Cozy space-rescue adventures across friendly worlds."),
+        "creature-rescue-club.html": ("creature-rescue-club", "Creature rescue series", "Warm rescue adventures about noticing what magical creatures need and helping them find safety."),
+        "go-to-camp.html": ("go-to-camp", "Camp adventure series", "Campfire-cozy adventures about teamwork, trying new things, and gentle outdoor mysteries."),
+        "backyard-academy.html": ("backyard-academy", "Nature learning storybooks", "Nature, science, and discovery adventures built around curiosity and careful observation."),
+        "bedtime-adventures.html": ("bedtime-adventures", "Bedtime storybooks", "Soft, low-stimulation bedtime stories with quiet wonder and calm endings."),
+    }
+    for filename, (series_id, eyebrow, lede) in source_status_pages.items():
+        (ROOT / "series" / filename).write_text(
+            render_source_status_series(master, series_id, eyebrow, lede),
+            encoding="utf-8",
+        )
+    stale_mystery = {
+        "mystery-tails-the-case-of-the-missing-mooncake.html": "Moved: The Case of the Missing Mooncake",
+        "mystery-tails-the-lighthouse-that-blinked-twice.html": "Moved: The Lighthouse That Blinked Twice",
+        "mystery-tails-the-pawprints-in-the-pumpkin-patch.html": "Moved: The Pawprints in the Pumpkin Patch",
+    }
+    for stale, title in stale_mystery.items():
         path = ROOT / "books" / stale
         if path.exists():
-            path.write_text(redirect_page("Mystery Tails catalog moved", "../series/mystery-tails.html"), encoding="utf-8")
+            path.write_text(redirect_page(title, "../series/mystery-tails.html"), encoding="utf-8")
     patch_all_html(master)
 
 
