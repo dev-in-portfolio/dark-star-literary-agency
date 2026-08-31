@@ -380,7 +380,7 @@ def patch_all_html(master: dict) -> None:
             return f'{attribute}="/web-image/{relative_asset}"'
 
         text = re.sub(
-            r'\\b(src|poster)=["\\']([^"\\']+\\.(?:png|jpe?g|webp))["\\']',
+            r"\b(src|poster)=[\"']([^\"']+\.(?:png|jpe?g|webp))[\"']",
             optimize_public_image,
             text,
             flags=re.I,
