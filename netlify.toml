@@ -1,6 +1,6 @@
 [build]
   publish = "."
-  command = "sh scripts/netlify_diagnostic.sh"
+  command = "python3 scripts/release_check.py"
 
 [[redirects]]
   from = "/lulu-and-ellie.html"
