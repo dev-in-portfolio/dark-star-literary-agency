@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "data" / "site-config.json"
 SITEMAP_PATH = ROOT / "sitemap.xml"
 ROBOTS_PATH = ROOT / "robots.txt"
-IGNORED_PARTS = {".git", ".github", "node_modules"}
+IGNORED_PARTS = {".git", ".github", ".netlify", "node_modules"}
 
 CANONICAL_RE = re.compile(r"\s*<link\b[^>]*\brel=[\"']canonical[\"'][^>]*>", re.IGNORECASE)
 META_RE_TEMPLATE = r"\s*<meta\b[^>]*(?:property|name)=[\"']{key}[\"'][^>]*>"
