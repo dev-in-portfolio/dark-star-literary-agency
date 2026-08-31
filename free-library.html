@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-nav="free">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Free Lulu & Ellie Library | Read, Watch, Listen & Download</title>
+    <meta name="description" content="Browse the free Lulu & Ellie archive: full books, activity books, learning books, audio, video, cover art, and companion media from all seven storage collections.">
+    <meta property="og:title" content="Free Lulu & Ellie Library">
+    <meta property="og:description" content="Read, watch, listen, view, and download the Lulu & Ellie archive for free.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script src="free-library.js" defer></script>
+  </head>
+  <body data-nav="free">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="Dark Star Literary Agency home">
+          <span class="brand-orb" aria-hidden="true"></span>
+          <span>Dark Star Literary Agency</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="agency.html">Dark Star</a>
+          <a href="ambrose-caspian-vale.html">About the Author</a>
+          <a href="lulu-ellie/">Lulu &amp; Ellie</a>
+          <a href="library.html">Library</a>
+          <a href="free-library.html" aria-current="page">Free Library</a>
+          <a href="parents-teachers.html">Parents &amp; Teachers</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="site-shell hero-grid">
+          <article class="hero-panel">
+            <div class="eyebrow">The Free Lulu &amp; Ellie Library</div>
+            <h1>Read it. Watch it. Listen to it. Keep a copy.</h1>
+            <p class="lede">The public archive now opens the reader-facing material from all seven Lulu &amp; Ellie storage repositories for free viewing and free download.</p>
+            <p class="support-note">Full books, learning books, activity books, coloring interiors, audio, video, cover art, feature art, and other reader-facing media are linked to their authoritative storage copies. Repository workflows, transfer files, and internal status documents stay out of the public library because nobody came here to download YAML.</p>
+            <div class="hero-actions">
+              <a class="button" href="#browse-free-library">Browse everything</a>
+              <a class="button secondary" href="library.html">Editorial Library</a>
+            </div>
+          </article>
+          <aside class="hero-side">
+            <div class="portal-card">
+              <div class="portal-top">
+                <div>
+                  <div class="eyebrow">Access</div>
+                  <div class="portal-title">Free to view and download</div>
+                </div>
+                <span class="status-badge">Public archive</span>
+              </div>
+              <p class="portal-copy">Nothing in this archive requires a purchase. Source files remain in the storage repositories so the website does not create duplicate masters.</p>
+              <div id="free-library-stats" class="free-library-stats" aria-live="polite">Loading archive inventory…</div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="browse-free-library">
+        <div class="site-shell section-card">
+          <div class="section-head">
+            <div class="section-kicker">Browse the archive</div>
+            <h2>Everything reader-facing in Storages 1–7.</h2>
+            <p class="section-lede">Search by title or filename, narrow by collection, or filter by books, audio, video, and images.</p>
+          </div>
+
+          <form class="free-library-filters" id="free-library-filters" role="search">
+            <label>
+              <span>Search</span>
+              <input id="free-search" type="search" placeholder="Book title, filename, collection…" autocomplete="off">
+            </label>
+            <label>
+              <span>Collection</span>
+              <select id="free-collection">
+                <option value="">All collections</option>
+              </select>
+            </label>
+            <label>
+              <span>Type</span>
+              <select id="free-kind">
+                <option value="">All types</option>
+                <option value="document">Books &amp; PDFs</option>
+                <option value="audio">Audio</option>
+                <option value="video">Video</option>
+                <option value="image">Images</option>
+              </select>
+            </label>
+            <button class="button secondary" type="button" id="free-reset">Reset filters</button>
+          </form>
+
+          <div class="free-library-result-head">
+            <strong id="free-result-count" aria-live="polite">Loading…</strong>
+            <span>Every item includes a free viewer and a direct source download.</span>
+          </div>
+
+          <div id="free-library-grid" class="free-library-grid"></div>
+
+          <noscript>
+            <div class="catalog-notice"><strong>JavaScript is required for the searchable archive.</strong> The source files remain publicly available in the seven Lulu &amp; Ellie storage repositories.</div>
+          </noscript>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-shell footer-inner">
+        <strong>&copy; 2026 Dark Star Literary Agency. All rights reserved.</strong>
+        <div>Dark Star Literary Agency is the creative home of Ambrose Caspian Vale and the Lulu &amp; Ellie Adventures.</div>
+        <div><a href="accessibility.html">Accessibility</a> · Contact: <a href="mailto:literary@darkstarconsultinggroup.com">literary@darkstarconsultinggroup.com</a></div>
+      </div>
+    </footer>
+  </body>
+</html>
