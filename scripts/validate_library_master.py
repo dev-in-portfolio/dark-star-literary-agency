@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MASTER = ROOT / "data" / "library-master.json"
+IGNORED_PARTS = {".git", ".github", ".netlify", "node_modules"}
 
 
 def fail(message: str, errors: list[str]) -> None:
@@ -138,6 +139,8 @@ def main() -> int:
         fail("Time Tails is missing from the public series architecture", errors)
 
     for page in ROOT.rglob("*.html"):
+        if any(part in IGNORED_PARTS for part in page.parts):
+            continue
         text = page.read_text(encoding="utf-8")
         stale_purchase_targets = (
             "series/lulu-and-ellie-adventures.html#purchase",
