@@ -160,7 +160,7 @@ def validate_delivery_policy() -> list[str]:
 
     page_requirements = (
         'href="archive.css"',
-        'preload="none" poster="../../assets/lulu-ellie/original-adventure/book-10/front-cover.jpg"',
+        'preload="none" poster="../../assets/lulu-ellie/original-adventure/book-20/front-cover.jpg"',
         "created and loaded only after a visitor selects a cover",
     )
     for requirement in page_requirements:
