@@ -378,6 +378,36 @@
       ],
       "public_state": "preview",
       "catalog_reconciled": false
+    },
+    {
+      "id": "backyard-academy",
+      "name": "Lulu & Ellie Backyard Academy",
+      "storage_repo": "dev-in-portfolio/l_e_storage6",
+      "expected_books": 5,
+      "complete_books": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "missing_books": [],
+      "public_state": "preview",
+      "catalog_reconciled": false
+    },
+    {
+      "id": "bedtime-adventures",
+      "name": "Lulu & Ellie Bedtime Adventures",
+      "storage_repo": "dev-in-portfolio/l_e_storage7",
+      "expected_books": 3,
+      "complete_books": [
+        1,
+        2,
+        3
+      ],
+      "missing_books": [],
+      "public_state": "preview",
+      "catalog_reconciled": false
     }
   ],
   "learning_library": {
