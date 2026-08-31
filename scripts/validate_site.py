@@ -150,7 +150,10 @@ def resolve_local_reference(page: Path, value: str) -> Path | None:
     if not clean_path:
         return None
 
-    target = ROOT / clean_path.lstrip("/") if clean_path.startswith("/") else page.parent / clean_path
+    if clean_path.startswith("/web-image/"):
+        target = ROOT / clean_path.removeprefix("/web-image/")
+    else:
+        target = ROOT / clean_path.lstrip("/") if clean_path.startswith("/") else page.parent / clean_path
     target = target.resolve()
 
     try:
