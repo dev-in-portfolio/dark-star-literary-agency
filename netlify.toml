@@ -1,10 +1,16 @@
 [build]
   publish = "."
-  command = "python3 scripts/validate_site.py && python3 scripts/validate_source_manifest.py && python3 scripts/validate_marketplace.py && python3 scripts/update_seo.py --check && python3 scripts/update_structured_data.py --check && python3 scripts/update_media_inventory.py --check && python3 scripts/validate_pdf_accessibility.py"
+  command = "python3 scripts/release_check.py"
 
 [[redirects]]
   from = "/lulu-and-ellie.html"
   to = "/lulu-ellie/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/books/lulu-and-ellie-and-the-lost-dinosaur-valley.html"
+  to = "/books/lulu-and-ellie-and-the-lost-valley-of-thunder.html"
   status = 301
   force = true
 
