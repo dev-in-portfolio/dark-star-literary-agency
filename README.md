@@ -92,7 +92,7 @@ SEO, structured data, and media inventory are then regenerated from the reconcil
 
 ## Release Pipeline
 
-Both GitHub Actions and Netlify execute the same command:
+Both GitHub Actions and Netlify execute the same command. Netlify's build runtime is pinned to Python 3.12 to match CI:
 
 ```bash
 python3 scripts/release_check.py
