@@ -50,8 +50,8 @@ def main() -> int:
         print(f"Could not read data/free-library.json: {exc}")
         return 1
 
-    if manifest.get("schema_version") != 1:
-        fail("free-library schema_version must be 1", errors)
+    if manifest.get("schema_version") != 2:
+        fail("free-library schema_version must be 2", errors)
 
     if manifest.get("policy", {}).get("public_free_access") is not True:
         fail("free-library manifest must explicitly enable public_free_access", errors)
@@ -98,6 +98,15 @@ def main() -> int:
         kind = asset.get("kind")
         source_url = asset.get("source_url")
         download_url = asset.get("download_url")
+        display_title = asset.get("display_title")
+        display_collection = asset.get("display_collection")
+
+        if not isinstance(display_title, str) or not display_title.strip():
+            fail(f"{key or index}: missing explicit public display_title", errors)
+        if not isinstance(display_collection, str) or not display_collection.strip():
+            fail(f"{key or index}: missing explicit public display_collection", errors)
+        if isinstance(display_title, str) and any(token in display_title for token in ("_FINAL", "_INTERIOR", "l_e_storage", ".pdf", ".mp3", ".mp4")):
+            fail(f"{key or index}: technical shorthand leaked into display_title: {display_title}", errors)
 
         if not isinstance(key, str) or not key:
             fail(f"asset #{index} is missing a key", errors)
@@ -158,7 +167,7 @@ def main() -> int:
         script_text = library_script.read_text(encoding="utf-8")
         if 'repo.textContent = asset.repo' in script_text:
             fail("raw repository names must not be rendered as reader-facing card labels", errors)
-        for phrase in ("PAGE_SIZE", "free-shelf-tab", "free-load-more", "displayTitle"):
+        for phrase in ("PAGE_SIZE", "free-shelf-tab", "free-load-more", "asset.display_title", "asset.display_collection"):
             if phrase not in script_text:
                 fail(f"free-library.js missing redesigned browsing behavior: {phrase}", errors)
 
@@ -173,7 +182,7 @@ def main() -> int:
     library_page = ROOT / "free-library.html"
     if library_page.is_file():
         text = library_page.read_text(encoding="utf-8")
-        for phrase in ("Free Library", "No account. No checkout.", "free-shelf-tabs", "free-library.js"):
+        for phrase in ("Free Library", "No account. No checkout.", "free-shelf-tabs", "free-library.js?v=20260831-3", "styles.css?v=20260831-3"):
             if phrase not in text:
                 fail(f"free-library.html missing required public access language: {phrase}", errors)
 
