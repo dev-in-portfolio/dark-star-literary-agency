@@ -288,6 +288,13 @@
     view.className = "free-card-action free-card-action-primary";
     view.href = viewerHref(asset);
     view.textContent = actionLabel(asset.kind);
+    view.addEventListener("click", () => {
+      try {
+        sessionStorage.setItem("free-library-title:" + asset.key, displayTitle(asset));
+      } catch (_) {
+        // Session storage is optional; the viewer still works without it.
+      }
+    });
 
     const download = document.createElement("a");
     download.className = "free-card-action free-card-action-secondary";
