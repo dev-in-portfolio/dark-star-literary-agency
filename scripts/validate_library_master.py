@@ -154,7 +154,7 @@ def main() -> int:
             fail(f"{page.relative_to(ROOT)}: missing accessibility stylesheet", errors)
 
         raw_media_refs = re.findall(
-            r'\\b(?:src|poster)=["\\']([^"\\']+\\.(?:png|jpe?g|webp))["\\']',
+            r"\b(?:src|poster)=[\"']([^\"']+\.(?:png|jpe?g|webp))[\"']",
             text,
             flags=re.I,
         )
