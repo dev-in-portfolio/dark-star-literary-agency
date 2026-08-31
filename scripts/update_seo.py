@@ -39,6 +39,10 @@ REFRESH_RE = re.compile(
 IMG_RE = re.compile(r"<img\b([^>]*)>", re.IGNORECASE | re.DOTALL)
 SRC_RE = re.compile(r"\bsrc=[\"']([^\"']+)[\"']", re.IGNORECASE)
 ALT_RE = re.compile(r"\balt=[\"']([^\"']*)[\"']", re.IGNORECASE)
+ROBOTS_META_RE = re.compile(
+    r"<meta\\b[^>]*\\bname=[\"\']robots[\"\'][^>]*\\bcontent=[\"\']([^\"\']*)[\"\'][^>]*>",
+    re.IGNORECASE,
+)
 
 MANAGED_META_KEYS = (
     "og:url",
