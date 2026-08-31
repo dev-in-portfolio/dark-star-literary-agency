@@ -138,7 +138,7 @@ def redirect_target(page_url: str, text: str) -> str | None:
     return urljoin(page_url, match.group(1).strip())
 
 
-def build_metadata(page: Path, text: str, config: dict[str, str]) -> tuple[str, bool]:
+def build_metadata(page: Path, text: str, config: dict[str, str]) -> tuple[str, bool, bool]:
     page_url = absolute_page_url(page, config["site_url"])
     redirect_url = redirect_target(page_url, text)
     canonical_url = redirect_url or page_url
@@ -146,6 +146,10 @@ def build_metadata(page: Path, text: str, config: dict[str, str]) -> tuple[str, 
     title = find_content(OG_TITLE_RE, text) or find_content(TITLE_RE, text, config["site_name"])
     description = find_content(OG_DESCRIPTION_RE, text) or find_content(DESCRIPTION_RE, text)
     image = first_local_image(page, page_url, text)
+    if image is None:
+        image = (config["site_url"].rstrip("/") + "/og-image.png", config["site_name"])
+    robots = find_content(ROBOTS_META_RE, text).lower()
+    is_noindex = "noindex" in {part.strip() for part in robots.split(",")} if robots else False
 
     lines = [
         f'    <link rel="canonical" href="{escape_attr(canonical_url)}">',
@@ -176,7 +180,7 @@ def build_metadata(page: Path, text: str, config: dict[str, str]) -> tuple[str, 
     if "</head>" not in cleaned.lower():
         raise ValueError("missing </head>")
     updated = re.sub(r"\s*</head>", "\n" + "\n".join(lines) + "\n  </head>", cleaned, count=1, flags=re.IGNORECASE)
-    return updated, redirect_url is not None
+    return updated, redirect_url is not None, is_noindex
 
 
 def sitemap_xml(urls: list[str]) -> str:
@@ -215,12 +219,12 @@ def main() -> int:
         relative = page.relative_to(ROOT).as_posix()
         try:
             original = page.read_text(encoding="utf-8")
-            updated, is_redirect = build_metadata(page, original, config)
+            updated, is_redirect, is_noindex = build_metadata(page, original, config)
         except (OSError, UnicodeDecodeError, ValueError) as exc:
             errors.append(f"{relative}: {exc}")
             continue
 
-        if not is_redirect:
+        if not is_redirect and not is_noindex:
             sitemap_urls.append(absolute_page_url(page, config["site_url"]))
 
         if updated != original:
