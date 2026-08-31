@@ -14,6 +14,11 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/web-image/*"
+  to = "/.netlify/images?url=/:splat&w=1000&fm=webp&q=82"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
