@@ -233,7 +233,7 @@ def validate_html() -> tuple[list[str], list[str]]:
                     except (OSError, UnicodeDecodeError) as exc:
                         errors.append(f"{relative}: could not read fragment target {fragment_target.relative_to(ROOT)}: {exc}")
                     else:
-                        if not re.search(r'\\bid=[\"\']' + re.escape(fragment) + r'[\"\']', target_text):
+                        if not re.search(r'\bid=["\']' + re.escape(fragment) + r'["\']', target_text):
                             errors.append(
                                 f"{relative}: missing fragment target #{fragment} in "
                                 f"{fragment_target.relative_to(ROOT)}"
