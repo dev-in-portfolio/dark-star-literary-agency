@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Dark Star Literary Agency">
+  <defs>
+    <radialGradient id="g" cx="35%" cy="30%">
+      <stop offset="0" stop-color="#fff7e7"/>
+      <stop offset=".22" stop-color="#f0c674"/>
+      <stop offset=".72" stop-color="#96732c"/>
+      <stop offset="1" stop-color="#241806"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#050812"/>
+  <circle cx="32" cy="32" r="20" fill="url(#g)"/>
+  <path d="M32 8l3.4 15.6L50 20l-11.8 9.7L48 42l-14.6-5.5L32 56l-3.4-19.5L14 42l9.8-12.3L14 20l14.6 3.6L32 8z" fill="#fff7e7" fill-opacity=".28"/>
+</svg>
