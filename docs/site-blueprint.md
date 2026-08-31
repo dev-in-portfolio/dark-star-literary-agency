@@ -6,91 +6,134 @@
 - `agency.html` — Dark Star identity
 - `ambrose-caspian-vale.html` — author identity
 - `lulu-ellie/` — flagship Lulu & Ellie universe hub
-- `lulu-ellie/original-adventure/` — 20-volume media archive with ten named storybooks and ten archive-preview volumes
-- `library.html` — growing public library
+- `lulu-ellie/original-adventure/` — complete 20-book Original Adventure media archive
+- `library.html` — canonical public library
 - `companion-library.html` — source-backed companion catalog
-- `parents-teachers.html` — trust and educational-use page
-- `accessibility.html` — public accessibility statement and feedback route
-- `contact.html` — agency contact page
+- `parents-teachers.html` — parent / teacher trust page
+- `accessibility.html` — accessibility statement and feedback route
+- `contact.html` — public contact page
 
-The legacy `/lulu-and-ellie.html` route redirects permanently to `/lulu-ellie/`.
+Series architecture includes Original Adventure, Mystery Tails, Creature Rescue Club, Backyard Academy, Go To Camp, In Space, Time Tails, and Bedtime Adventures.
 
 ## Catalog Model
 
-The public site separates:
+`data/library-master.json` is the canonical public-catalog input.
 
-1. Named and documented storybooks
-2. Clearly labeled media previews
-3. Developed companion interiors
-4. Marketplace verification state
-5. Accessibility release state
+The model deliberately separates:
 
-The existence of source media or an interior file is not treated as proof of publication, purchase availability, or accessible digital-release readiness.
+1. source-book existence;
+2. canonical title and sequence;
+3. public catalog reconciliation state;
+4. public visibility state;
+5. marketplace evidence;
+6. accessibility release state.
+
+A PDF existing in storage is not proof that the title is currently for sale, available in a given format, or approved for accessible digital distribution.
+
+## Storage Integration
+
+The site recognizes seven authoritative storage repositories:
+
+- `l_e_storage` — Original Adventure
+- `l_e_storage2` — In Space
+- `l_e_storage3` — Creature Rescue Club
+- `l_e_storage4` — Mystery Tails + Time Tails
+- `l_e_storage5` — Go To Camp
+- `l_e_storage6` — learning library
+- `l_e_storage7` — companion/activity library
+
+See `docs/storage-integration.md`.
+
+## Original Adventure
+
+Original Adventure is fully reconciled at Books 1–20.
+
+The site:
+
+- preserves canonical story order;
+- generates canonical pages for all 20;
+- maps media Book 1 → book-1 through Book 20 → book-20;
+- generates Book JSON-LD for all 20;
+- keeps marketplace claims separate from archive status.
+
+## Unreconciled Series
+
+When a storage series is known but its public title-by-title catalog is not yet reconciled, the series page shows source-backed archive status without promoting old concept titles into canonical book records.
+
+Legacy concept book pages are marked `noindex,follow` and visibly labeled as concept previews until they are either reconciled or redirected.
+
+Mystery Tails Books 1–5 are currently source-title reconciled. Time Tails now exists in the public architecture as an intentional preview.
 
 ## Companion Source Controls
 
-- `data/companion-catalog.json` represents the public companion catalog.
-- `data/companion-source-manifest.csv` records exact source package, internal PDF path, page count, SHA-256, quality status, and marketplace status.
-- `data/pdf-accessibility-audit.json` records text-layer, tagging, reading-order, alternative-text, language, remediation, and release state for the same 44 source IDs.
-- Raw source PDFs remain outside the public website repository.
+The existing 44-record companion catalog remains backed by:
+
+- `data/companion-catalog.json`
+- `data/companion-source-manifest.csv`
+- `data/pdf-accessibility-audit.json`
+
+Those records preserve exact provenance and accessibility release state independently of the broader storage-repository catalog.
 
 ## Marketplace Controls
 
-- `data/marketplace-records.json` stores recorded Amazon links and verification state for canonical Books 1–10.
-- A recorded ASIN is not proof of current price, format, stock, or orderability.
-- Book 6 remains in a no-active-link state until manually verified.
+`data/marketplace-records.json` preserves recorded Amazon evidence.
 
-## Media Controls
-
-- `data/media-inventory.json` records public-media paths, sizes, types, and SHA-256 values.
-- `data/media-budget.json` limits aggregate and per-file growth.
-- Original Adventure archive videos are click-to-load.
-- Automatic previews use `preload="none"`, visibility-aware playback, and reduced-motion safeguards.
+Marketplace links never prove current price, stock, format, or orderability. Unsupported prices and purchase claims are rejected by validation.
 
 ## SEO and Discovery
 
-- `data/site-config.json` centralizes the production URL, site identity, locale, author identity, series identity, contact email, and social defaults.
-- `scripts/update_seo.py` generates canonical and social metadata, `robots.txt`, and `sitemap.xml`.
-- `scripts/update_structured_data.py` generates conservative homepage and canonical-book JSON-LD.
-- `accessibility.html` is canonicalized and included in the sitemap.
+- `data/site-config.json` centralizes production URL and identity.
+- `scripts/update_seo.py` generates canonical/social metadata and the sitemap.
+- Local page art is preferred for social cards.
+- `og-image.png` is the fallback social image.
+- `noindex` preview pages are excluded from the sitemap.
+- `favicon.svg` is the primary favicon.
+- `scripts/update_structured_data.py` generates homepage identity data and Book data for all 20 canonical Original Adventure books.
 
-## Accessibility Direction
+## Accessibility and Interaction
 
-The website uses skip links, semantic headings, visible focus, image alternatives, controlled media, and reduced-motion support.
+Public pages use:
 
-The 44 supplied companion PDFs are image-based source files. The July 11, 2026 baseline found no usable extractable text. They remain blocked from accessible digital distribution until text, semantic tags, reading order, meaningful alternatives, language metadata, manual assistive-technology QA, and an exact release-file checksum are verified.
+- skip links;
+- semantic landmarks;
+- visible keyboard focus;
+- image alternatives;
+- reduced-motion safeguards;
+- safe new-tab behavior;
+- explicit accessibility feedback routing.
 
-The public accessibility statement:
-
-- Describes current website features
-- Discloses known source-PDF limitations
-- Explains third-party boundaries
-- Provides a direct barrier-reporting and accessible-format request route
-- Avoids claiming blanket formal conformance
+The PDF accessibility registry remains a separate release gate for source interiors.
 
 ## Design Direction
 
-- Midnight navy and black-blue background
+- Midnight navy and black-blue foundation
 - Soft gold accents
 - Ivory text
-- Subtle star and portal glow
-- Premium literary styling with warmer child-friendly accents inside Lulu & Ellie content
-- Motion previews that respect reduced-motion preferences and do not all play simultaneously
+- Subtle portal/star glow
+- Real Lulu & Ellie cover art on core brand surfaces
+- Premium literary styling with warm child-friendly art
+- Horizontally scrollable compact navigation on narrower screens rather than a tall wrapped sticky header
 
-## Technical Direction
+## Release Architecture
 
-Run all seven release checks before deployment:
+GitHub Actions and Netlify both call:
 
-1. `validate_site.py`
-2. `validate_source_manifest.py`
-3. `validate_marketplace.py`
-4. `update_seo.py --check`
-5. `update_structured_data.py --check`
-6. `update_media_inventory.py --check`
-7. `validate_pdf_accessibility.py`
+```bash
+python3 scripts/release_check.py
+```
 
-Keep book numbers, titles, page slugs, Previous/Next links, media directories, source hashes, marketplace records, and accessibility records aligned. Keep source archives and production interiors outside the website repository.
+The command performs generation first and then runs the complete validation suite. There is no separate weaker Netlify release path.
 
 ## Public Positioning
 
-The site should feel polished, literary, and magical immediately. Future collections remain hidden unless they are purchase-ready, preorder-ready, sample-ready, or intentionally announced as clearly labeled previews. Unapproved source PDFs must not be linked or described as accessible digital editions.
+The public site should feel like an intentional literary/publishing home, not an internal production dashboard.
+
+Future titles may be represented publicly only when they are:
+
+- canonical and intentionally announced;
+- purchase-ready;
+- preorder-ready;
+- sample-ready; or
+- deliberately presented as a clearly labeled preview.
+
+Unsupported production notes, uncertain titles, and internal-only source material stay out of canonical public navigation.

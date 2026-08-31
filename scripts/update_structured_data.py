@@ -14,6 +14,7 @@ from urllib.parse import urljoin
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = ROOT / "data" / "site-config.json"
 MARKETPLACE_PATH = ROOT / "data" / "marketplace-records.json"
+MASTER_PATH = ROOT / "data" / "library-master.json"
 GENERATED_RE = re.compile(
     r"\s*<script\s+type=[\"']application/ld\+json[\"']\s+data-generated=[\"']structured-data[\"']>.*?</script>",
     re.IGNORECASE | re.DOTALL,
@@ -168,26 +169,40 @@ def book_payload(config: dict[str, str], record: dict, text: str) -> dict:
     return payload
 
 
-def target_pages(config: dict, marketplace: dict) -> list[tuple[Path, dict]]:
-    records = marketplace.get("records")
-    if not isinstance(records, list) or len(records) != 10:
-        raise SystemExit("marketplace registry must contain exactly ten canonical records")
+def target_pages(config: dict, master: dict) -> list[tuple[Path, dict]]:
+    series = master.get("series")
+    if not isinstance(series, list):
+        raise SystemExit("library master series must be a list")
+    original = next((item for item in series if isinstance(item, dict) and item.get("id") == "original-adventure"), None)
+    if not isinstance(original, dict):
+        raise SystemExit("library master is missing original-adventure")
+    books = original.get("books")
+    if not isinstance(books, list) or len(books) != 20:
+        raise SystemExit("library master must contain exactly twenty canonical Original Adventure books")
 
     targets: list[tuple[Path, dict]] = [(ROOT / "index.html", homepage_payload(config))]
     seen: set[str] = set()
-    for record in records:
-        if not isinstance(record, dict):
-            raise SystemExit("marketplace registry records must be objects")
-        filename = record.get("filename")
-        if not isinstance(filename, str) or not filename.strip():
-            raise SystemExit("marketplace record is missing filename")
+    for book in books:
+        if not isinstance(book, dict):
+            raise SystemExit("library master book records must be objects")
+        number = book.get("number")
+        title = book.get("title")
+        slug = book.get("slug")
+        if not isinstance(number, int) or not 1 <= number <= 20:
+            raise SystemExit("library master contains an invalid Original Adventure book number")
+        if not isinstance(title, str) or not title.strip():
+            raise SystemExit(f"Original Adventure Book {number} is missing a title")
+        if not isinstance(slug, str) or not slug.strip():
+            raise SystemExit(f"Original Adventure Book {number} is missing a slug")
+        filename = slug + ".html"
         if filename in seen:
-            raise SystemExit(f"duplicate marketplace filename: {filename}")
+            raise SystemExit(f"duplicate canonical filename: {filename}")
         seen.add(filename)
         page = ROOT / "books" / filename
         if not page.is_file():
             raise SystemExit(f"missing canonical book page: {page.relative_to(ROOT)}")
         text = page.read_text(encoding="utf-8")
+        record = {"book_number": number, "title": title, "filename": filename}
         targets.append((page, book_payload(config, record, text)))
     return targets
 
@@ -201,10 +216,11 @@ def main() -> int:
 
     config = load_json(CONFIG_PATH)
     marketplace = load_json(MARKETPLACE_PATH)
+    master = load_json(MASTER_PATH)
     changes: list[str] = []
     errors: list[str] = []
 
-    for page, payload in target_pages(config, marketplace):
+    for page, payload in target_pages(config, master):
         relative = page.relative_to(ROOT).as_posix()
         try:
             original = page.read_text(encoding="utf-8")
@@ -230,7 +246,7 @@ def main() -> int:
         return 1
 
     action = "Updated" if args.write else "Validated"
-    print(f"{action} structured data for the homepage and ten canonical storybooks.")
+    print(f"{action} structured data for the homepage and twenty canonical storybooks.")
     if changes and args.write:
         print(f"Changed {len(changes)} file(s).")
     return 0

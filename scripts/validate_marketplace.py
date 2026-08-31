@@ -202,17 +202,17 @@ def validate_library_page() -> list[str]:
     text = LIBRARY_PAGE.read_text(encoding="utf-8")
     requirements = (
         '<link rel="stylesheet" href="accessibility.css">',
-        '<span class="status-badge">Growing library</span>',
-        "Recorded Amazon links are shown on canonical storybook pages.",
-        "Current price, format, and availability must be confirmed on Amazon.",
+        "One library, with one source of truth.",
+        "Original Adventure Books 1–20",
+        "Marketplace links, where recorded, live on the individual book pages",
     )
     for phrase in requirements:
         if phrase not in text:
             errors.append(f"{relative}: missing current Library wording: {phrase}")
 
     stale_phrases = (
-        '<span class="status-badge">Coming soon</span>',
         "Live paperback purchase links are shown",
+        "Temporarily unavailable.",
     )
     for phrase in stale_phrases:
         if phrase in text:

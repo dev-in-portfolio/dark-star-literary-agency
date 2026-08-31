@@ -6,6 +6,7 @@ on:
     branches:
       - main
       - "agent/**"
+      - "catalog-source-of-truth-rebuild"
 
 permissions:
   contents: read
@@ -22,8 +23,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Compile validation scripts
+      - name: Compile release scripts
         run: |
+          python -m py_compile scripts/reconcile_catalog.py
+          python -m py_compile scripts/release_check.py
+          python -m py_compile scripts/validate_library_master.py
           python -m py_compile scripts/validate_site.py
           python -m py_compile scripts/validate_source_manifest.py
           python -m py_compile scripts/validate_marketplace.py
@@ -33,18 +37,11 @@ jobs:
           python -m py_compile scripts/validate_pdf_accessibility.py
           python -m py_compile scripts/validate_interaction_semantics.py
 
-      - name: Run all eight release checks
+      - name: Run canonical release check
         shell: bash
         run: |
           set -euo pipefail
-          python scripts/validate_site.py | tee validation-report.txt
-          python scripts/validate_source_manifest.py | tee -a validation-report.txt
-          python scripts/validate_marketplace.py | tee -a validation-report.txt
-          python scripts/update_seo.py --check | tee -a validation-report.txt
-          python scripts/update_structured_data.py --check | tee -a validation-report.txt
-          python scripts/update_media_inventory.py --check | tee -a validation-report.txt
-          python scripts/validate_pdf_accessibility.py | tee -a validation-report.txt
-          python scripts/validate_interaction_semantics.py | tee -a validation-report.txt
+          python scripts/release_check.py | tee validation-report.txt
 
       - name: Upload validation report
         if: always()
