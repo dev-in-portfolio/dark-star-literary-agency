@@ -9,7 +9,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDED_DIRS = {".git", ".github", "docs", "data", "scripts"}
+EXCLUDED_DIRS = {".git", ".github", ".netlify", "node_modules", "docs", "data", "scripts"}
 
 
 class PageParser(HTMLParser):
