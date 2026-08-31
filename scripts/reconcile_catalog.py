@@ -342,7 +342,7 @@ def patch_all_html(master: dict) -> None:
     canonical_original = {b["slug"] + ".html" for b in original_series(master)["books"]}
     canonical_mystery = {b["slug"] + ".html" for b in mystery_books(master)}
     for page in sorted(ROOT.rglob("*.html")):
-        if any(part in {".git", ".github"} for part in page.parts):
+        if any(part in {".git", ".github", ".netlify", "node_modules"} for part in page.parts):
             continue
         text = page.read_text(encoding="utf-8")
         if "http-equiv=\"refresh\"" in text.lower() or "http-equiv='refresh'" in text.lower():
@@ -455,7 +455,7 @@ def main() -> int:
         write_site()
         print("Reconciled public catalog from data/library-master.json")
         return 0
-    before = {p.relative_to(ROOT).as_posix(): p.read_text(encoding="utf-8") for p in ROOT.rglob("*.html")}
+    before = {p.relative_to(ROOT).as_posix(): p.read_text(encoding="utf-8") for p in ROOT.rglob("*.html") if not any(part in {".git", ".github", ".netlify", "node_modules"} for part in p.parts)}
     before_js = (ROOT / "lulu-ellie" / "original-adventure" / "archive.js").read_text(encoding="utf-8")
     write_site()
     changed = [path for path, old in before.items() if (ROOT / path).read_text(encoding="utf-8") != old]
