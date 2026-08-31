@@ -12,7 +12,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-IGNORED_PARTS = {".git", ".github", "node_modules"}
+IGNORED_PARTS = {".git", ".github", ".netlify", "node_modules"}
 EXTERNAL_SCHEMES = {"http", "https", "mailto", "tel", "sms", "data", "javascript"}
 
 MASTER_CATALOG_PATH = ROOT / "data" / "library-master.json"
