@@ -16,32 +16,6 @@
     image: "Free image"
   }[kind] || "Free archive item");
 
-  function words(value) {
-    return String(value || "")
-      .replace(/\.[^.]+$/, "")
-      .replace(/[_-]+/g, " ")
-      .replace(/([a-z])([A-Z])/g, "$1 $2")
-      .replace(/([A-Za-z])(\d)/g, "$1 $2")
-      .replace(/\b(final|optimized|interior|full|repaired|v\d+)\b/gi, "")
-      .replace(/\bm\d+\b/gi, "")
-      .replace(/\s+/g, " ")
-      .trim();
-  }
-
-  function titleCase(value) {
-    return words(value).split(" ").map((part) => {
-      if (!part) return part;
-      if (/^(and|of|the|in|to|that|with)$/i.test(part)) return part.toLowerCase();
-      return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
-    }).join(" ").replace(/^Lulu /, "Lulu ").replace(/ Ellie /g, " Ellie ");
-  }
-
-  function displayTitle(asset) {
-    const saved = sessionStorage.getItem("free-library-title:" + asset.key);
-    if (saved) return saved;
-    return titleCase(asset.title || asset.filename);
-  }
-
   function actionLink(className, href, text, external = true) {
     const link = document.createElement("a");
     link.className = className;
@@ -58,7 +32,7 @@
     const frame = document.createElement("iframe");
     frame.className = "free-pdf-frame";
     frame.src = asset.download_url;
-    frame.title = "PDF viewer: " + displayTitle(asset);
+    frame.title = "PDF viewer: " + asset.display_title;
     frame.loading = "eager";
     stage.append(frame);
   }
@@ -92,7 +66,7 @@
     const image = document.createElement("img");
     image.className = "free-image-viewer";
     image.src = asset.download_url;
-    image.alt = displayTitle(asset);
+    image.alt = asset.display_title;
     image.decoding = "async";
     stage.append(image);
   }
@@ -107,21 +81,21 @@
     }
 
     try {
-      const response = await fetch("data/free-library.json", { cache: "no-cache" });
+      const response = await fetch("data/free-library.json?v=20260831-3", { cache: "no-store" });
       if (!response.ok) throw new Error("The library inventory could not be loaded.");
       const manifest = await response.json();
       const asset = manifest.assets.find((item) => item.key === key);
       if (!asset) throw new Error("That item is no longer in the current public library.");
 
-      const readableTitle = displayTitle(asset);
-      document.title = readableTitle + " | Free Lulu & Ellie Library";
-      title.textContent = readableTitle;
-      collection.textContent = asset.collection;
+      document.title = asset.display_title + " | Free Lulu & Ellie Library";
+      title.textContent = asset.display_title;
+      collection.textContent = asset.display_collection;
       file.textContent = formatLabel(asset.kind) + " · free to view or download";
 
-      const download = actionLink("free-viewer-action free-viewer-action-primary", asset.download_url, "Download");
-      const source = actionLink("free-viewer-action free-viewer-action-secondary", asset.source_url, "Source file");
-      actions.append(download, source);
+      actions.append(
+        actionLink("free-viewer-action free-viewer-action-primary", asset.download_url, "Download"),
+        actionLink("free-viewer-action free-viewer-action-secondary", asset.source_url, "Source file")
+      );
 
       technical.textContent = asset.filename + " · " + asset.repo;
       status.textContent = asset.kind === "document"

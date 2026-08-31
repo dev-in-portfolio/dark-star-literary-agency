@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "generated_from": "Current public contents of dev-in-portfolio/l_e_storage through l_e_storage7",
   "generated_at": "2026-08-31",
   "owner": "dev-in-portfolio",
@@ -19,7 +19,8 @@
       "GitHub workflows",
       "transfer manifests",
       "README/status documents"
-    ]
+    ],
+    "public_labels": "Every reader-facing asset has explicit display_title and display_collection fields; internal shorthand stays technical-only."
   },
   "source_repositories": [
     {
@@ -86,7 +87,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventure_Log1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventure_Log1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventure_Log1.pdf",
+      "display_collection": "Adventure Logs",
+      "display_title": "Adventure Log 1"
     },
     {
       "key": "l_e_storage7::Adventurelog2.pdf",
@@ -100,7 +103,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventurelog2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventurelog2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventurelog2.pdf",
+      "display_collection": "Adventure Logs",
+      "display_title": "Adventure Log 2"
     },
     {
       "key": "l_e_storage7::Adventurelog3.pdf",
@@ -114,7 +119,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventurelog3.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventurelog3.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventurelog3.pdf",
+      "display_collection": "Adventure Logs",
+      "display_title": "Adventure Log 3"
     },
     {
       "key": "l_e_storage7::Adventurelog4.pdf",
@@ -128,7 +135,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventurelog4.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventurelog4.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventurelog4.pdf",
+      "display_collection": "Adventure Logs",
+      "display_title": "Adventure Log 4"
     },
     {
       "key": "l_e_storage7::Adventurelog5.pdf",
@@ -142,7 +151,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventurelog5.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventurelog5.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Adventurelog5.pdf",
+      "display_collection": "Adventure Logs",
+      "display_title": "Adventure Log 5"
     },
     {
       "key": "l_e_storage6::Acadamy4.pdf",
@@ -156,7 +167,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Acadamy4.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Acadamy4.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Acadamy4.pdf",
+      "display_collection": "Backyard Academy",
+      "display_title": "Backyard Academy · Book 4"
     },
     {
       "key": "l_e_storage6::academy1.pdf",
@@ -170,7 +183,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/academy1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/academy1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/academy1.pdf",
+      "display_collection": "Backyard Academy",
+      "display_title": "Backyard Academy · Book 1"
     },
     {
       "key": "l_e_storage6::Academy2.pdf",
@@ -184,7 +199,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Academy2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Academy2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Academy2.pdf",
+      "display_collection": "Backyard Academy",
+      "display_title": "Backyard Academy · Book 2"
     },
     {
       "key": "l_e_storage6::Academy3.pdf",
@@ -198,7 +215,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Academy3.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Academy3.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Academy3.pdf",
+      "display_collection": "Backyard Academy",
+      "display_title": "Backyard Academy · Book 3"
     },
     {
       "key": "l_e_storage6::Academy5.pdf",
@@ -212,7 +231,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Academy5.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Academy5.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Academy5.pdf",
+      "display_collection": "Backyard Academy",
+      "display_title": "Backyard Academy · Book 5"
     },
     {
       "key": "l_e_storage7::Bedtime3.pdf",
@@ -226,7 +247,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Bedtime3.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Bedtime3.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Bedtime3.pdf",
+      "display_collection": "Bedtime Adventures",
+      "display_title": "Bedtime Adventures · Book 3"
     },
     {
       "key": "l_e_storage7::BT-B1_The_Moonbeam_That_Wouldnt_Sleep_FINAL.pdf",
@@ -240,7 +263,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/BT-B1_The_Moonbeam_That_Wouldnt_Sleep_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/BT-B1_The_Moonbeam_That_Wouldnt_Sleep_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/BT-B1_The_Moonbeam_That_Wouldnt_Sleep_FINAL.pdf",
+      "display_collection": "Bedtime Adventures",
+      "display_title": "The Moonbeam That Wouldn’t Sleep"
     },
     {
       "key": "l_e_storage7::lulu_ellie_bedtime_adventures_blanket_fort_under_the_stars_final_optimized.pdf",
@@ -254,7 +279,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/lulu_ellie_bedtime_adventures_blanket_fort_under_the_stars_final_optimized.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/lulu_ellie_bedtime_adventures_blanket_fort_under_the_stars_final_optimized.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/lulu_ellie_bedtime_adventures_blanket_fort_under_the_stars_final_optimized.pdf",
+      "display_collection": "Bedtime Adventures",
+      "display_title": "Blanket Fort Under the Stars"
     },
     {
       "key": "l_e_storage7::Lulu_Ellie_B5S3_Charms_Patches_Badges_Coloring_Collection_FINAL_INTERIOR.pdf",
@@ -268,7 +295,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu_Ellie_B5S3_Charms_Patches_Badges_Coloring_Collection_FINAL_INTERIOR.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu_Ellie_B5S3_Charms_Patches_Badges_Coloring_Collection_FINAL_INTERIOR.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu_Ellie_B5S3_Charms_Patches_Badges_Coloring_Collection_FINAL_INTERIOR.pdf",
+      "display_collection": "Coloring Books",
+      "display_title": "Charms, Patches & Badges Coloring Collection"
     },
     {
       "key": "l_e_storage7::lulu_ellie_first_coloring_book_interior_optimized.pdf",
@@ -282,7 +311,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/lulu_ellie_first_coloring_book_interior_optimized.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/lulu_ellie_first_coloring_book_interior_optimized.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/lulu_ellie_first_coloring_book_interior_optimized.pdf",
+      "display_collection": "Coloring Books",
+      "display_title": "Lulu & Ellie First Coloring Book"
     },
     {
       "key": "l_e_storage7::Lulu_Ellie_Portal_Adventures_Coloring_Book_B2S3_Final_Interior.pdf",
@@ -296,7 +327,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu_Ellie_Portal_Adventures_Coloring_Book_B2S3_Final_Interior.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu_Ellie_Portal_Adventures_Coloring_Book_B2S3_Final_Interior.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu_Ellie_Portal_Adventures_Coloring_Book_B2S3_Final_Interior.pdf",
+      "display_collection": "Coloring Books",
+      "display_title": "Portal Adventures Coloring Book"
     },
     {
       "key": "l_e_storage7::Cook1.pdf",
@@ -310,7 +343,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Cook1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Cook1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Cook1.pdf",
+      "display_collection": "Lulu & Ellie Cookbooks",
+      "display_title": "Lulu & Ellie Cookbook · Book 1"
     },
     {
       "key": "l_e_storage7::Cook2.pdf",
@@ -324,7 +359,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Cook2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Cook2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Cook2.pdf",
+      "display_collection": "Lulu & Ellie Cookbooks",
+      "display_title": "Lulu & Ellie Cookbook · Book 2"
     },
     {
       "key": "l_e_storage3::Club 5.pdf",
@@ -338,7 +375,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club%205.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club%205.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club%205.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Mooncalf in the Mushroom Ring · Book 5"
     },
     {
       "key": "l_e_storage3::Club1.pdf",
@@ -352,7 +391,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club1.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Tiny Dragon with Soggy Wings · Book 1"
     },
     {
       "key": "l_e_storage3::Club2.pdf",
@@ -366,7 +407,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club2.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Shy Griffin Under the Porch · Book 2"
     },
     {
       "key": "l_e_storage3::Club3.pdf",
@@ -380,7 +423,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club3.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club3.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club3.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Pearl Pup in the Rain Barrel · Book 3"
     },
     {
       "key": "l_e_storage3::Club4.pdf",
@@ -394,7 +439,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club4.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club4.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Club4.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Frost Egg on the Doorstep · Book 4"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_CRC_Book16_The_Dewpuff_That_Wouldnt_Land_Final.pdf",
@@ -408,7 +455,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_CRC_Book16_The_Dewpuff_That_Wouldnt_Land_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_CRC_Book16_The_Dewpuff_That_Wouldnt_Land_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_CRC_Book16_The_Dewpuff_That_Wouldnt_Land_Final.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Dewpuff That Wouldn’t Land · Book 16"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_CRC_Book18_The_Glowmoth_Who_Needed_the_Dark_FINAL.pdf",
@@ -422,7 +471,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_CRC_Book18_The_Glowmoth_Who_Needed_the_Dark_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_CRC_Book18_The_Glowmoth_Who_Needed_the_Dark_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_CRC_Book18_The_Glowmoth_Who_Needed_the_Dark_FINAL.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Glowmoth Who Needed the Dark · Book 18"
     },
     {
       "key": "l_e_storage3::lulu_ellie_creature_rescue_club_09_hushwing_honeysuckle_final.pdf",
@@ -436,7 +487,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/lulu_ellie_creature_rescue_club_09_hushwing_honeysuckle_final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/lulu_ellie_creature_rescue_club_09_hushwing_honeysuckle_final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/lulu_ellie_creature_rescue_club_09_hushwing_honeysuckle_final.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "Hushwing Honeysuckle · Book 9"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_Creature_Rescue_Club_19_Hushbell_Mothling_Rescue.pdf",
@@ -450,7 +503,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_19_Hushbell_Mothling_Rescue.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_19_Hushbell_Mothling_Rescue.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_19_Hushbell_Mothling_Rescue.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "Hushbell Mothling Rescue · Book 19"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_Creature_Rescue_Club_Book_20_The_Moon_Moss_Mender.pdf",
@@ -464,7 +519,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book_20_The_Moon_Moss_Mender.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book_20_The_Moon_Moss_Mender.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book_20_The_Moon_Moss_Mender.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Moon Moss Mender · Book 20"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_Creature_Rescue_Club_Book06_The_Lantern_Fox_FINAL.pdf",
@@ -478,7 +535,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book06_The_Lantern_Fox_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book06_The_Lantern_Fox_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book06_The_Lantern_Fox_FINAL.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Lantern Fox · Book 6"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_Creature_Rescue_Club_Book07_Teacup_Kraken_FINAL.pdf",
@@ -492,7 +551,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book07_Teacup_Kraken_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book07_Teacup_Kraken_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book07_Teacup_Kraken_FINAL.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "Teacup Kraken · Book 7"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_Creature_Rescue_Club_Book08_The_Whisper_Moth_in_the_Willow_FINAL.pdf",
@@ -506,7 +567,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book08_The_Whisper_Moth_in_the_Willow_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book08_The_Whisper_Moth_in_the_Willow_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book08_The_Whisper_Moth_in_the_Willow_FINAL.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Whisper Moth in the Willow · Book 8"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_Creature_Rescue_Club_Book10_The_Last_Little_Wishbeast_FINAL.pdf",
@@ -520,7 +583,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book10_The_Last_Little_Wishbeast_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book10_The_Last_Little_Wishbeast_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book10_The_Last_Little_Wishbeast_FINAL.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Last Little Wishbeast · Book 10"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_Creature_Rescue_Club_Book11_The_Hushling_in_the_Hollow_Log_FINAL.pdf",
@@ -534,7 +599,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book11_The_Hushling_in_the_Hollow_Log_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book11_The_Hushling_in_the_Hollow_Log_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book11_The_Hushling_in_the_Hollow_Log_FINAL.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Hushling in the Hollow Log · Book 11"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_Creature_Rescue_Club_Book12_The_Moonbrella_Moth_Final.pdf",
@@ -548,7 +615,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book12_The_Moonbrella_Moth_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book12_The_Moonbrella_Moth_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book12_The_Moonbrella_Moth_Final.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Moonbrella Moth · Book 12"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_Creature_Rescue_Club_Book13_Whisper_Rabbit_Final.pdf",
@@ -562,7 +631,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book13_Whisper_Rabbit_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book13_Whisper_Rabbit_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book13_Whisper_Rabbit_Final.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "Whisper Rabbit · Book 13"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_Creature_Rescue_Club_Book14_Final_Optimized.pdf",
@@ -576,7 +647,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book14_Final_Optimized.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book14_Final_Optimized.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book14_Final_Optimized.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "Creature Rescue Club · Book 14"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_Creature_Rescue_Club_Book15_The_Moon_Moss_Nest_FINAL.pdf",
@@ -590,7 +663,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book15_The_Moon_Moss_Nest_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book15_The_Moon_Moss_Nest_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book15_The_Moon_Moss_Nest_FINAL.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Moon Moss Nest · Book 15"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_Creature_Rescue_Club_Book17_The_Cloudlet_Fawn_in_the_Clover_Clock_FINAL.pdf",
@@ -604,7 +679,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book17_The_Cloudlet_Fawn_in_the_Clover_Clock_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book17_The_Cloudlet_Fawn_in_the_Clover_Clock_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Club_Book17_The_Cloudlet_Fawn_in_the_Clover_Clock_FINAL.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "The Cloudlet Fawn in the Clover Clock · Book 17"
     },
     {
       "key": "l_e_storage3::Lulu_Ellie_Creature_Rescue_Coloring_Book_B4_S3_INTERIOR_FINAL.pdf",
@@ -618,7 +695,9 @@
       "extension": "pdf",
       "repository_label": "Creature Rescue Club",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage3/blob/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Coloring_Book_B4_S3_INTERIOR_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Coloring_Book_B4_S3_INTERIOR_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage3/raw/856b7418aaaac1dab4721957eb6d9ef12bf73957/Lulu_Ellie_Creature_Rescue_Coloring_Book_B4_S3_INTERIOR_FINAL.pdf",
+      "display_collection": "Creature Rescue Club",
+      "display_title": "Creature Rescue Club · Coloring Book"
     },
     {
       "key": "l_e_storage6::Cursive1.pdf",
@@ -632,7 +711,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Cursive1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Cursive1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Cursive1.pdf",
+      "display_collection": "Cursive Club",
+      "display_title": "Cursive Club · Book 1"
     },
     {
       "key": "l_e_storage6::Cursive2.pdf",
@@ -646,7 +727,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Cursive2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Cursive2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Cursive2.pdf",
+      "display_collection": "Cursive Club",
+      "display_title": "Cursive Club · Book 2"
     },
     {
       "key": "l_e_storage7::Diary1.pdf",
@@ -660,7 +743,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary1.pdf",
+      "display_collection": "Adventure Diaries",
+      "display_title": "Adventure Diary 1"
     },
     {
       "key": "l_e_storage7::Diary2.pdf",
@@ -674,7 +759,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary2.pdf",
+      "display_collection": "Adventure Diaries",
+      "display_title": "Adventure Diary 2"
     },
     {
       "key": "l_e_storage7::Diary3.pdf",
@@ -688,7 +775,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary3.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary3.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary3.pdf",
+      "display_collection": "Adventure Diaries",
+      "display_title": "Adventure Diary 3"
     },
     {
       "key": "l_e_storage7::Diary4.pdf",
@@ -702,7 +791,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary4.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary4.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary4.pdf",
+      "display_collection": "Adventure Diaries",
+      "display_title": "Adventure Diary 4"
     },
     {
       "key": "l_e_storage7::Diary5.pdf",
@@ -716,7 +807,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary5.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary5.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Diary5.pdf",
+      "display_collection": "Adventure Diaries",
+      "display_title": "Adventure Diary 5"
     },
     {
       "key": "l_e_storage7::Fieldguide1.pdf",
@@ -730,7 +823,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Fieldguide1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Fieldguide1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Fieldguide1.pdf",
+      "display_collection": "Field Guides",
+      "display_title": "Field Guide 1"
     },
     {
       "key": "l_e_storage7::FieldGuide2.pdf",
@@ -744,7 +839,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/FieldGuide2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/FieldGuide2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/FieldGuide2.pdf",
+      "display_collection": "Field Guides",
+      "display_title": "Field Guide 2"
     },
     {
       "key": "l_e_storage7::FieldGuide4.pdf",
@@ -758,7 +855,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/FieldGuide4.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/FieldGuide4.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/FieldGuide4.pdf",
+      "display_collection": "Field Guides",
+      "display_title": "Field Guide 4"
     },
     {
       "key": "l_e_storage7::FieldGuide5.pdf",
@@ -772,7 +871,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/FieldGuide5.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/FieldGuide5.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/FieldGuide5.pdf",
+      "display_collection": "Field Guides",
+      "display_title": "Field Guide 5"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/General/1006720010.mp4",
@@ -786,7 +887,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/1006720010.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/1006720010.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/1006720010.mp4",
+      "display_collection": "Lulu & Ellie Videos",
+      "display_title": "Lulu & Ellie Video · Clip 1"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/General/1024978004.mp4",
@@ -800,7 +903,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/1024978004.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/1024978004.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/1024978004.mp4",
+      "display_collection": "Lulu & Ellie Videos",
+      "display_title": "Lulu & Ellie Video · Clip 2"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/General/12175027.mp4",
@@ -814,7 +919,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/12175027.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/12175027.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/12175027.mp4",
+      "display_collection": "Lulu & Ellie Videos",
+      "display_title": "Lulu & Ellie Video · Clip 3"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/General/188093633.mp4",
@@ -828,7 +935,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/188093633.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/188093633.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/188093633.mp4",
+      "display_collection": "Lulu & Ellie Videos",
+      "display_title": "Lulu & Ellie Video · Clip 4"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/General/193171790.mp4",
@@ -842,7 +951,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/193171790.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/193171790.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/193171790.mp4",
+      "display_collection": "Lulu & Ellie Videos",
+      "display_title": "Lulu & Ellie Video · Clip 5"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/General/300556554.mp4",
@@ -856,7 +967,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/300556554.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/300556554.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/300556554.mp4",
+      "display_collection": "Lulu & Ellie Videos",
+      "display_title": "Lulu & Ellie Video · Clip 6"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/General/44871919.mp4",
@@ -870,7 +983,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/44871919.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/44871919.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/44871919.mp4",
+      "display_collection": "Lulu & Ellie Videos",
+      "display_title": "Lulu & Ellie Video · Clip 7"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/General/465494924.mp4",
@@ -884,7 +999,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/465494924.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/465494924.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/465494924.mp4",
+      "display_collection": "Lulu & Ellie Videos",
+      "display_title": "Lulu & Ellie Video · Clip 8"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/General/567657757.mp4",
@@ -898,7 +1015,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/567657757.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/567657757.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/General/567657757.mp4",
+      "display_collection": "Lulu & Ellie Videos",
+      "display_title": "Lulu & Ellie Video · Clip 9"
     },
     {
       "key": "l_e_storage5::Lulu_and_Ellie_Go_To_Camp_5.pdf",
@@ -912,7 +1031,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_and_Ellie_Go_To_Camp_5.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_and_Ellie_Go_To_Camp_5.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_and_Ellie_Go_To_Camp_5.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "Lulu & Ellie Go To Camp · Book null"
     },
     {
       "key": "l_e_storage5::Lulu_and_Ellie_Go_To_Camp_Book_8_The_Canoe_That_Sang_to_the_Moon_FINAL.pdf",
@@ -926,7 +1047,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_and_Ellie_Go_To_Camp_Book_8_The_Canoe_That_Sang_to_the_Moon_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_and_Ellie_Go_To_Camp_Book_8_The_Canoe_That_Sang_to_the_Moon_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_and_Ellie_Go_To_Camp_Book_8_The_Canoe_That_Sang_to_the_Moon_FINAL.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "The Canoe That Sang to the Moon · Book 8"
     },
     {
       "key": "l_e_storage5::Lulu_Ellie_Go_To_Camp_1.pdf",
@@ -940,7 +1063,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_1.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "Lulu & Ellie Go To Camp · Book null"
     },
     {
       "key": "l_e_storage5::Lulu_Ellie_Go_To_Camp_2.pdf",
@@ -954,7 +1079,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_2.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "Lulu & Ellie Go To Camp · Book null"
     },
     {
       "key": "l_e_storage5::Lulu_Ellie_Go_To_Camp_3.pdf",
@@ -968,7 +1095,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_3.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_3.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_3.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "Lulu & Ellie Go To Camp · Book null"
     },
     {
       "key": "l_e_storage5::Lulu_Ellie_Go_To_Camp_4.pdf",
@@ -982,7 +1111,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_4.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_4.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_4.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "Lulu & Ellie Go To Camp · Book null"
     },
     {
       "key": "l_e_storage5::Lulu_Ellie_Go_To_Camp_Book_10_The_Lantern_That_Pointed_Sideways_FINAL.pdf",
@@ -996,7 +1127,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_10_The_Lantern_That_Pointed_Sideways_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_10_The_Lantern_That_Pointed_Sideways_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_10_The_Lantern_That_Pointed_Sideways_FINAL.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "The Lantern That Pointed Sideways · Book 10"
     },
     {
       "key": "l_e_storage5::Lulu_Ellie_Go_To_Camp_Book_11_Final.pdf",
@@ -1010,7 +1143,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_11_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_11_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_11_Final.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "Lulu & Ellie Go To Camp · Book 11"
     },
     {
       "key": "l_e_storage5::Lulu_Ellie_Go_To_Camp_Book_12_The_Lantern_That_Pointed_Sideways_FINAL.pdf",
@@ -1024,7 +1159,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_12_The_Lantern_That_Pointed_Sideways_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_12_The_Lantern_That_Pointed_Sideways_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_12_The_Lantern_That_Pointed_Sideways_FINAL.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "The Lantern That Pointed Sideways · Book 12"
     },
     {
       "key": "l_e_storage5::Lulu_Ellie_Go_To_Camp_Book_13_Final.pdf",
@@ -1038,7 +1175,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_13_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_13_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_13_Final.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "Lulu & Ellie Go To Camp · Book 13"
     },
     {
       "key": "l_e_storage5::Lulu_Ellie_Go_To_Camp_Book_15_Final.pdf",
@@ -1052,7 +1191,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_15_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_15_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_15_Final.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "Lulu & Ellie Go To Camp · Book 15"
     },
     {
       "key": "l_e_storage5::Lulu_Ellie_Go_To_Camp_Book_6_The_Canoe_That_Forgot_The_Shore_FINAL.pdf",
@@ -1066,7 +1207,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_6_The_Canoe_That_Forgot_The_Shore_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_6_The_Canoe_That_Forgot_The_Shore_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_6_The_Canoe_That_Forgot_The_Shore_FINAL.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "The Canoe That Forgot the Shore · Book 6"
     },
     {
       "key": "l_e_storage5::Lulu_Ellie_Go_To_Camp_Book_7_Final.pdf",
@@ -1080,7 +1223,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_7_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_7_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_7_Final.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "Lulu & Ellie Go To Camp · Book 7"
     },
     {
       "key": "l_e_storage5::Lulu_Ellie_Go_To_Camp_Book_9_Final.pdf",
@@ -1094,7 +1239,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_9_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_9_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book_9_Final.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "Lulu & Ellie Go To Camp · Book 9"
     },
     {
       "key": "l_e_storage5::Lulu_Ellie_Go_To_Camp_Book14_FINAL.pdf",
@@ -1108,7 +1255,9 @@
       "extension": "pdf",
       "repository_label": "Go To Camp",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage5/blob/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book14_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book14_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage5/raw/c57db418d77f54b406966938e0be9d0c4e175d56/Lulu_Ellie_Go_To_Camp_Book14_FINAL.pdf",
+      "display_collection": "Go To Camp",
+      "display_title": "Lulu & Ellie Go To Camp · Book 14"
     },
     {
       "key": "l_e_storage6::Handwriting1.pdf",
@@ -1122,7 +1271,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Handwriting1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Handwriting1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Handwriting1.pdf",
+      "display_collection": "Write & Wag",
+      "display_title": "Write & Wag · Book 1"
     },
     {
       "key": "l_e_storage6::Handwriting2.pdf",
@@ -1136,7 +1287,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Handwriting2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Handwriting2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Handwriting2.pdf",
+      "display_collection": "Write & Wag",
+      "display_title": "Write & Wag · Book 2"
     },
     {
       "key": "l_e_storage6::Handwriting3.pdf",
@@ -1150,7 +1303,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Handwriting3.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Handwriting3.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Handwriting3.pdf",
+      "display_collection": "Write & Wag",
+      "display_title": "Write & Wag · Book 3"
     },
     {
       "key": "l_e_storage7::Keepsake2.pdf",
@@ -1164,7 +1319,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Keepsake2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Keepsake2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Keepsake2.pdf",
+      "display_collection": "Keepsakes",
+      "display_title": "Keepsake Book 2"
     },
     {
       "key": "l_e_storage6::Learning 1.pdf",
@@ -1178,7 +1335,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Learning%201.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Learning%201.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Learning%201.pdf",
+      "display_collection": "Learning Club",
+      "display_title": "Learning Club · Book 1"
     },
     {
       "key": "l_e_storage6::Learning 2.pdf",
@@ -1192,7 +1351,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Learning%202.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Learning%202.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Learning%202.pdf",
+      "display_collection": "Learning Club",
+      "display_title": "Learning Club · Book 2"
     },
     {
       "key": "l_e_storage6::Learning3.pdf",
@@ -1206,7 +1367,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Learning3.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Learning3.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Learning3.pdf",
+      "display_collection": "Learning Club",
+      "display_title": "Learning Club · Book 3"
     },
     {
       "key": "l_e_storage7::Lulu and Ellie Paws Up.mp3",
@@ -1220,7 +1383,9 @@
       "extension": "mp3",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu%20and%20Ellie%20Paws%20Up.mp3",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu%20and%20Ellie%20Paws%20Up.mp3"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu%20and%20Ellie%20Paws%20Up.mp3",
+      "display_collection": "Lulu & Ellie Audio",
+      "display_title": "Lulu & Ellie: Paws Up"
     },
     {
       "key": "l_e_storage7::Lulu and Ellie Paws Up (1).mp3",
@@ -1234,7 +1399,9 @@
       "extension": "mp3",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu%20and%20Ellie%20Paws%20Up%20(1).mp3",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu%20and%20Ellie%20Paws%20Up%20(1).mp3"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu%20and%20Ellie%20Paws%20Up%20(1).mp3",
+      "display_collection": "Lulu & Ellie Audio",
+      "display_title": "Lulu & Ellie: Paws Up · Alternate Version"
     },
     {
       "key": "l_e_storage7::Lulu Ellie Portal.mp3",
@@ -1248,7 +1415,9 @@
       "extension": "mp3",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu%20Ellie%20Portal.mp3",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu%20Ellie%20Portal.mp3"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu%20Ellie%20Portal.mp3",
+      "display_collection": "Lulu & Ellie Audio",
+      "display_title": "Lulu & Ellie Portal"
     },
     {
       "key": "l_e_storage7::Lulu Ellie Portal (1).mp3",
@@ -1262,7 +1431,9 @@
       "extension": "mp3",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu%20Ellie%20Portal%20(1).mp3",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu%20Ellie%20Portal%20(1).mp3"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Lulu%20Ellie%20Portal%20(1).mp3",
+      "display_collection": "Lulu & Ellie Audio",
+      "display_title": "Lulu & Ellie Portal · Alternate Version"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book1.pdf",
@@ -1276,7 +1447,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book1.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 1"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book10.pdf",
@@ -1290,7 +1463,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book10.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book10.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book10.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 10"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book11.pdf",
@@ -1304,7 +1479,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book11.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book11.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book11.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 11"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book12.pdf",
@@ -1318,7 +1495,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book12.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book12.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book12.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 12"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_in_Space_Book13.pdf",
@@ -1332,7 +1511,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_in_Space_Book13.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_in_Space_Book13.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_in_Space_Book13.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 13"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book14.pdf",
@@ -1346,7 +1527,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book14.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book14.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book14.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 14"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book15.pdf",
@@ -1360,7 +1543,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book15.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book15.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book15.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 15"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book16.pdf",
@@ -1374,7 +1559,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book16.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book16.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book16.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 16"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book17.pdf",
@@ -1388,7 +1575,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book17.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book17.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book17.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 17"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book18.pdf",
@@ -1402,7 +1591,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book18.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book18.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book18.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 18"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book19.pdf",
@@ -1416,7 +1607,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book19.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book19.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book19.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 19"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book2.pdf",
@@ -1430,7 +1623,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book2.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 2"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book20.pdf",
@@ -1444,7 +1639,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book20.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book20.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book20.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 20"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book3.pdf",
@@ -1458,7 +1655,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book3.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book3.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book3.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 3"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book4.pdf",
@@ -1472,7 +1671,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book4.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book4.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book4.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 4"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book5.pdf",
@@ -1486,7 +1687,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book5.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book5.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book5.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 5"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book6.pdf",
@@ -1500,7 +1703,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book6.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book6.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book6.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 6"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book7.pdf",
@@ -1514,7 +1719,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book7.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book7.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book7.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 7"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book8.pdf",
@@ -1528,7 +1735,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book8.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book8.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book8.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 8"
     },
     {
       "key": "l_e_storage2::Lulu_&_Ellie_In_Space_Book9.pdf",
@@ -1542,7 +1751,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book9.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book9.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/Lulu_%26_Ellie_In_Space_Book9.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Book 9"
     },
     {
       "key": "l_e_storage2::lulu_ellie_space_coloring_adventure_A-AX_FINAL.pdf",
@@ -1556,7 +1767,9 @@
       "extension": "pdf",
       "repository_label": "Lulu & Ellie in Space",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage2/blob/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/lulu_ellie_space_coloring_adventure_A-AX_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/lulu_ellie_space_coloring_adventure_A-AX_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage2/raw/cde04976c89289e85ff02c8b1ec7fa1666ea5c32/lulu_ellie_space_coloring_adventure_A-AX_FINAL.pdf",
+      "display_collection": "Lulu & Ellie in Space",
+      "display_title": "Lulu & Ellie in Space · Coloring Adventure"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Mystery_Tails_Book15_Final.pdf",
@@ -1570,7 +1783,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book15_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book15_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book15_Final.pdf",
+      "display_collection": "Mystery Tails",
+      "display_title": "Mystery Tails · Book 15"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Mystery_Tails_Book16_The_Case_of_the_Lantern_That_Winked_FINAL.pdf",
@@ -1584,7 +1799,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book16_The_Case_of_the_Lantern_That_Winked_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book16_The_Case_of_the_Lantern_That_Winked_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book16_The_Case_of_the_Lantern_That_Winked_FINAL.pdf",
+      "display_collection": "Mystery Tails",
+      "display_title": "The Case of the Lantern That Winked · Book 16"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Mystery_Tails_Book17_The_Case_of_the_Borrowed_Starlight_FINAL.pdf",
@@ -1598,7 +1815,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book17_The_Case_of_the_Borrowed_Starlight_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book17_The_Case_of_the_Borrowed_Starlight_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book17_The_Case_of_the_Borrowed_Starlight_FINAL.pdf",
+      "display_collection": "Mystery Tails",
+      "display_title": "The Case of the Borrowed Starlight · Book 17"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Mystery_Tails_Book18_Final.pdf",
@@ -1612,7 +1831,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book18_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book18_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book18_Final.pdf",
+      "display_collection": "Mystery Tails",
+      "display_title": "Mystery Tails · Book 18"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Mystery_Tails_Book19_Final.pdf",
@@ -1626,7 +1847,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book19_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book19_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book19_Final.pdf",
+      "display_collection": "Mystery Tails",
+      "display_title": "Mystery Tails · Book 19"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Mystery_Tails_Book20_Final.pdf",
@@ -1640,7 +1863,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book20_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book20_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Book20_Final.pdf",
+      "display_collection": "Mystery Tails",
+      "display_title": "Mystery Tails · Book 20"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Mystery_Tails_Missing_Moon_Biscuit_FINALm1.pdf",
@@ -1654,7 +1879,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Missing_Moon_Biscuit_FINALm1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Missing_Moon_Biscuit_FINALm1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Missing_Moon_Biscuit_FINALm1.pdf",
+      "display_collection": "Mystery Tails",
+      "display_title": "Mystery Tails · Book null"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Mystery_Tails_Pawprints_That_Walked_Backward_final_v1m3.pdf",
@@ -1668,7 +1895,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Pawprints_That_Walked_Backward_final_v1m3.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Pawprints_That_Walked_Backward_final_v1m3.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_Pawprints_That_Walked_Backward_final_v1m3.pdf",
+      "display_collection": "Mystery Tails",
+      "display_title": "Mystery Tails · Book null"
     },
     {
       "key": "l_e_storage4::lulu_ellie_mystery_tails_secret_of_the_whispering_mailbox_FINALm2.pdf",
@@ -1682,7 +1911,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/lulu_ellie_mystery_tails_secret_of_the_whispering_mailbox_FINALm2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/lulu_ellie_mystery_tails_secret_of_the_whispering_mailbox_FINALm2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/lulu_ellie_mystery_tails_secret_of_the_whispering_mailbox_FINALm2.pdf",
+      "display_collection": "Mystery Tails",
+      "display_title": "Mystery Tails · Book null"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Mystery_Tails_The_Haunted_Treat_Truck_FINALm4.pdf",
@@ -1696,7 +1927,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_The_Haunted_Treat_Truck_FINALm4.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_The_Haunted_Treat_Truck_FINALm4.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_The_Haunted_Treat_Truck_FINALm4.pdf",
+      "display_collection": "Mystery Tails",
+      "display_title": "Mystery Tails · Book null"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Mystery_Tails_The_Lighthouse_That_Barked_FINALm5.pdf",
@@ -1710,7 +1943,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_The_Lighthouse_That_Barked_FINALm5.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_The_Lighthouse_That_Barked_FINALm5.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Mystery_Tails_The_Lighthouse_That_Barked_FINALm5.pdf",
+      "display_collection": "Mystery Tails",
+      "display_title": "Mystery Tails · Book null"
     },
     {
       "key": "l_e_storage4::MysteryTails1_REPAIRED.pdf",
@@ -1724,7 +1959,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/MysteryTails1_REPAIRED.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/MysteryTails1_REPAIRED.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/MysteryTails1_REPAIRED.pdf",
+      "display_collection": "Mystery Tails",
+      "display_title": "The Case of the Missing Moon Biscuit · Alternate Archive Copy"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book12.pdf",
@@ -1738,7 +1975,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book12.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book12.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book12.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Acorn Crown"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book8.pdf",
@@ -1752,7 +1991,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book8.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book8.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book8.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Book That Lost Its Ending"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book3.pdf",
@@ -1766,7 +2007,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book3.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book3.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book3.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Clockwork Forest"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book18.pdf",
@@ -1780,7 +2023,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book18.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book18.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book18.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Crystal Pawprint"
     },
     {
       "key": "l_e_storage::library-import/Lulu_Ellie_Book16_The_Lantern_That_Pointed_Sideways_FINAL.pdf",
@@ -1794,7 +2039,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_Ellie_Book16_The_Lantern_That_Pointed_Sideways_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_Ellie_Book16_The_Lantern_That_Pointed_Sideways_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_Ellie_Book16_The_Lantern_That_Pointed_Sideways_FINAL.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Emberleaf Kingdom"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book19.pdf",
@@ -1808,7 +2055,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book19.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book19.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book19.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Feather of Two Shadows"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book9.pdf",
@@ -1822,7 +2071,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book9.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book9.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book9.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Island That Drifted Away"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book20.pdf",
@@ -1836,7 +2087,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book20.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book20.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book20.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Keeper Ring"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book7.pdf",
@@ -1850,7 +2103,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book7.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book7.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book7.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Lanterns of the Deep"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book2.pdf",
@@ -1864,7 +2119,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book2.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Lost Valley of Thunder"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book15.pdf",
@@ -1878,7 +2135,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book15.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book15.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book15.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Moon That Forgot to Laugh"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book4.pdf",
@@ -1892,7 +2151,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book4.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book4.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book4.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Moonlit Circus"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book6.pdf",
@@ -1906,7 +2167,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book6.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book6.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book6.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Mushroom Moon Maze"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book13.pdf",
@@ -1920,7 +2183,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book13.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book13.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book13.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Red Kite in the Impossible Wind"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book1.pdf",
@@ -1934,7 +2199,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book1.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Secret of Blackwater Bay"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book14.pdf",
@@ -1948,7 +2215,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book14.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book14.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book14.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Silver Door Garden"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book5.pdf",
@@ -1962,7 +2231,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book5.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book5.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book5.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Snow Dragon's Bell"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book10.pdf",
@@ -1976,7 +2247,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book10.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book10.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book10.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Star Map of Everywhere"
     },
     {
       "key": "l_e_storage::library-import/Lulu_&_Ellie_Book17.pdf",
@@ -1990,7 +2263,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book17.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book17.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/Lulu_%26_Ellie_Book17.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Waterfall That Climbed the Stars"
     },
     {
       "key": "l_e_storage::library-import/lulu_ellie_book_11_the_hushling_rescue_final.pdf",
@@ -2004,7 +2279,9 @@
       "extension": "pdf",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/lulu_ellie_book_11_the_hushling_rescue_final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/lulu_ellie_book_11_the_hushling_rescue_final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/library-import/lulu_ellie_book_11_the_hushling_rescue_final.pdf",
+      "display_collection": "Original Adventure",
+      "display_title": "Lulu & Ellie and the Lanterns of Firefly Hollow"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_1/book_1.mp4",
@@ -2018,7 +2295,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_1/book_1.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_1/book_1.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_1/book_1.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Secret of Blackwater Bay · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_1/book_1_front_cover.png",
@@ -2032,7 +2311,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_1/book_1_front_cover.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_1/book_1_front_cover.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_1/book_1_front_cover.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Secret of Blackwater Bay · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_1/book_1_fun_book.png",
@@ -2046,7 +2327,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_1/book_1_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_1/book_1_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_1/book_1_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Secret of Blackwater Bay · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_10/book_10.mp4",
@@ -2060,7 +2343,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_10/book_10.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_10/book_10.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_10/book_10.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Star Map of Everywhere · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_10/book_10_front_cover.jpg",
@@ -2074,7 +2359,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_10/book_10_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_10/book_10_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_10/book_10_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Star Map of Everywhere · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_10/book_10_fun_book.png",
@@ -2088,7 +2375,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_10/book_10_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_10/book_10_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_10/book_10_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Star Map of Everywhere · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_11/book_11.mp4",
@@ -2102,7 +2391,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_11/book_11.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_11/book_11.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_11/book_11.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Lanterns of Firefly Hollow · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_11/book_11_front_cover.jpg",
@@ -2116,7 +2407,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_11/book_11_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_11/book_11_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_11/book_11_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Lanterns of Firefly Hollow · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_11/book_11_fun_book.png",
@@ -2130,7 +2423,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_11/book_11_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_11/book_11_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_11/book_11_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Lanterns of Firefly Hollow · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_12/book_12.mp4",
@@ -2144,7 +2439,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_12/book_12.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_12/book_12.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_12/book_12.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Acorn Crown · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_12/book_12_front_cover.jpg",
@@ -2158,7 +2455,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_12/book_12_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_12/book_12_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_12/book_12_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Acorn Crown · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_12/book_12_fun_book.png",
@@ -2172,7 +2471,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_12/book_12_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_12/book_12_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_12/book_12_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Acorn Crown · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_13/book_13.mp4",
@@ -2186,7 +2487,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_13/book_13.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_13/book_13.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_13/book_13.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Red Kite in the Impossible Wind · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_13/book_13_front_cover.jpg",
@@ -2200,7 +2503,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_13/book_13_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_13/book_13_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_13/book_13_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Red Kite in the Impossible Wind · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_13/book_13_fun_book.png",
@@ -2214,7 +2519,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_13/book_13_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_13/book_13_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_13/book_13_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Red Kite in the Impossible Wind · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_14/book_14.mp4",
@@ -2228,7 +2535,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_14/book_14.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_14/book_14.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_14/book_14.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Silver Door Garden · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_14/book_14_front_cover.jpg",
@@ -2242,7 +2551,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_14/book_14_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_14/book_14_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_14/book_14_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Silver Door Garden · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_14/book_14_fun_book.png",
@@ -2256,7 +2567,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_14/book_14_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_14/book_14_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_14/book_14_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Silver Door Garden · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_15/book_15.mp4",
@@ -2270,7 +2583,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_15/book_15.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_15/book_15.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_15/book_15.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Moon That Forgot to Laugh · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_15/book_15_front_cover.jpg",
@@ -2284,7 +2599,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_15/book_15_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_15/book_15_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_15/book_15_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Moon That Forgot to Laugh · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_15/book_15_fun_book.png",
@@ -2298,7 +2615,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_15/book_15_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_15/book_15_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_15/book_15_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Moon That Forgot to Laugh · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_16/book_16.mp4",
@@ -2312,7 +2631,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_16/book_16.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_16/book_16.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_16/book_16.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Emberleaf Kingdom · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_16/book_16_front_cover.jpg",
@@ -2326,7 +2647,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_16/book_16_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_16/book_16_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_16/book_16_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Emberleaf Kingdom · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_16/book_16_fun_book.png",
@@ -2340,7 +2663,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_16/book_16_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_16/book_16_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_16/book_16_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Emberleaf Kingdom · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_17/book_17.mp4",
@@ -2354,7 +2679,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_17/book_17.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_17/book_17.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_17/book_17.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Waterfall That Climbed the Stars · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_17/book_17_front_cover.jpg",
@@ -2368,7 +2695,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_17/book_17_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_17/book_17_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_17/book_17_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Waterfall That Climbed the Stars · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_17/book_17_fun_book.png",
@@ -2382,7 +2711,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_17/book_17_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_17/book_17_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_17/book_17_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Waterfall That Climbed the Stars · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_18/book_18.mp4",
@@ -2396,7 +2727,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_18/book_18.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_18/book_18.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_18/book_18.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Crystal Pawprint · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_18/book_18_front_cover.jpg",
@@ -2410,7 +2743,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_18/book_18_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_18/book_18_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_18/book_18_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Crystal Pawprint · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_18/book_18_fun_book.png",
@@ -2424,7 +2759,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_18/book_18_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_18/book_18_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_18/book_18_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Crystal Pawprint · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_19/book_19.mp4",
@@ -2438,7 +2775,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_19/book_19.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_19/book_19.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_19/book_19.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Feather of Two Shadows · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_19/book_19_front_cover.jpg",
@@ -2452,7 +2791,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_19/book_19_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_19/book_19_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_19/book_19_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Feather of Two Shadows · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_19/book_19_fun_book.png",
@@ -2466,7 +2807,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_19/book_19_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_19/book_19_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_19/book_19_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Feather of Two Shadows · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_2/book_2.mp4",
@@ -2480,7 +2823,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_2/book_2.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_2/book_2.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_2/book_2.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Lost Valley of Thunder · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_2/book_2_front_cover.jpg",
@@ -2494,7 +2839,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_2/book_2_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_2/book_2_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_2/book_2_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Lost Valley of Thunder · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_2/book_2_fun_book.png",
@@ -2508,7 +2855,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_2/book_2_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_2/book_2_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_2/book_2_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Lost Valley of Thunder · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_20/book_20.mp4",
@@ -2522,7 +2871,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_20/book_20.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_20/book_20.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_20/book_20.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Keeper Ring · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_20/book_20_front_cover.jpg",
@@ -2536,7 +2887,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_20/book_20_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_20/book_20_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_20/book_20_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Keeper Ring · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_20/book_20_fun_book.png",
@@ -2550,7 +2903,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_20/book_20_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_20/book_20_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_20/book_20_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Keeper Ring · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_3/book_3.mp4",
@@ -2564,7 +2919,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_3/book_3.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_3/book_3.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_3/book_3.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Clockwork Forest · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_3/book_3_front_cover.jpg",
@@ -2578,7 +2935,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_3/book_3_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_3/book_3_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_3/book_3_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Clockwork Forest · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_3/book_3_fun_book.png",
@@ -2592,7 +2951,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_3/book_3_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_3/book_3_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_3/book_3_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Clockwork Forest · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_4/book_4.mp4",
@@ -2606,7 +2967,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_4/book_4.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_4/book_4.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_4/book_4.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Moonlit Circus · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_4/book_4_front_cover.jpg",
@@ -2620,7 +2983,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_4/book_4_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_4/book_4_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_4/book_4_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Moonlit Circus · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_4/book_4_fun_book.png",
@@ -2634,7 +2999,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_4/book_4_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_4/book_4_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_4/book_4_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Moonlit Circus · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_5/book_5.mp4",
@@ -2648,7 +3015,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_5/book_5.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_5/book_5.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_5/book_5.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Snow Dragon's Bell · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_5/book_5_front_cover.jpg",
@@ -2662,7 +3031,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_5/book_5_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_5/book_5_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_5/book_5_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Snow Dragon's Bell · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_5/book_5_fun_book.png",
@@ -2676,7 +3047,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_5/book_5_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_5/book_5_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_5/book_5_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Snow Dragon's Bell · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_6/book_6.mp4",
@@ -2690,7 +3063,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_6/book_6.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_6/book_6.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_6/book_6.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Mushroom Moon Maze · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_6/book_6_front_cover.jpg",
@@ -2704,7 +3079,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_6/book_6_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_6/book_6_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_6/book_6_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Mushroom Moon Maze · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_6/book_6_fun_book.png",
@@ -2718,7 +3095,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_6/book_6_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_6/book_6_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_6/book_6_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Mushroom Moon Maze · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_7/book_7.mp4",
@@ -2732,7 +3111,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_7/book_7.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_7/book_7.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_7/book_7.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Lanterns of the Deep · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_7/book_7_front_cover.jpg",
@@ -2746,7 +3127,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_7/book_7_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_7/book_7_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_7/book_7_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Lanterns of the Deep · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_7/book_7_fun_book.png",
@@ -2760,7 +3143,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_7/book_7_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_7/book_7_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_7/book_7_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Lanterns of the Deep · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_8/book_8.mp4",
@@ -2774,7 +3159,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_8/book_8.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_8/book_8.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_8/book_8.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Book That Lost Its Ending · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_8/book_8_front_cover.jpg",
@@ -2788,7 +3175,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_8/book_8_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_8/book_8_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_8/book_8_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Book That Lost Its Ending · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_8/book_8_fun_book.png",
@@ -2802,7 +3191,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_8/book_8_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_8/book_8_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_8/book_8_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Book That Lost Its Ending · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_9/book_9.mp4",
@@ -2816,7 +3207,9 @@
       "extension": "mp4",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_9/book_9.mp4",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_9/book_9.mp4"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_9/book_9.mp4",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Island That Drifted Away · Animated Cover"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_9/book_9_front_cover.jpg",
@@ -2830,7 +3223,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_9/book_9_front_cover.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_9/book_9_front_cover.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_9/book_9_front_cover.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Island That Drifted Away · Cover Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Book_9/book_9_fun_book.png",
@@ -2844,7 +3239,9 @@
       "extension": "png",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_9/book_9_fun_book.png",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_9/book_9_fun_book.png"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Book_9/book_9_fun_book.png",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Lulu & Ellie and the Island That Drifted Away · Feature Art"
     },
     {
       "key": "l_e_storage::LULU & ELLIE STORAGE HUB/Original Adventure/Organization/fun_pages_contact_sheet.jpg",
@@ -2858,7 +3255,9 @@
       "extension": "jpg",
       "repository_label": "Original Adventure & Media",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage/blob/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Organization/fun_pages_contact_sheet.jpg",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Organization/fun_pages_contact_sheet.jpg"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage/raw/f3979e925b7c58531fafb247f8cb4a75ec0c5acd/LULU%20%26%20ELLIE%20STORAGE%20HUB/Original%20Adventure/Organization/fun_pages_contact_sheet.jpg",
+      "display_collection": "Original Adventure Extras",
+      "display_title": "Original Adventure · Feature Art Collection"
     },
     {
       "key": "l_e_storage6::Phonics1.pdf",
@@ -2872,7 +3271,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Phonics1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Phonics1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Phonics1.pdf",
+      "display_collection": "Phonics Path",
+      "display_title": "Phonics Path · Book 1"
     },
     {
       "key": "l_e_storage6::Phonics2.pdf",
@@ -2886,7 +3287,9 @@
       "extension": "pdf",
       "repository_label": "Learning Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage6/blob/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Phonics2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Phonics2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage6/raw/2e9691fc94bb4e91ce39e4cf8dc2e70f90044943/Phonics2.pdf",
+      "display_collection": "Phonics Path",
+      "display_title": "Phonics Path · Book 2"
     },
     {
       "key": "l_e_storage7::Puzzle1.pdf",
@@ -2900,7 +3303,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle1.pdf",
+      "display_collection": "Puzzle Books",
+      "display_title": "Puzzle Book 1"
     },
     {
       "key": "l_e_storage7::Puzzle2.pdf",
@@ -2914,7 +3319,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle2.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle2.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle2.pdf",
+      "display_collection": "Puzzle Books",
+      "display_title": "Puzzle Book 2"
     },
     {
       "key": "l_e_storage7::Puzzle3.pdf",
@@ -2928,7 +3335,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle3.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle3.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle3.pdf",
+      "display_collection": "Puzzle Books",
+      "display_title": "Puzzle Book 3"
     },
     {
       "key": "l_e_storage7::Puzzle4.pdf",
@@ -2942,7 +3351,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle4.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle4.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle4.pdf",
+      "display_collection": "Puzzle Books",
+      "display_title": "Puzzle Book 4"
     },
     {
       "key": "l_e_storage7::Puzzle5.pdf",
@@ -2956,7 +3367,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle5.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle5.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Puzzle5.pdf",
+      "display_collection": "Puzzle Books",
+      "display_title": "Puzzle Book 5"
     },
     {
       "key": "l_e_storage7::Search and find 1.pdf",
@@ -2970,7 +3383,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Search%20and%20find%201.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Search%20and%20find%201.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Search%20and%20find%201.pdf",
+      "display_collection": "Search & Find",
+      "display_title": "Search & Find · Book 1"
     },
     {
       "key": "l_e_storage7::Search and find 2.pdf",
@@ -2984,7 +3399,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Search%20and%20find%202.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Search%20and%20find%202.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Search%20and%20find%202.pdf",
+      "display_collection": "Search & Find",
+      "display_title": "Search & Find · Book 2"
     },
     {
       "key": "l_e_storage7::Search and find 3.pdf",
@@ -2998,7 +3415,9 @@
       "extension": "pdf",
       "repository_label": "Companion & Activity Library",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage7/blob/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Search%20and%20find%203.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Search%20and%20find%203.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage7/raw/a25ca923a3fed9bbc5fcbab8fb7f7ef48ca20924/Search%20and%20find%203.pdf",
+      "display_collection": "Search & Find",
+      "display_title": "Search & Find · Book 3"
     },
     {
       "key": "l_e_storage4::Lulu_and_Ellie_Time_Tails_Book_12_Final.pdf",
@@ -3012,7 +3431,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_and_Ellie_Time_Tails_Book_12_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_and_Ellie_Time_Tails_Book_12_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_and_Ellie_Time_Tails_Book_12_Final.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "Time Tails · Book 12"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Time_Tails_Book_11_Final.pdf",
@@ -3026,7 +3447,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_11_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_11_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_11_Final.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "Time Tails · Book 11"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Time_Tails_Book_16_Final.pdf",
@@ -3040,7 +3463,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_16_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_16_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_16_Final.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "Time Tails · Book 16"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Time_Tails_Book_17_The_Clockseed_Promise_FINAL.pdf",
@@ -3054,7 +3479,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_17_The_Clockseed_Promise_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_17_The_Clockseed_Promise_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_17_The_Clockseed_Promise_FINAL.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "The Clockseed Promise · Book 17"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Time_Tails_Book_19_Final.pdf",
@@ -3068,7 +3495,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_19_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_19_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_19_Final.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "Time Tails · Book 19"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Time_Tails_Book_8_FULL.pdf",
@@ -3082,7 +3511,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_8_FULL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_8_FULL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book_8_FULL.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "Time Tails · Book 8"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Time_Tails_Book13_The_Tick_Tock_Seedling_FINAL.pdf",
@@ -3096,7 +3527,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book13_The_Tick_Tock_Seedling_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book13_The_Tick_Tock_Seedling_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book13_The_Tick_Tock_Seedling_FINAL.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "The Tick-Tock Seedling · Book 13"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Time_Tails_Book14_Final.pdf",
@@ -3110,7 +3543,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book14_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book14_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book14_Final.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "Time Tails · Book 14"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Time_Tails_Book15_The_Clockflower_Promise_FINAL.pdf",
@@ -3124,7 +3559,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book15_The_Clockflower_Promise_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book15_The_Clockflower_Promise_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book15_The_Clockflower_Promise_FINAL.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "The Clockflower Promise · Book 15"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Time_Tails_Book18_Final.pdf",
@@ -3138,7 +3575,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book18_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book18_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book18_Final.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "Time Tails · Book 18"
     },
     {
       "key": "l_e_storage4::Lulu_Ellie_Time_Tails_Book20_The_Tomorrow_Bell_FINAL.pdf",
@@ -3152,7 +3591,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book20_The_Tomorrow_Bell_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book20_The_Tomorrow_Bell_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Lulu_Ellie_Time_Tails_Book20_The_Tomorrow_Bell_FINAL.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "The Tomorrow Bell · Book 20"
     },
     {
       "key": "l_e_storage4::Time 3.pdf",
@@ -3166,7 +3607,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Time%203.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Time%203.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Time%203.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "Time Tails · Book 3"
     },
     {
       "key": "l_e_storage4::Time_Tails_Book_10_Final.pdf",
@@ -3180,7 +3623,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Time_Tails_Book_10_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Time_Tails_Book_10_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Time_Tails_Book_10_Final.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "Time Tails · Book 10"
     },
     {
       "key": "l_e_storage4::Time_Tails_Book_7_The_Tick_Tock_Acorn_Final.pdf",
@@ -3194,7 +3639,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Time_Tails_Book_7_The_Tick_Tock_Acorn_Final.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Time_Tails_Book_7_The_Tick_Tock_Acorn_Final.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Time_Tails_Book_7_The_Tick_Tock_Acorn_Final.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "The Tick-Tock Acorn · Book 7"
     },
     {
       "key": "l_e_storage4::Time_Tails_Book_9_The_Acorn_That_Ticked_Tomorrow_FINAL.pdf",
@@ -3208,7 +3655,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Time_Tails_Book_9_The_Acorn_That_Ticked_Tomorrow_FINAL.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Time_Tails_Book_9_The_Acorn_That_Ticked_Tomorrow_FINAL.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Time_Tails_Book_9_The_Acorn_That_Ticked_Tomorrow_FINAL.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "The Acorn That Ticked Tomorrow · Book 9"
     },
     {
       "key": "l_e_storage4::Time1.pdf",
@@ -3222,7 +3671,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Time1.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Time1.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Time1.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "Time Tails · Book 1"
     },
     {
       "key": "l_e_storage4::Time4.pdf",
@@ -3236,7 +3687,9 @@
       "extension": "pdf",
       "repository_label": "Mystery Tails & Time Tails",
       "source_url": "https://github.com/dev-in-portfolio/l_e_storage4/blob/d0fc4e100cec899949191853fba95c5ccf3907ea/Time4.pdf",
-      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Time4.pdf"
+      "download_url": "https://github.com/dev-in-portfolio/l_e_storage4/raw/d0fc4e100cec899949191853fba95c5ccf3907ea/Time4.pdf",
+      "display_collection": "Time Tails",
+      "display_title": "Time Tails · Book 4"
     }
   ]
 }
