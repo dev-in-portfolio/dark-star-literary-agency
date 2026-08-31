@@ -354,7 +354,7 @@ def patch_all_html(master: dict) -> None:
         if nav_match:
             nav_html = nav_match.group(2)
             free_href = f'{prefix}free-library.html'
-            if 'free-library.html" not in nav_html:
+            if 'free-library.html"' not in nav_html:
                 library_link = re.search(
                     r'(<a\b[^>]*href=["\']' + re.escape(f'{prefix}library.html') + r'["\'][^>]*>\s*Library\s*</a>)',
                     nav_html,
