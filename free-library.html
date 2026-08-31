@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Free Lulu & Ellie Library | Read, Watch, Listen & Download</title>
-    <meta name="description" content="Browse the free Lulu & Ellie archive: full books, activity books, learning books, audio, video, cover art, and companion media from all seven storage collections.">
-    <meta property="og:title" content="Free Lulu & Ellie Library">
-    <meta property="og:description" content="Read, watch, listen, view, and download the Lulu & Ellie archive for free.">
+    <meta name="description" content="Read Lulu & Ellie books, explore learning and activity collections, watch videos, listen to audio, and download archive editions for free.">
+    <meta property="og:title" content="The Free Lulu & Ellie Library">
+    <meta property="og:description" content="Books, learning activities, audio, video, and art from the Lulu & Ellie archive, free to view and download.">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="accessibility.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <script src="free-library.js" defer></script>
   </head>
-  <body data-nav="free">
+  <body class="free-library-page" data-nav="free">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="header-inner">
@@ -35,75 +35,94 @@
     </header>
 
     <main id="main">
-      <section class="page-hero">
-        <div class="site-shell hero-grid">
-          <article class="hero-panel">
+      <section class="free-library-hero">
+        <div class="site-shell free-library-hero-grid">
+          <article class="free-library-hero-copy">
             <div class="eyebrow">The Free Lulu &amp; Ellie Library</div>
-            <h1>Read it. Watch it. Listen to it. Keep a copy.</h1>
-            <p class="lede">The public archive now opens the reader-facing material from all seven Lulu &amp; Ellie storage repositories for free viewing and free download.</p>
-            <p class="support-note">Full books, learning books, activity books, coloring interiors, audio, video, cover art, feature art, and other reader-facing media are linked to their authoritative storage copies. Repository workflows, transfer files, and internal status documents stay out of the public library because nobody came here to download YAML.</p>
+            <h1>A whole shelf of adventures, completely free.</h1>
+            <p class="lede">Read full books, explore learning and activity collections, watch videos, listen to audio, and keep a copy of anything you love.</p>
             <div class="hero-actions">
-              <a class="button" href="#browse-free-library">Browse everything</a>
-              <a class="button secondary" href="library.html">Editorial Library</a>
+              <a class="button" href="#browse-free-library">Start reading</a>
+              <a class="button secondary" href="library.html">Explore the storyworld</a>
             </div>
+            <p class="free-library-note">No account. No checkout. View online or download a copy.</p>
           </article>
-          <aside class="hero-side">
-            <div class="portal-card">
-              <div class="portal-top">
-                <div>
-                  <div class="eyebrow">Access</div>
-                  <div class="portal-title">Free to view and download</div>
-                </div>
-                <span class="status-badge">Public archive</span>
-              </div>
-              <p class="portal-copy">Nothing in this archive requires a purchase. Source files remain in the storage repositories so the website does not create duplicate masters.</p>
-              <div id="free-library-stats" class="free-library-stats" aria-live="polite">Loading archive inventory…</div>
+
+          <aside class="free-library-feature" aria-label="Featured Lulu and Ellie artwork">
+            <div class="free-feature-stack">
+              <img class="free-feature-cover free-feature-cover-back" src="/web-image/assets/lulu-ellie/original-adventure/book-20/front-cover.jpg" alt="Lulu & Ellie and the Keeper Ring cover art">
+              <img class="free-feature-cover free-feature-cover-front" src="/web-image/assets/lulu-ellie/original-adventure/book-1/front-cover.png" alt="Lulu & Ellie and the Secret of Blackwater Bay cover art">
+            </div>
+            <div id="free-library-stats" class="free-stat-grid" aria-live="polite">
+              <div class="free-stat"><strong>—</strong><span>Free items</span></div>
+              <div class="free-stat"><strong>—</strong><span>Books &amp; PDFs</span></div>
+              <div class="free-stat"><strong>—</strong><span>Audio &amp; video</span></div>
             </div>
           </aside>
         </div>
       </section>
 
-      <section id="browse-free-library">
-        <div class="site-shell section-card">
-          <div class="section-head">
-            <div class="section-kicker">Browse the archive</div>
-            <h2>Everything reader-facing in Storages 1–7.</h2>
-            <p class="section-lede">Search by title or filename, narrow by collection, or filter by books, audio, video, and images.</p>
+      <section id="browse-free-library" class="free-library-browse">
+        <div class="site-shell">
+          <div class="free-library-intro">
+            <div>
+              <div class="section-kicker">Browse the shelves</div>
+              <h2>Find something to read, make, watch, or listen to.</h2>
+            </div>
+            <p>Choose a shelf or search the whole library. Technical archive details stay out of the way until you actually need them.</p>
           </div>
 
-          <form class="free-library-filters" id="free-library-filters" role="search">
-            <label>
-              <span>Search</span>
-              <input id="free-search" type="search" placeholder="Book title, filename, collection…" autocomplete="off">
+          <div class="free-shelf-tabs" id="free-shelf-tabs" aria-label="Library shelves">
+            <button type="button" class="free-shelf-tab is-active" data-shelf="" aria-pressed="true">Everything</button>
+            <button type="button" class="free-shelf-tab" data-shelf="storybooks" aria-pressed="false">Storybooks</button>
+            <button type="button" class="free-shelf-tab" data-shelf="learning" aria-pressed="false">Learning</button>
+            <button type="button" class="free-shelf-tab" data-shelf="activities" aria-pressed="false">Activities</button>
+            <button type="button" class="free-shelf-tab" data-shelf="listen-watch" aria-pressed="false">Listen &amp; Watch</button>
+            <button type="button" class="free-shelf-tab" data-shelf="art" aria-pressed="false">Art &amp; Media</button>
+          </div>
+
+          <form class="free-library-toolbar" id="free-library-filters" role="search">
+            <label class="free-search-field">
+              <span class="free-field-label">Search the library</span>
+              <input id="free-search" type="search" placeholder="Try “camp,” “phonics,” “puzzle,” or a book title…" autocomplete="off">
             </label>
-            <label>
-              <span>Collection</span>
+
+            <label class="free-select-field">
+              <span class="free-field-label">Collection</span>
               <select id="free-collection">
                 <option value="">All collections</option>
               </select>
             </label>
-            <label>
-              <span>Type</span>
+
+            <label class="free-select-field">
+              <span class="free-field-label">Format</span>
               <select id="free-kind">
-                <option value="">All types</option>
+                <option value="">All formats</option>
                 <option value="document">Books &amp; PDFs</option>
                 <option value="audio">Audio</option>
                 <option value="video">Video</option>
                 <option value="image">Images</option>
               </select>
             </label>
-            <button class="button secondary" type="button" id="free-reset">Reset filters</button>
+
+            <button class="free-reset-button" type="button" id="free-reset">Clear</button>
           </form>
 
           <div class="free-library-result-head">
-            <strong id="free-result-count" aria-live="polite">Loading…</strong>
-            <span>Every item includes a free viewer and a direct source download.</span>
+            <div>
+              <strong id="free-result-count" aria-live="polite">Loading the shelves…</strong>
+              <span id="free-result-context">Free to read or download.</span>
+            </div>
           </div>
 
           <div id="free-library-grid" class="free-library-grid"></div>
 
+          <div class="free-load-more-wrap">
+            <button class="button secondary free-load-more" type="button" id="free-load-more" hidden>Show more</button>
+          </div>
+
           <noscript>
-            <div class="catalog-notice"><strong>JavaScript is required for the searchable archive.</strong> The source files remain publicly available in the seven Lulu &amp; Ellie storage repositories.</div>
+            <div class="catalog-notice"><strong>JavaScript is required for the searchable library.</strong> The source files remain publicly available in the Lulu &amp; Ellie archive.</div>
           </noscript>
         </div>
       </section>
