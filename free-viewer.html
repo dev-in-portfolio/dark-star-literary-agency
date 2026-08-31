@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" data-nav="free">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Free Viewer | Lulu & Ellie Library</title>
+    <meta name="description" content="Free in-browser viewer for Lulu & Ellie books, audio, video, and images from the public archive.">
+    <meta property="og:title" content="Lulu & Ellie Free Viewer">
+    <meta property="og:description" content="View and download Lulu & Ellie archive material for free.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="noindex,follow">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="accessibility.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script src="free-viewer.js" defer></script>
+  </head>
+  <body data-nav="free">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="Dark Star Literary Agency home">
+          <span class="brand-orb" aria-hidden="true"></span>
+          <span>Dark Star Literary Agency</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="agency.html">Dark Star</a>
+          <a href="ambrose-caspian-vale.html">About the Author</a>
+          <a href="lulu-ellie/">Lulu &amp; Ellie</a>
+          <a href="library.html">Library</a>
+          <a href="free-library.html" aria-current="page">Free Library</a>
+          <a href="parents-teachers.html">Parents &amp; Teachers</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero free-viewer-hero">
+        <div class="site-shell">
+          <div class="breadcrumbs"><a href="free-library.html">Free Library</a><span>→</span><span id="viewer-breadcrumb">Viewer</span></div>
+          <article class="hero-panel">
+            <div class="eyebrow" id="viewer-collection">Free archive viewer</div>
+            <h1 id="viewer-title">Loading item…</h1>
+            <p class="lede" id="viewer-file"></p>
+            <div class="hero-actions" id="viewer-actions"></div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="site-shell section-card">
+          <div id="viewer-status" class="catalog-notice" aria-live="polite">Loading the free viewer…</div>
+          <div id="viewer-stage" class="free-viewer-stage"></div>
+          <div class="free-viewer-fallback">
+            <p>If your browser cannot render this file inline, use <strong>Open original</strong> or <strong>Download free</strong> above. The source file remains public either way.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-shell footer-inner">
+        <strong>&copy; 2026 Dark Star Literary Agency. All rights reserved.</strong>
+        <div>Dark Star Literary Agency is the creative home of Ambrose Caspian Vale and the Lulu &amp; Ellie Adventures.</div>
+        <div><a href="accessibility.html">Accessibility</a> · Contact: <a href="mailto:literary@darkstarconsultinggroup.com">literary@darkstarconsultinggroup.com</a></div>
+      </div>
+    </footer>
+  </body>
+</html>
