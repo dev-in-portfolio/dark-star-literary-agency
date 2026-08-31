@@ -230,6 +230,7 @@ def render_archive(master: dict) -> tuple[str, str]:
     {js_items}
   ];
   const assetRoot = "../../assets/lulu-ellie/original-adventure";
+  const imageRoot = "/web-image/assets/lulu-ellie/original-adventure";
   const make = (tag, className, text) => {{ const e = document.createElement(tag); if (className) e.className = className; if (text) e.textContent = text; return e; }};
   const coverUrl = (item) => `${{assetRoot}}/book-${{item.number}}/front-cover.${{item.cover}}`;
   const videoUrl = (item) => `${{assetRoot}}/book-${{item.number}}/animated-cover.mp4`;
@@ -364,6 +365,27 @@ def patch_all_html(master: dict) -> None:
         if footer_match and "accessibility.html" not in footer_match.group(0):
             replacement = footer_match.group(1) + footer_match.group(2) + f'\n        <div><a href="{prefix}accessibility.html">Accessibility</a></div>\n      ' + footer_match.group(3)
             text = text[:footer_match.start()] + replacement + text[footer_match.end():]
+        def optimize_public_image(match: re.Match[str]) -> str:
+            attribute = match.group(1)
+            source = match.group(2)
+            if source.startswith("/web-image/") or source.startswith("http://") or source.startswith("https://") or source.startswith("data:"):
+                return match.group(0)
+            source_path = (ROOT / source.lstrip("/")) if source.startswith("/") else (page.parent / source)
+            try:
+                relative_asset = source_path.resolve().relative_to(ROOT.resolve()).as_posix()
+            except ValueError:
+                return match.group(0)
+            if not relative_asset.startswith("assets/"):
+                return match.group(0)
+            return f'{attribute}="/web-image/{relative_asset}"'
+
+        text = re.sub(
+            r'\\b(src|poster)=["\\']([^"\\']+\\.(?:png|jpe?g|webp))["\\']',
+            optimize_public_image,
+            text,
+            flags=re.I,
+        )
+
         if page.parent.name == "books":
             name = page.name
             if name not in canonical_original and name not in canonical_mystery and "http-equiv=\"refresh\"" not in text.lower():
