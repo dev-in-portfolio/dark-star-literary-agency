@@ -1062,3 +1062,20 @@ main p a:not(.button):not(.contact-link),
     flex: 0 0 auto;
   }
 }
+
+
+.hero-brand-art {
+  margin: 1rem 0 0;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(240, 198, 116, 0.2);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-brand-art img {
+  display: block;
+  width: 100%;
+  max-height: 34rem;
+  object-fit: cover;
+  object-position: center;
+}
