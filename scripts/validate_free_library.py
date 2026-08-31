@@ -153,6 +153,15 @@ def main() -> int:
         if not path.is_file():
             fail(f"missing Free Library surface: {path.relative_to(ROOT)}", errors)
 
+    library_script = ROOT / "free-library.js"
+    if library_script.is_file():
+        script_text = library_script.read_text(encoding="utf-8")
+        if 'repo.textContent = asset.repo' in script_text:
+            fail("raw repository names must not be rendered as reader-facing card labels", errors)
+        for phrase in ("PAGE_SIZE", "free-shelf-tab", "Show more", "displayTitle"):
+            if phrase not in script_text:
+                fail(f"free-library.js missing redesigned browsing behavior: {phrase}", errors)
+
     viewer = ROOT / "free-viewer.html"
     if viewer.is_file():
         text = viewer.read_text(encoding="utf-8")
@@ -164,7 +173,7 @@ def main() -> int:
     library_page = ROOT / "free-library.html"
     if library_page.is_file():
         text = library_page.read_text(encoding="utf-8")
-        for phrase in ("Free Library", "free viewing and free download", "free-library.js"):
+        for phrase in ("Free Library", "No account. No checkout.", "free-shelf-tabs", "free-library.js"):
             if phrase not in text:
                 fail(f"free-library.html missing required public access language: {phrase}", errors)
 
